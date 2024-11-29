@@ -1,0 +1,2250 @@
+# depslib dependency file v1.0
+1731789783 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\main.cpp
+	<SFML/Graphics.hpp>
+	"Game_play.h"
+	"Juego2.h"
+	"Menu.h"
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/VertexBuffer.hpp>
+	<SFML/Graphics/View.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Clipboard.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+	<SFML/Window/Touch.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\config.hpp
+	"TargetConditionals.h"
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\export.hpp
+	<SFML/Config.hpp>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\time.hpp
+	<SFML/System/Export.hpp>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\fileinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\inputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\memoryinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\string.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\utf.inl
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\string.inl
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\thread.inl
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\threadlocalptr.inl
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\vector2.inl
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\system\vector3.inl
+
+1728425818 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\clipboard.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\export.hpp
+	<SFML/Config.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\glresource.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\contextsettings.hpp
+	<SFML/Config.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\cursor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\joystick.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\sensor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/System/Time.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\touch.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\window.hpp
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Vector2.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1728425819 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\window\windowstyle.hpp
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\blendmode.hpp
+	<SFML/Graphics/Export.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\export.hpp
+	<SFML/Config.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\circleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/Vector2.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\rect.inl
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\vertexarray.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<vector>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\primitivetype.hpp
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\convexshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<vector>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\font.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/String.hpp>
+	<map>
+	<string>
+	<vector>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\glyph.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\rectangleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\rendertexture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/ContextSettings.hpp>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\shader.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glsl.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<map>
+	<string>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\glsl.hpp
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/Graphics/Glsl.inl>
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\glsl.inl
+
+1728425816 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\text.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/String.hpp>
+	<string>
+	<vector>
+
+1728425817 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\graphics\vertexbuffer.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1732821481 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\game_play.h
+	<SFML/Graphics.hpp>
+	"Hero_1.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Background.h"
+	"Shots.h"
+	"Platforms.h"
+	"Platforms_rectangle_shape.h"
+	"Player.h"
+	"Manager_wolf.h"
+	"Items.h"
+	"Colision.h"
+	"Colisionables.h"
+
+1732819215 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\hero_1.h
+	<SFML/Graphics.hpp>
+	"Shots.h"
+	<iostream>
+	<vector>
+	<memory>
+	"Colision.h"
+
+1731596427 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\shots.h
+	<SFML/Graphics.hpp>
+
+1728951677 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\background.h
+	<SFML/Graphics.hpp>
+
+1728951764 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\background.cpp
+	"Background.h"
+
+1732822647 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\game_play.cpp
+	"Game_play.h"
+
+1732819335 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\hero_1.cpp
+	"Hero_1.h"
+	"Items.h"
+	"Colision.h"
+	<ctime>
+	<stdlib.h>
+	"Shots.h"
+
+1728951782 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\shot_manager.cpp
+	"Shot_manager.h"
+
+1728951692 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\shot_manager.h
+
+1731596885 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\shots.cpp
+	"Shots.h"
+	"Sauron.h"
+
+1729115257 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\enemigo.cpp
+	"enemigo.h"
+	<SFML/Graphics.hpp>
+
+1729114984 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\enemigo.h
+
+1732740416 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\colision.cpp
+	"Colision.h"
+	<SFML/Graphics.hpp>
+
+1732740289 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\colision.h
+	<SFML/Graphics.hpp>
+	"Hero_1.h"
+	"Items.h"
+	"Colisionables.h"
+
+1729203410 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\salto.h
+	<SFML/Graphics.hpp>
+
+1729621142 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\enemy.cpp
+	"Enemy.h"
+
+1729621142 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\enemy.h
+
+1732822978 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\items.h
+	<SFML/Graphics.hpp>
+	"Colision.h"
+
+1732821348 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\items.cpp
+	<stdlib.h>
+	"Hero_1.h"
+	"Items.h"
+
+1732564345 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\mago.cpp
+	"Mago.h"
+
+1732814732 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\mago.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"Colision.h"
+	"Hero_1.h"
+
+1732818047 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\anillos.cpp
+	"Anillos.h"
+
+1732817683 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\anillos.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+
+1732747311 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\platforms.cpp
+	"Platforms.h"
+
+1731437214 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\platforms.h
+	<SFML/Graphics.hpp>
+
+1732747327 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\platforms_rectangle_shape.cpp
+	"Platforms_rectangle_shape.h"
+
+1731437214 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\platforms_rectangle_shape.h
+	<SFML/Graphics.hpp>
+
+1732750098 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\sauron.cpp
+	"Sauron.h"
+
+1732817810 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\sauron.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"Colision.h"
+	"Hero_1.h"
+
+1732818174 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\audio.cpp
+	"Audio.h"
+
+1731560078 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\audio.h
+	<iostream>
+	<SFML/Audio.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundfilefactory.inl
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1728425815 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\sfml\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1732747271 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\menu.cpp
+	"Menu.h"
+
+1732814799 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\menu.h
+	<iostream>
+	<vector>
+	<string>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1732747474 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\player.h
+	<string.h>
+	<cstdlib>
+	<string>
+	<SFML/Graphics.hpp>
+	"Partida.h"
+
+1732747453 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\partida.h
+	<cstring>
+	<SFML/Graphics.hpp>
+	"Player.h"
+
+1732747348 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\player.cpp
+	<iostream>
+	"Player.h"
+
+1732747410 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\juego2.h
+	<SFML/Graphics.hpp>
+	"Menu.h"
+	"Player.h"
+	"Game_play.h"
+	"Partida.h"
+	"Ranking.h"
+	"Audio.h"
+
+1732747491 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\ranking.h
+	<iostream>
+	"Partida.h"
+
+1732747244 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\juego2.cpp
+	"Juego2.h"
+	"Player.h"
+
+1732747295 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\partida.cpp
+	<iostream>
+	"Partida.h"
+
+1732747370 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\ranking.cpp
+	"Ranking.h"
+
+1732822978 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\colisionables.h
+	<vector>
+	"Hero_1.h"
+	"Background.h"
+	"Shots.h"
+	"Items.h"
+	"Colision.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Enemy_wolf.h"
+	"Manager_wolf.h"
+	"Enemy_wolf.h"
+
+1732822978 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\colisionables.cpp
+	"Colisionables.h"
+	<vector>
+	"Hero_1.h"
+	"Background.h"
+	"Shots.h"
+	"Items.h"
+	"Colision.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Manager_wolf.h"
+	"Enemy_wolf.h"
+
+1732769800 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\manager_wolf.h
+	<vector>
+	"Enemy_wolf.h"
+
+1732769356 c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\include\enemy_wolf.h
+	<SFML/Graphics.hpp>
+	<vector>
+	"Hero_1.h"
+	"Platforms.h"
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1732767440 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\enemy_wolf.cpp
+	"Enemy_wolf.h"
+
+1732761501 source:c:\users\marcelo\desktop\facultad\proyecto los anillos del poder\src\manager_wolf.cpp
+	"Manager_wolf.h"
+
+1732830913 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\main.cpp
+	<SFML/Graphics.hpp>
+	"Game_play.h"
+	"Juego2.h"
+	"Menu.h"
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/VertexBuffer.hpp>
+	<SFML/Graphics/View.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Clipboard.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+	<SFML/Window/Touch.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\config.hpp
+	"TargetConditionals.h"
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\export.hpp
+	<SFML/Config.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\time.hpp
+	<SFML/System/Export.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\fileinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\inputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\memoryinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\string.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\utf.inl
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\string.inl
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\thread.inl
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\threadlocalptr.inl
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\vector2.inl
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\system\vector3.inl
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\clipboard.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\export.hpp
+	<SFML/Config.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\glresource.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\contextsettings.hpp
+	<SFML/Config.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\cursor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\joystick.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\sensor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/System/Time.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\touch.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\window.hpp
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1732830917 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\window\windowstyle.hpp
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\blendmode.hpp
+	<SFML/Graphics/Export.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\export.hpp
+	<SFML/Config.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\circleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\rect.inl
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\vertexarray.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<vector>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\primitivetype.hpp
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\convexshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<vector>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\font.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/String.hpp>
+	<map>
+	<string>
+	<vector>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\glyph.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\rectangleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\rendertexture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/ContextSettings.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\shader.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glsl.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<map>
+	<string>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\glsl.hpp
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/Graphics/Glsl.inl>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\glsl.inl
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\text.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/String.hpp>
+	<string>
+	<vector>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\graphics\vertexbuffer.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1732834450 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\game_play.h
+	<SFML/Graphics.hpp>
+	"Hero_1.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Background.h"
+	"Shots.h"
+	"Platforms.h"
+	"Platforms_rectangle_shape.h"
+	"Player.h"
+	"Manager_wolf.h"
+	"Items.h"
+	"Colision.h"
+	"Colisionables.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\hero_1.h
+	<SFML/Graphics.hpp>
+	"Shots.h"
+	<iostream>
+	<vector>
+	<memory>
+	"Colision.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\shots.h
+	<SFML/Graphics.hpp>
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\colision.h
+	<SFML/Graphics.hpp>
+	"Hero_1.h"
+	"Items.h"
+	"Colisionables.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\items.h
+	<SFML/Graphics.hpp>
+	"Colision.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\colisionables.h
+	<vector>
+	"Hero_1.h"
+	"Background.h"
+	"Shots.h"
+	"Items.h"
+	"Colision.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Enemy_wolf.h"
+	"Manager_wolf.h"
+	"Enemy_wolf.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\background.h
+	<SFML/Graphics.hpp>
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\mago.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"Colision.h"
+	"Hero_1.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\sauron.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"Colision.h"
+	"Hero_1.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\anillos.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\enemy_wolf.h
+	<SFML/Graphics.hpp>
+	<vector>
+	"Hero_1.h"
+	"Platforms.h"
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\platforms.h
+	<SFML/Graphics.hpp>
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\manager_wolf.h
+	<vector>
+	"Enemy_wolf.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\platforms_rectangle_shape.h
+	<SFML/Graphics.hpp>
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\player.h
+	<string.h>
+	<cstdlib>
+	<string>
+	<SFML/Graphics.hpp>
+	"Partida.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\partida.h
+	<cstring>
+	<SFML/Graphics.hpp>
+	"Player.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\juego2.h
+	<SFML/Graphics.hpp>
+	"Menu.h"
+	"Player.h"
+	"Game_play.h"
+	"Partida.h"
+	"Ranking.h"
+	"Audio.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\menu.h
+	<iostream>
+	<vector>
+	<string>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundfilefactory.inl
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1732830916 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\sfml\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\ranking.h
+	<iostream>
+	"Partida.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\audio.h
+	<iostream>
+	<SFML/Audio.hpp>
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\anillos.cpp
+	"Anillos.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\audio.cpp
+	"Audio.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\background.cpp
+	"Background.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\colision.cpp
+	"Colision.h"
+	<SFML/Graphics.hpp>
+
+1732831767 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\colisionables.cpp
+	"Colisionables.h"
+	<vector>
+	"Hero_1.h"
+	"Background.h"
+	"Shots.h"
+	"Items.h"
+	"Colision.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Manager_wolf.h"
+	"Enemy_wolf.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\enemy_wolf.cpp
+	"Enemy_wolf.h"
+
+1732833225 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\hero_1.cpp
+	"Hero_1.h"
+	"Items.h"
+	"Colision.h"
+	<ctime>
+	<stdlib.h>
+	"Shots.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\items.cpp
+	<stdlib.h>
+	"Hero_1.h"
+	"Items.h"
+
+1732834116 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\juego2.cpp
+	"Juego2.h"
+	"Player.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\mago.cpp
+	"Mago.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\manager_wolf.cpp
+	"Manager_wolf.h"
+
+1732833601 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\menu.cpp
+	"Menu.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\partida.cpp
+	<iostream>
+	"Partida.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\platforms.cpp
+	"Platforms.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\platforms_rectangle_shape.cpp
+	"Platforms_rectangle_shape.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\player.cpp
+	<iostream>
+	"Player.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\ranking.cpp
+	"Ranking.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\sauron.cpp
+	"Sauron.h"
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\shot_manager.cpp
+	"Shot_manager.h"
+
+1732830914 c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\include\shot_manager.h
+
+1732830918 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\shots.cpp
+	"Shots.h"
+	"Sauron.h"
+
+1732833712 source:c:\users\usuario\onedrive\escritorio\proyecto los anillos del poder1\src\game_play.cpp
+	"Game_play.h"
+
+1732830914 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\main.cpp
+	<SFML/Graphics.hpp>
+	"Game_play.h"
+	"Juego2.h"
+	"Menu.h"
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/VertexBuffer.hpp>
+	<SFML/Graphics/View.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Clipboard.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+	<SFML/Window/Touch.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\config.hpp
+	"TargetConditionals.h"
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\export.hpp
+	<SFML/Config.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\time.hpp
+	<SFML/System/Export.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\fileinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\inputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\memoryinputstream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\string.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\utf.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\string.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\thread.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\threadlocalptr.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\vector2.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\system\vector3.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\clipboard.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\export.hpp
+	<SFML/Config.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\glresource.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\contextsettings.hpp
+	<SFML/Config.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\cursor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\joystick.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\sensor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/System/Time.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\touch.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\window.hpp
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\window\windowstyle.hpp
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\blendmode.hpp
+	<SFML/Graphics/Export.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\export.hpp
+	<SFML/Config.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\circleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\rect.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\vertexarray.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<vector>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\primitivetype.hpp
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\convexshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<vector>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\font.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/String.hpp>
+	<map>
+	<string>
+	<vector>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\glyph.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\rectangleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\rendertexture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/ContextSettings.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\shader.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glsl.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<map>
+	<string>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\glsl.hpp
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/Graphics/Glsl.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\glsl.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\text.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/String.hpp>
+	<string>
+	<vector>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\graphics\vertexbuffer.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1732834452 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\game_play.h
+	<SFML/Graphics.hpp>
+	"Hero_1.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Background.h"
+	"Shots.h"
+	"Platforms.h"
+	"Platforms_rectangle_shape.h"
+	"Player.h"
+	"Manager_wolf.h"
+	"Items.h"
+	"Colision.h"
+	"Colisionables.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\hero_1.h
+	<SFML/Graphics.hpp>
+	"Shots.h"
+	<iostream>
+	<vector>
+	<memory>
+	"Colision.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\shots.h
+	<SFML/Graphics.hpp>
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\colision.h
+	<SFML/Graphics.hpp>
+	"Hero_1.h"
+	"Items.h"
+	"Colisionables.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\items.h
+	<SFML/Graphics.hpp>
+	"Colision.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\colisionables.h
+	<vector>
+	"Hero_1.h"
+	"Background.h"
+	"Shots.h"
+	"Items.h"
+	"Colision.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Enemy_wolf.h"
+	"Manager_wolf.h"
+	"Enemy_wolf.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\background.h
+	<SFML/Graphics.hpp>
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\mago.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"Colision.h"
+	"Hero_1.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\sauron.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"Colision.h"
+	"Hero_1.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\anillos.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\enemy_wolf.h
+	<SFML/Graphics.hpp>
+	<vector>
+	"Hero_1.h"
+	"Platforms.h"
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\platforms.h
+	<SFML/Graphics.hpp>
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\manager_wolf.h
+	<vector>
+	"Enemy_wolf.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\platforms_rectangle_shape.h
+	<SFML/Graphics.hpp>
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\player.h
+	<string.h>
+	<cstdlib>
+	<string>
+	<SFML/Graphics.hpp>
+	"Partida.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\partida.h
+	<cstring>
+	<SFML/Graphics.hpp>
+	"Player.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\juego2.h
+	<SFML/Graphics.hpp>
+	"Menu.h"
+	"Player.h"
+	"Game_play.h"
+	"Partida.h"
+	"Ranking.h"
+	"Audio.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\menu.h
+	<iostream>
+	<vector>
+	<string>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundfilefactory.inl
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1732830918 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\sfml\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\ranking.h
+	<iostream>
+	"Partida.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\audio.h
+	<iostream>
+	<SFML/Audio.hpp>
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\anillos.cpp
+	"Anillos.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\audio.cpp
+	"Audio.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\background.cpp
+	"Background.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\colision.cpp
+	"Colision.h"
+	<SFML/Graphics.hpp>
+
+1732831768 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\colisionables.cpp
+	"Colisionables.h"
+	<vector>
+	"Hero_1.h"
+	"Background.h"
+	"Shots.h"
+	"Items.h"
+	"Colision.h"
+	"Mago.h"
+	"Sauron.h"
+	"Anillos.h"
+	"Manager_wolf.h"
+	"Enemy_wolf.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\enemy_wolf.cpp
+	"Enemy_wolf.h"
+
+1732833714 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\game_play.cpp
+	"Game_play.h"
+
+1732833226 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\hero_1.cpp
+	"Hero_1.h"
+	"Items.h"
+	"Colision.h"
+	<ctime>
+	<stdlib.h>
+	"Shots.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\items.cpp
+	<stdlib.h>
+	"Hero_1.h"
+	"Items.h"
+
+1732834118 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\juego2.cpp
+	"Juego2.h"
+	"Player.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\mago.cpp
+	"Mago.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\manager_wolf.cpp
+	"Manager_wolf.h"
+
+1732833602 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\menu.cpp
+	"Menu.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\partida.cpp
+	<iostream>
+	"Partida.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\platforms.cpp
+	"Platforms.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\platforms_rectangle_shape.cpp
+	"Platforms_rectangle_shape.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\player.cpp
+	<iostream>
+	"Player.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\ranking.cpp
+	"Ranking.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\sauron.cpp
+	"Sauron.h"
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\shot_manager.cpp
+	"Shot_manager.h"
+
+1732830916 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\include\shot_manager.h
+
+1732830920 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\proyecto_prog_ii-master\src\shots.cpp
+	"Shots.h"
+	"Sauron.h"
+

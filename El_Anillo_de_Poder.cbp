@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="El_Anillo_de_Poder" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/El_Anillo_de_Poder" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/El_Anillo_de_Poder" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="SFML/include" />
+		</Compiler>
+		<Linker>
+			<Add library="SFML/lib/libsfml-graphics.a" />
+			<Add library="SFML/lib/libsfml-system.a" />
+			<Add library="SFML/lib/libsfml-window.a" />
+			<Add library="SFML/lib/libsfml-audio.a" />
+			<Add library="SFML/lib/libsfml-audio-d.a" />
+			<Add library="SFML/lib/libsfml-audio-s.a" />
+			<Add library="SFML/lib/libsfml-audio-s-d.a" />
+			<Add directory="SFML/lib" />
+		</Linker>
+		<Unit filename="include/Anillos.h" />
+		<Unit filename="include/Audio.h" />
+		<Unit filename="include/Background.h" />
+		<Unit filename="include/Colision.h" />
+		<Unit filename="include/Colisionables.h" />
+		<Unit filename="include/Enemy_wolf.h" />
+		<Unit filename="include/Game_play.h" />
+		<Unit filename="include/Hero_1.h" />
+		<Unit filename="include/Items.h" />
+		<Unit filename="include/Juego2.h" />
+		<Unit filename="include/Mago.h" />
+		<Unit filename="include/Manager_wolf.h" />
+		<Unit filename="include/Menu.h" />
+		<Unit filename="include/Partida.h" />
+		<Unit filename="include/Platforms.h" />
+		<Unit filename="include/Platforms_rectangle_shape.h" />
+		<Unit filename="include/Player.h" />
+		<Unit filename="include/Ranking.h" />
+		<Unit filename="include/Sauron.h" />
+		<Unit filename="include/Shot_manager.h" />
+		<Unit filename="include/Shots.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Anillos.cpp" />
+		<Unit filename="src/Audio.cpp" />
+		<Unit filename="src/Background.cpp" />
+		<Unit filename="src/Colision.cpp" />
+		<Unit filename="src/Colisionables.cpp" />
+		<Unit filename="src/Enemy_wolf.cpp" />
+		<Unit filename="src/Game_play.cpp" />
+		<Unit filename="src/Hero_1.cpp" />
+		<Unit filename="src/Items.cpp" />
+		<Unit filename="src/Juego2.cpp" />
+		<Unit filename="src/Mago.cpp" />
+		<Unit filename="src/Manager_wolf.cpp" />
+		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Partida.cpp" />
+		<Unit filename="src/Platforms.cpp" />
+		<Unit filename="src/Platforms_rectangle_shape.cpp" />
+		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/Ranking.cpp" />
+		<Unit filename="src/Sauron.cpp" />
+		<Unit filename="src/Shot_manager.cpp" />
+		<Unit filename="src/Shots.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
