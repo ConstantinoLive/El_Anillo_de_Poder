@@ -2663,7 +2663,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1733712026 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\game_play.h
+1733761614 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\game_play.h
 	<SFML/Graphics.hpp>
 	"Hero_1.h"
 	"Mago.h"
@@ -2679,7 +2679,7 @@
 	"Colision.h"
 	"Colisionables.h"
 
-1733702628 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\hero_1.h
+1733726412 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\hero_1.h
 	<SFML/Graphics.hpp>
 	"Shots.h"
 	<iostream>
@@ -2687,22 +2687,22 @@
 	<memory>
 	"Colision.h"
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\shots.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\shots.h
 	<SFML/Graphics.hpp>
 
-1733701428 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\colision.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\colision.h
 	<SFML/Graphics.hpp>
 	"Hero_1.h"
 	"Items.h"
 	"Colisionables.h"
 
-1733553518 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\items.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\items.h
 	<SFML/Graphics.hpp>
 	<vector>
 	"Colision.h"
 	"Hero_1.h"
 
-1733702570 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\colisionables.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\colisionables.h
 	<vector>
 	"Hero_1.h"
 	"Background.h"
@@ -2715,21 +2715,10 @@
 	"Manager_wolf.h"
 	"Enemy_wolf.h"
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\background.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\background.h
 	<SFML/Graphics.hpp>
 
-1733551214 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\mago.h
-	<SFML/Graphics.hpp>
-	<iostream>
-	<vector>
-	<memory>
-	<cmath>
-	<cstdlib>
-	<ctime>
-	"Colision.h"
-	"Hero_1.h"
-
-1733550992 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\sauron.h
+1733731822 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\mago.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<vector>
@@ -2740,13 +2729,24 @@
 	"Colision.h"
 	"Hero_1.h"
 
-1733702120 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\anillos.h
+1733732652 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\sauron.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<vector>
+	<memory>
+	<cmath>
+	<cstdlib>
+	<ctime>
+	"Colision.h"
+	"Hero_1.h"
+
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\anillos.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<ctime>
 	<cstdlib>
 
-1733711950 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\enemy_wolf.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\enemy_wolf.h
 	<SFML/Graphics.hpp>
 	<vector>
 	"Hero_1.h"
@@ -2755,29 +2755,29 @@
 	<ctime>
 	<cstdlib>
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\platforms.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\platforms.h
 	<SFML/Graphics.hpp>
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\manager_wolf.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\manager_wolf.h
 	<vector>
 	"Enemy_wolf.h"
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\platforms_rectangle_shape.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\platforms_rectangle_shape.h
 	<SFML/Graphics.hpp>
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\player.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\player.h
 	<string.h>
 	<cstdlib>
 	<string>
 	<SFML/Graphics.hpp>
 	"Partida.h"
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\partida.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\partida.h
 	<cstring>
 	<SFML/Graphics.hpp>
 	"Player.h"
 
-1733711794 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\juego2.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\juego2.h
 	<SFML/Graphics.hpp>
 	"Menu.h"
 	"Player.h"
@@ -2786,7 +2786,7 @@
 	"Ranking.h"
 	"Audio.h"
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\menu.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\menu.h
 	<iostream>
 	<vector>
 	<string>
@@ -2897,28 +2897,28 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\ranking.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\ranking.h
 	<iostream>
 	"Partida.h"
 
-1733702412 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\audio.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\audio.h
 	<iostream>
 	<SFML/Audio.hpp>
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\anillos.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\anillos.cpp
 	"Anillos.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\audio.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\audio.cpp
 	"Audio.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\background.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\background.cpp
 	"Background.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\colision.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\colision.cpp
 	"Colision.h"
 	<SFML/Graphics.hpp>
 
-1733711794 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\colisionables.cpp
+1733754164 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\colisionables.cpp
 	"Colisionables.h"
 	<vector>
 	"Hero_1.h"
@@ -2932,13 +2932,13 @@
 	"Manager_wolf.h"
 	"Enemy_wolf.h"
 
-1733712086 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\enemy_wolf.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\enemy_wolf.cpp
 	"Enemy_wolf.h"
 
-1733712620 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\game_play.cpp
+1733773942 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\game_play.cpp
 	"Game_play.h"
 
-1733702944 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\hero_1.cpp
+1733757958 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\hero_1.cpp
 	"Hero_1.h"
 	"Items.h"
 	"Colision.h"
@@ -2946,50 +2946,50 @@
 	<stdlib.h>
 	"Shots.h"
 
-1733553514 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\items.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\items.cpp
 	<stdlib.h>
 	"Hero_1.h"
 	"Items.h"
 
-1733711794 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\juego2.cpp
+1733715762 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\juego2.cpp
 	"Juego2.h"
 	"Player.h"
 
-1733701428 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\mago.cpp
+1733731988 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\mago.cpp
 	"Mago.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\manager_wolf.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\manager_wolf.cpp
 	"Manager_wolf.h"
 
-1733557458 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\menu.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\menu.cpp
 	"Menu.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\partida.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\partida.cpp
 	<iostream>
 	"Partida.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\platforms.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\platforms.cpp
 	"Platforms.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\platforms_rectangle_shape.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\platforms_rectangle_shape.cpp
 	"Platforms_rectangle_shape.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\player.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\player.cpp
 	<iostream>
 	"Player.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\ranking.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\ranking.cpp
 	"Ranking.h"
 
-1733702032 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\sauron.cpp
+1733733028 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\sauron.cpp
 	"Sauron.h"
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\shot_manager.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\shot_manager.cpp
 	"Shot_manager.h"
 
-1732863578 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\shot_manager.h
+1733713342 d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\include\shot_manager.h
 
-1732863578 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\shots.cpp
+1733713342 source:d:\estudio\utn\programacion ii ejercicios\prog ii cursada 3\el anillo de poder\src\shots.cpp
 	"Shots.h"
 	"Sauron.h"
 

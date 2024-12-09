@@ -342,13 +342,13 @@ void Game_play::update(sf::RenderTarget& window)
                 }
                 if(GANO.getElapsedTime().asSeconds()>(2.0f))
                 {
-                    puntaje=+200;
+                    puntaje+=200;
                     _winner=true;
                     _game_over=false;
                 }
             }
 
-//        std::cout<<"MURIO "<<_game_over<<" -- "<<"GANO "<< _winner<<std::endl;
+            //std::cout<<"MURIO "<<_game_over<<" -- "<<"GANO "<< _winner<<std::endl;
 
 
             if(Hro.isAlive==false)
@@ -369,7 +369,7 @@ void Game_play::update(sf::RenderTarget& window)
 
             }
 
-//            //-------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------
             if(num_PackFlechas == 0 && Hro.getPosition().y <= 500)
             {
                 items.update(0);
@@ -419,22 +419,22 @@ void Game_play::update(sf::RenderTarget& window)
                     }
                 }
             }
-
-//            ---------------------------------------------------------------------------------------*/
-            if (Hro.getDraw().getPosition().y<650)
+            //---------------------------------------------------------------------------------------*/
+            /*if (Hro.getDraw().getPosition().y<650)
             {
                 _current_level = LEVEL_I;
             }
             else
             {
                 _current_level = LEVEL_II;
-            }
+            }*/
 
-/////////SETEO DE POSICION DE PERSONAJE SEGUN NIVEL
+            /////////SETEO DE POSICION DE PERSONAJE SEGUN NIVEL
 
-////////POSICION
+            ////////POSICION
             if(posicion_LEVEL_I==true)
             {
+                _current_level = LEVEL_I;
                 if(Hro.getPosition().x<1435)
                 {
                     Hro.setPosition(1435,Hro.getPosition().y);
@@ -448,6 +448,7 @@ void Game_play::update(sf::RenderTarget& window)
 
             if(posicion_LEVEL_II==true)
             {
+               _current_level = LEVEL_II;
                 posicion_LEVEL_I=false;
                 if(Hro.getPosition().y<775)
                 {
@@ -567,7 +568,7 @@ void Game_play::updateEnemySupGeneration()
             {
                 newWolf->setPosition(randomOffset, 485);
             }
-            else if(_current_level==LEVEL_I)
+            else if(_current_level==LEVEL_II)
             {
                 newWolf->setPosition(randomOffset, 1210);
             }
