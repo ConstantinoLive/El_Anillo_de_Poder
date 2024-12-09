@@ -29,14 +29,11 @@ enum STATES
         W_WALKING_LEFT_JUMPING,
         W_DEATH_RIGHT,
         W_DEATH_LEFT,
-        // W_INTERSECTION_RIGHT,
-        //W_INTERSECTION_LEFT,
     };
    STATES _state;
     void update();
     void updateAnimation();
     void mobility(const sf::Vector2f& heroPosition);
-    //sf::Sprite& getDraw();
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
     void floor(float x, float y);
     sf::Vector2f getPosition();
@@ -47,34 +44,31 @@ enum STATES
     void initAnimation();
     void initTexture();
     int getRandom();
-    //bool isAlives;
-
     int vidaW;
     void restarVidas(int cantidad);
     bool death=false;
-
-
+    bool isDying = false;
+    sf::Clock deathTimer;
+    int getEnergy();
+    void setEnergy(int n);
+    void updateDeath();
 
 private:
     sf::Sprite _sprite_wolf;
     sf::Texture _texture_wolf;
-    //STATES _state;
     float _jump_force;
     int _xtexture=0;
     float _width_texture;
     float _distance=0;
-
     sf::Clock _animationTimer;
     sf::IntRect _current_frame;
     sf::IntRect _first_frame_of_sheet;      //me sirve para saber las coordenadas donde arranca el frame de cada tipo de disparo
     int _end_of_frames_sheet;               //me sirve para saber hasta donde va cada sprite en los distintos tipos de disparos
     int _height_texture;
-
     sf::Clock _jump_timer;
-    //sf::Time _time_jump;
-
     int random=0;
     int op_dir;
+    float _energy=60;
 
 
 };

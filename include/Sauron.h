@@ -28,12 +28,13 @@ public:
         ATTACK_LEFT,
         ATTACKED_RIGHT,
         ATTACKED_LEFT,
-        DEATH_RIGHT,
-        DEATH_LEFT,
+        DEATH_RIGHT,//11
+        DEATH_LEFT,//12
     };
 
     void update(const sf::Vector2f& heroPosition, sf::Time deltaTime);
     void updateAnimation();
+    void updateMuerte(const sf::Vector2f& heroPosition);
     void mobility(const sf::Vector2f& heroPosition,int heroState);
     sf::Sprite& getDraw();
     sf::Vector2f getPosition();
@@ -43,7 +44,7 @@ public:
     void limitePantalla();
     bool HERO_LEFT = true;
     bool estaAtacando;
-    bool arranqueNivel_2;
+    bool arranqueNivel_2 = false;
     float distanciaPersonajes_X;
     float distanciaPersonajes_Y;
     float PosicionInicio;
@@ -55,14 +56,14 @@ public:
     void restarVida(int cantidad);
     sf::FloatRect getBounds() const;
     int vidas;
-    bool isAlive;
+    bool isAlive=true;
     STATES _state;
     void _setVidas(int n);
     int _getVidas();
     int n;
-    int num;
+    int numEstado;
     int Estado;
-    void setEstado(int num);
+    void setEstado(int numEstado);
     int getEstado();
 
 

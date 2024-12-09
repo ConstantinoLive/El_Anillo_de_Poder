@@ -32,6 +32,5 @@ void Items::respawn(int n)
     int positionsY[]= {500,230,230,300,1230,970,900,970};
 
     _sprite_items.setPosition(positionsX[n], positionsY[n]);
-
-}
+    }
 

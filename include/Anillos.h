@@ -1,11 +1,9 @@
 #ifndef ANILLOS_H_INCLUDED
 #define ANILLOS_H_INCLUDED
-
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <vector>
-#include <memory>
-#include <cmath>
+#include <ctime>
+#include <cstdlib>
 
 class Anillos
 {
@@ -21,7 +19,6 @@ public:
     };
 
     void limitePantalla(const sf::Vector2f& heroPosition);
-
     void update(const sf::Vector2f& heroPosition);
     void updateAnimation();
     void mobility(const sf::Vector2f& heroPosition);
@@ -39,7 +36,6 @@ public:
     bool obtenido;
     void recoger() {obtenido = true;}
     STATES _state;
-
     bool isObtenido() const {return obtenido;}
 
 
@@ -48,20 +44,14 @@ protected:
 private:
     sf::Sprite _spriteAnillos;
     sf::Texture _texture_anillos;
-    //STATES _state;
     int _xtexture = 0;
     float _width_texture;
-
     sf::Clock _animationTimer;
     sf::IntRect _current_frame;
     int _end_of_frames_sheet;   // Límite de cada sprite
     int _height_texture;
-
     sf::Clock _attackCooldown; // Temporizador para el ataque
     sf::Time _attackCooldownTime; // Tiempo entre ataques
-
-    bool _isDisappearing;
-
     // Variable para controlar la animación
     float _animationSpeed; // Velocidad de la animación
 };

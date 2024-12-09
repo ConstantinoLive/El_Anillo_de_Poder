@@ -2,14 +2,15 @@
 
 Game_play::Game_play(sf::RenderWindow& window,Player& player)
 {
-    j=0;
+    _winner = false;
+    _game_over=false;
+    num_PackFlechas=0;
     i=0;
-   // _winner=false;
+    // _winner=false;
     _states=STATES_GAME_PLAY::ACTION;
     _current_level = LEVEL_I;
     // Inicializa el tiempo
     clock.restart(); // objeto clock
-
 
     //Superficie
     Prs[0]=Platforms_rectangle_shape(508,846,355);
@@ -54,7 +55,46 @@ Game_play::Game_play(sf::RenderWindow& window,Player& player)
 
     _namePlayer = player.getNombre();
 
+    /************** NOMBRE DE JUGADOR ****************/
 
+    if (!_fontPlayer.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
+    {
+        std::cout<<"Error al cargar texto"<<std::endl;
+    }
+    _textPlayer.setFont(_fontPlayer);
+    _textPlayer.setString(_namePlayer);
+    _textPlayer.setFillColor(sf::Color::Yellow);
+
+    /*****************PUNTAJE**************************/
+    if (!_fontPuntaje.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
+    {
+        std::cout<<"Error al cargar texto"<<std::endl;
+    }
+    _textPuntaje.setFont(_fontPuntaje);
+
+    _textPuntaje.setColor(sf::Color::Yellow);
+
+    /*****************VIDAS**************************/
+
+    if (!_fontvidas.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
+    {
+        std::cout<<"Error al cargar texto"<<std::endl;
+    }
+    _textvidas.setFont(_fontvidas);
+    _textvidas.setFillColor(sf::Color::Yellow);
+
+
+    /*****************ENERGIA**************************/
+
+    if (!_fontenergia.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
+    {
+        std::cout<<"Error al cargar texto"<<std::endl;
+    }
+    _textenergia.setFont(_fontenergia);
+//        _textenergia.setString(std::to_string(Hro.porcentajeVida));
+    _textenergia.setFillColor(sf::Color::Yellow);
+
+    /***********************************************/
 
 
 }
@@ -69,28 +109,22 @@ void Game_play::draw(sf::RenderWindow& window)
     window.draw(BG.getDraw());
     window.draw(Pltfm.getDraw());
     window.draw(Hro.getDraw());
-    //if (Villano_1.isAlive && !dying) {
+
     window.draw(Villano_1.getDraw());
-    // }
-    if (Villano_2.isAlive && !death)
-    {
-        window.draw(Villano_2.getDraw());
-    }
+
+    window.draw(Villano_2.getDraw());
 
     if (!anillos.isObtenido())
     {
         window.draw(anillos.getDraw());
-
     }
 
 
-    /*if (!items.isObtenido()) {
-        window.draw(items);
-    }*/
-    /////////////////////////////
-    /* if (!items->isObtenido[j]) {
-     window.draw(items->getDraw());}*/
-    /////////////////////////////////
+    if (!items.isObtenido[num_PackFlechas])
+    {
+        window.draw(items.getDraw());
+    }
+
 
     for (auto Wolf : _Wolf_manager._array_wolf)
     {
@@ -114,7 +148,18 @@ void Game_play::draw(sf::RenderWindow& window)
         window.draw(Platform.getDraw());
     }
 
+    if(_states==STATES_GAME_PLAY::PAUSE)
+    {
+        window.draw(_text_pause);
+    }
 
+    if(_states==STATES_GAME_PLAY::ACTION)
+    {
+        window.draw(_textPlayer);
+        window.draw(_textPuntaje);
+        window.draw(_textvidas);
+        window.draw(_textenergia);
+    }
 }
 
 void Game_play::cmd()
@@ -123,16 +168,28 @@ void Game_play::cmd()
 
     if(_states==STATES_GAME_PLAY::ACTION)
     {
+        check_collision_platform();
+        //   colisionables.itemsColision(Hro, items);
+        colisionables.anillosColision(Hro, anillos);
+        colisionables.colisionFlechasConVillanos(Hro, Villano_1, Villano_2, death, dying);
+        colisionables.colisionHeroConVillanos(Hro, Villano_1, Villano_2, death, dying, attack);
+        colisionables.colisionSauronConHro(Villano_2,Hro, death);
+        colisionables.colisionMagoConHero(Villano_1, Hro, death);
+        colisionables.colisionHeroConWolf(Hro,_Wolf_manager,attack,dying);
+        colisionables.colisionFlechasWolf(Hro,_Wolf_manager,dying);
+        colisionables.colisionWolfConHero(Hro,_Wolf_manager,dying);
+
+
         Hro.mobility();
 
-        Villano_1.mobility(Hro.getPosition());
+        Villano_1.mobility(Hro.getPosition(),Hro.getEstado());
 
         Villano_2.mobility(Hro.getPosition(),Hro.getEstado());
-
-        for (auto& Wolf :  _Wolf_manager._array_wolf)
-        {
-            Wolf->mobility(Hro.getPosition());
-        }
+//
+//        for (auto& Wolf :  _Wolf_manager._array_wolf)
+//        {
+//            Wolf->mobility(Hro.getPosition());
+//        }
 
 //        anillos.mobility(Hro.getPosition());
 
@@ -146,7 +203,7 @@ void Game_play::cmd()
             std::cout<<"Pausa"<<std::endl;
             _text_pause.setFont(_font_pause);
             _text_pause.setString("PAUSA");
-            _text_pause.setColor(sf::Color::Red);
+            _text_pause.setFillColor(sf::Color::Red);
             _text_pause.setPosition(Hro.getPosition().x+200,Hro.getPosition().y+200);
         }
     }
@@ -162,63 +219,30 @@ void Game_play::update(sf::RenderTarget& window)
 {
     if(_game_over==false)
     {
-        check_collision_platform();
-        //   colisionables.itemsColision(Hro, items);
-        colisionables.anillosColision(Hro, anillos);
-        colisionables.colisionFlechasConVillanos(Hro, Villano_1, Villano_2, death, dying);
-        colisionables.colisionHeroConVillanos(Hro, Villano_1, Villano_2, death, dying, attack);
-        colisionables.colisionSauronConHro(Villano_2,Hro, death);
-        colisionables.colisionMagoConHero(Villano_1, Hro, death);
-        colisionables.colisionHeroConWolf(Hro,_Wolf_manager,attack,dying);
-        colisionables.colisionFlechasWolf(Hro,_Wolf_manager,dying);
-        colisionables.colisionWolfConHero(Hro,_Wolf_manager,dying);
-        /*if(Villano_1.getEstado()==13){
-            puntaje+=15;
-        }
-        if(Villano_2.getEstado()==11||Villano_2.getEstado()==12){
-            puntaje+=15;
-        }
-
-        if(colisionables._Wolf_manager==true){
-            puntaje+=5;
-        }*/
-
-        /////////////////
-        /************** NOMBRE DE JUGADOR ****************/
-
-        if (!_fontPlayer.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
-        {
-            std::cout<<"Error al cargar texto"<<std::endl;
-        }
-        _textPlayer.setFont(_fontPlayer);
-        _textPlayer.setString(_namePlayer);
-        _textPlayer.setColor(sf::Color::Yellow);
-        _textPlayer.setPosition(Hro.getPosition().x-500,Hro.getPosition().y-270);
-        /*****************PUNTAJE**************************/
-        if (!_fontPuntaje.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
-        {
-            std::cout<<"Error al cargar texto"<<std::endl;
-        }
-        _textPuntaje.setFont(_fontPuntaje);
-        _textPuntaje.setString(std::to_string(puntaje));
-        _textPuntaje.setColor(sf::Color::Yellow);
-        _textPuntaje.setPosition(Hro.getPosition().x-100,Hro.getPosition().y-270);
-        /*****************VIDAS**************************/
-
-        if (!_fontvidas.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
-        {
-            std::cout<<"Error al cargar texto"<<std::endl;
-        }
-        _textvidas.setFont(_fontvidas);
-        _textvidas.setString(std::to_string(Hro.vida));
-        _textvidas.setColor(sf::Color::Yellow);
+//        check_collision_platform();
+//        //   colisionables.itemsColision(Hro, items);
+//        colisionables.anillosColision(Hro, anillos);
+//        colisionables.colisionFlechasConVillano-s(Hro, Villano_1, Villano_2, death, dying);
+//        colisionables.colisionHeroConVillanos(Hro, Villano_1, Villano_2, death, dying, attack);
+//        colisionables.colisionSauronConHro(Villano_2,Hro, death);
+//        colisionables.colisionMagoConHero(Villano_1, Hro, death);
+//        colisionables.colisionHeroConWolf(Hro,_Wolf_manager,attack,dying);
+//        colisionables.colisionFlechasWolf(Hro,_Wolf_manager,dying);
+//        colisionables.colisionWolfConHero(Hro,_Wolf_manager,dying);
+        _textenergia.setPosition(Hro.getPosition().x+400,Hro.getPosition().y-270);
+        _textenergia.setString(std::to_string(Hro.porcentajeVida));
         _textvidas.setPosition(Hro.getPosition().x+200,Hro.getPosition().y-270);
-
+        _textvidas.setString(std::to_string(Hro.vida));
+        _textPuntaje.setPosition(Hro.getPosition().x-100,Hro.getPosition().y-270);
+        _textPuntaje.setString(std::to_string(puntaje));
+        _textPlayer.setPosition(Hro.getPosition().x-500,Hro.getPosition().y-270);
 
         BG.update();
 
         // Obtén el tiempo transcurrido desde el último frame
         sf::Time deltaTime = clock.restart(); // Reinicia el reloj y obtiene el tiempo transcurrido
+
+
 
         if(_states==STATES_GAME_PLAY::ACTION)
         {
@@ -237,45 +261,119 @@ void Game_play::update(sf::RenderTarget& window)
 
             check_collision_platform();
 
-            updateEnemySupGeneration();
-            /*-------------------------------------------------------------------------------
-                        if(j==0&&Hro.getPosition().y<=500)
+            //updateEnemySupGeneration();
+            updateEnemySup();
+
+            if(Villano_1.isAlive==false)
+            {
+
+                puntaje=+50;
+                Villano_1.updateMuerte(Hro.getPosition());
+                posicion_LEVEL_II=true;
+                posicionInicial_LEVEL_II++;
+                posicion_LEVEL_I=false;
+            }
+
+            if(Villano_2.isAlive==false)
+            {
+                puntaje=+50;
+                Villano_2.updateMuerte(Hro.getPosition());
+                posicion_LEVEL_I=true;
+                posicionInicial_LEVEL_I++;
+                posicion_LEVEL_II=false;
+            }
+
+            if(posicionInicial_LEVEL_I==1)
+            {
+                Hro.setPosition(1435,485);
+            }
+
+            if(posicionInicial_LEVEL_II==1)
+            {
+                Hro.setPosition(650,1175);
+            }
+
+            if(Hro.getPosition().x>=1345&&Hro.getPosition().y<550&&Villano_1.isAlive==true)
+            {
+                posicion_LEVEL_I=true;
+                posicion_LEVEL_II=false;
+            }
+
+            if(Hro.getPosition().y>600&&Villano_2.isAlive==true)
+            {
+                posicion_LEVEL_II=true;
+            }
+
+
+            if(Villano_1.isAlive==false&&Villano_2.isAlive==false)
+            {
+                puntaje=+200;
+                _winner=true;
+                _game_over=false;
+            }
+
+//        std::cout<<"MURIO "<<_game_over<<" -- "<<"GANO "<< _winner<<std::endl;
+
+
+            if(Hro.isAlive==false)
+            {
+                Hro.updateMuerte();
+                _game_over=true;
+                _winner=false;
+            }
+
+//            //-------------------------------------------------------------------------------
+            if(num_PackFlechas == 0 && Hro.getPosition().y <= 500)
+            {
+                items.update(0);
+            }
+
+            if((num_PackFlechas == 0 && Hro.getPosition().y > 600)||(Villano_1.isAlive==false&&num_PackFlechas<=3))
+            {
+                num_PackFlechas = 4;
+                items.update(4);
+            }
+
+            if(num_PackFlechas >=4 && Villano_2.isAlive==false)
+            {
+                num_PackFlechas = 0;
+                items.update(0);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+            {
+
+                if(num_PackFlechas < 4)
+                {
+                    if (Hro.getBounds().intersects(items.getBounds()) && !items.isObtenido[num_PackFlechas])
                     {
-                        items.update(0);
+                        std::cout << "Se sumaron 10 flechas" << std::endl;
+                        items.isObtenido[num_PackFlechas] = true;
                     }
-
-                    if(j==0&&Hro.getPosition().y>600)
+                    if (items.isObtenido[num_PackFlechas])
                     {
-                        j=4;
-                        items.update(4);
-                    }
-
-                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
-
-                        if(j<4) {
-                        if (Hro.getBounds().intersects(items.getBounds()) && !items.isObtenido[j]) {
-                            std::cout << "Se sumaron 10 flechas" << std::endl;
-                            items.isObtenido[j] = true;
-                        }
-                    if (items.isObtenido[j]) {
-                        j=j+1;
-                        items.update(j);
+                        num_PackFlechas = num_PackFlechas + 1;
+                        items.update(num_PackFlechas);
                         Hro.shootig->setArrow(10);
                     }
+                }
+                else
+                {
+                    if (Hro.getBounds().intersects(items.getBounds()) && !items.isObtenido[num_PackFlechas])
+                    {
+                        std::cout << "Se sumaron 10 flechas" << std::endl;
+                        items.isObtenido[num_PackFlechas] = true;
                     }
-                    else {
-                        if (Hro.getBounds().intersects(items.getBounds()) && !items.isObtenido[j]) {
-                            std::cout << "Se sumaron 10 flechas" << std::endl;
-                            items.isObtenido[j] = true;
-                        }
-                    if (items.isObtenido[j]) {
-                        j=j+1;
-                        items.update(j);
+                    if (items.isObtenido[num_PackFlechas])
+                    {
+                        num_PackFlechas = num_PackFlechas + 1;
+                        items.update(num_PackFlechas);
                         Hro.shootig->setArrow(10);
                     }
-                    }
-                    }
-            ---------------------------------------------------------------------------------------*/
+                }
+            }
+
+//            ---------------------------------------------------------------------------------------*/
             if (Hro.getDraw().getPosition().y<650)
             {
                 _current_level = LEVEL_I;
@@ -284,17 +382,47 @@ void Game_play::update(sf::RenderTarget& window)
             {
                 _current_level = LEVEL_II;
             }
-            //std::cout<<Hro.getPosition().x<<"....."<<Hro.getPosition().y<<std::endl;
-            //Hro.floor(Hro.getDraw().getPosition().x, 485);
+
+/////////SETEO DE POSICION DE PERSONAJE SEGUN NIVEL
+
+////////POSICION
+            if(posicion_LEVEL_I==true)
+            {
+                if(Hro.getPosition().x<1435)
+                {
+                    Hro.setPosition(1435,Hro.getPosition().y);
+                }
+
+                if(Hro.getPosition().y>550)
+                {
+                    _game_over=true;
+                    _winner=false;
+                }
+            }
+
+            if(posicion_LEVEL_II==true)
+            {
+                posicion_LEVEL_I=false;
+                if(Hro.getPosition().y<775)
+                {
+                    Hro.setPosition(Hro.getPosition().x,775);
+                }
+            }
 
             floor_definition();
         }
     }
+    else
+    {
+        std::cout<<"GAME OVER"<<std::endl;
+    }
 }
+
+
 
 sf::Vector2f Game_play::get_camera_position()
 {
-    return Hro.getPosition();
+    return  Hro.getPosition();
 }
 
 void Game_play::check_collision_platform()
@@ -385,11 +513,11 @@ void Game_play::updateEnemySupGeneration()
         if (_wolf_spawn_timer.getElapsedTime().asSeconds() >= 1.5) // Spawnea cada 1.5 segundos
         {
             // Genera posiciones aleatorias dentro de un rango de la pantalla
-            int randomOffset = rand() % 1500;
+            int randomOffset = (static_cast<int>(Hro.getPosition().x) + 600)+ rand() % ((static_cast<int>(Hro.getPosition().x) + 1501)-(static_cast<int>(Hro.getPosition().x) +600));
 
             // Crea un nuevo lobo y lo posiciona
             Enemy_wolf* newWolf = new Enemy_wolf();
-            newWolf->setPosition(static_cast<int>(Hro.getPosition().x) + randomOffset, 485);
+            newWolf->setPosition(randomOffset, 485);
 
             // Agrega el lobo al administrador
             _Wolf_manager.Add_wolf(newWolf);
@@ -400,4 +528,80 @@ void Game_play::updateEnemySupGeneration()
     }
 
 }
+
+void Game_play::deleteEnemySup()
+{
+    ///DELETEO DE LOBOS
+    ////recorro el array de lobos del gestor y deleteo lobos si corresponde////
+    for(auto it=_Wolf_manager._array_wolf.begin(); it!=_Wolf_manager._array_wolf.end();)   //inicio el iterador IT en el principio del array y recorro hasta el final de array
+    {
+        Enemy_wolf* Wolf = *it;
+        /*std::cout<<Wolf->deathTimer.getElapsedTime().asSeconds()<<std::endl;
+        //deathTimer.restart();
+        if(Wolf->getEnergy()==0||Wolf->getPosition().y>650||Wolf->getPosition().x<Hro.getPosition().x-1500)
+        {
+            if (Wolf->deathTimer.getElapsedTime().asSeconds() <= 0.11)
+            {
+                Wolf->updateDeath();
+                //deathTimer.restart(); // Reinicio el temporizador de muerte
+            }
+            if (Wolf->deathTimer.getElapsedTime().asSeconds() > 0.11)   // Duración de la animación de muerte
+            {
+                delete Wolf;
+                _wolf_spawn_timer.restart();
+                Wolf->deathTimer.restart();
+                it = _Wolf_manager._array_wolf.erase(it); // Elimino el lobo y actualizo el iterador
+
+            }
+
+        }
+        else
+        {
+            ++it; //Si no se elimina el enemigo, avanza al siguiente elemento
+        }*/
+
+        std::cout<<Wolf->deathTimer.getElapsedTime().asSeconds()<<std::endl;
+        if (Wolf->getEnergy() == 0 || Wolf->getPosition().y > 650 || Wolf->getPosition().x < Hro.getPosition().x - 1500)
+        {
+            if (!Wolf->isDying)
+            {
+                Wolf->isDying = true;
+                Wolf->deathTimer.restart();
+            }
+
+            if (Wolf->deathTimer.getElapsedTime().asSeconds() > 0.015)   // Si la animación terminó
+            {
+                std::cout<<"ok"<<std::endl;
+                delete Wolf; // Elimina el objeto
+                _wolf_spawn_timer.restart();
+                it = _Wolf_manager._array_wolf.erase(it); // Elimina del array y actualiza el iterador
+                continue; // Salta al siguiente lobo
+            }
+            else
+            {
+                Wolf->updateDeath(); // Dibuja la animación de muerte
+                //Wolf->isDying = false;
+            }
+        }
+        ++it; // Si no se elimina el enemigo, avanza al siguiente
+    }
+
+
+}
+
+void Game_play::mobilityEnemySup()
+{
+    for (Enemy_wolf* Wolf :  _Wolf_manager._array_wolf)
+    {
+        Wolf->mobility(Hro.getPosition());
+    }
+}
+
+void Game_play::updateEnemySup()
+{
+    updateEnemySupGeneration();
+    deleteEnemySup();
+    mobilityEnemySup();
+}
+
 

@@ -5,7 +5,6 @@
 #include "Background.h"
 #include "Shots.h"
 #include "Items.h"
-#include "Colision.h"
 #include "Mago.h"
 #include "Sauron.h"
 #include "Anillos.h"
@@ -20,7 +19,6 @@ class Colisionables
     public:
         Colisionables();
         virtual ~Colisionables();
-        void itemsColision(Hero_1& Hro, Items*& items);
         void anillosColision(Hero_1& Hro, Anillos& anillos);
         void colisionFlechasConVillanos(Hero_1& Hro, Mago& Villano_1, Sauron& Villano_2, bool& death, bool& dying);
         void colisionHeroConVillanos(Hero_1& Hro, Mago& Villano_1, Sauron& Villano_2, bool& death, bool& dying, bool& attack);  // **Corrige la firma aquí**

@@ -26,8 +26,8 @@ public:
         SHOOTING_LEFT,
         ATTACK_RIGHT,
         ATTACK_LEFT,
-        COLISION_RIGHT,
-        COLISION_LEFT,
+        //COLISION_RIGHT,
+        //COLISION_LEFT,
         DEATH,
 
     };
@@ -41,7 +41,7 @@ public:
     void initVariables();
     void initAnimation();
     float getJump_force();
-    bool caida;
+    bool caida=false;
 
     Shots* shootig;
     std::vector<std::unique_ptr<Shots>> _shots_array;
@@ -49,21 +49,22 @@ public:
     bool yaDisparo = false;
     sf::FloatRect getBounds() const;
     bool obtenido=false;
-    bool isAlive=false;
+    bool isAlive=true;
     STATES _state;
-    int n;
+    int numEstado;
     int Estado;
-    void setEstado(int n);
+    void setEstado(int numEstado);
     int getEstado();
+    int getVida();
     bool attack=false;
     int vida;
-    int porcentajeVida=100;
+    float porcentajeVida=100;
     void restarVidas(int cantidad);
     bool murio=false;
     int energia=100;
     float puntos=0;
     void actualizarEstado();
-
+    void updateMuerte();
 
 protected:
 

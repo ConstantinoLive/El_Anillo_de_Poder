@@ -27,6 +27,9 @@ public:
     sf::Vector2f get_camera_position();
     bool arranqueMago;
     void check_collision_platform();
+    void deleteEnemySup();
+    void mobilityEnemySup();
+    void updateEnemySup();
     void updateEnemySupGeneration();
     void floor_definition();
     bool isAlive=false;
@@ -57,15 +60,6 @@ public:
     void setNombrePlayer(std::string nombre);
     bool getWinner();
 
-    /*int puntaje = 0;
-    int vidas;
-    int enemigos=0;
-    int enemigos_eliminados=0;
-    bool _winner = false;
-    bool dying=false;
-    int i;
-    int j;*/
-
 
 private:
     enum LEVEL
@@ -80,7 +74,7 @@ private:
         PAUSE
     };
     STATES_GAME_PLAY _states;
-    Items* items;
+    Items items;
     Hero_1 Hro;
     Background BG;
     Mago Villano_1;
@@ -93,6 +87,9 @@ private:
     Manager_wolf _Wolf_manager;
     // Agregar el reloj para movimiento random de villanos
     sf::Clock clock;
+    sf::Clock cambio_nivel;
+    sf::Clock clock_update_muerte;
+    bool clock_update_muerte_ACTIVADO=false;
 
     const int MAX_WOLVES = 3;
     sf::Clock _wolf_spawn_timer;
@@ -113,16 +110,21 @@ private:
     sf::Font _fontvidas;
     sf::Text _textvidas;
     sf::Text _cantvidas;
+    sf::Font _fontenergia;
+    sf::Text _textenergia;
 
     int puntaje = 0;
-    int enemigos=0;
-    int enemigos_eliminados=0;
-    bool _winner = false;
-    bool _game_over=false;
-
+   // int enemigos=0;
+   // int enemigos_eliminados=0;
+    bool _winner;
+    bool _game_over;
+    bool posicion_LEVEL_I=false;
+    bool posicion_LEVEL_II=false;
+    int posicionInicial_LEVEL_II=0;
+    int posicionInicial_LEVEL_I=0;
     bool dying=false;
     int i;
-    int j;
+    int num_PackFlechas;
 
 };
 

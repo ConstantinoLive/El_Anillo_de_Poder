@@ -28,14 +28,15 @@ public:
         WAITING,
         ATTACKED_RIGHT,
         ATTACKED_LEFT,
-        DEATH_RIGHT,
-        DEATH_LEFT,
+        DEATH_RIGHT,//11
+        DEATH_LEFT,//12
         DEATH,
 
     };
     void update(const sf::Vector2f& heroPosition, sf::Time deltaTime);
+    void updateMuerte(const sf::Vector2f& heroPosition);
     void updateAnimation();
-    void mobility(const sf::Vector2f& heroPosition);
+    void mobility(const sf::Vector2f& heroPosition, int heroState);
     sf::Sprite& getDraw();
     sf::Vector2f getPosition();
     void setPosition(float x, float y);
@@ -47,19 +48,19 @@ public:
     bool yaDisparo = false;
     bool yaAtaco = false;
     bool HERO_LEFT = true;
-    bool arranqueNivel_1;
+    bool arranqueNivel_1=false;
     int TiempoCambioDireccion;
     int CambioDireccion;
     float speed;
     float distanciaPersonajes;
-    bool dying;
+    bool dying=false;
     void restarVida(int cantidad);
     sf::FloatRect getBounds() const;
     int vidasMago;
-    bool isAlive=false;
+    bool isAlive=true;
     STATES _state;
     bool estaDisparando;
-    int num;
+    int numEstado;
     int Estado;
     void setEstado(int num);
     int getEstado();

@@ -10,8 +10,6 @@ Hero_1::Hero_1()
     vida = 3;
     porcentajeVida = 100;
     energia = 100;
-    isAlive = true;
-    murio = false;
     _texture_hero.loadFromFile("Resourses/Legolas_sprite.png");
     //_sprite_hero.setOrigin(_sprite_hero.getGlobalBounds().width/2,0);//Para que se de vuelta
     _sprite_hero.setTexture(_texture_hero);
@@ -194,28 +192,26 @@ void Hero_1::mobility()
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
         {
             _state=STATES::WALKING_RIGHT;
-            n=_state;
-            setEstado(n);
-            std::cout<<"x "<<_sprite_hero.getPosition().x<<std::endl;
-            std::cout<<"y "<<_sprite_hero.getPosition().y<<std::endl;
+            numEstado=_state;
+            setEstado(numEstado);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
             _state=STATES::WALKING_LEFT;
-            n=_state;
-            setEstado(n);
+            numEstado=_state;
+            setEstado(numEstado);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)&&sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
         {
             _state=STATES::WALKING_RIGHT_JUMPING;
-            n=_state;
-            setEstado(n);
+            numEstado=_state;
+            setEstado(numEstado);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)&&sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
             _state=STATES::WALKING_LEFT_JUMPING;
-            n=_state;
-            setEstado(n);
+            numEstado=_state;
+            setEstado(numEstado);
         }
         if (_state==STATES::STILL_RIGHT&&sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
@@ -226,25 +222,21 @@ void Hero_1::mobility()
             _state=STATES::STILL_LEFT;
 
         }
-        /*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-        {
-            _state=STATES::WALKING_RIGHT_JUMPING;
-        }*/
         if (_state==STATES::STILL_RIGHT&&sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         {
             _state=STATES::ATTACK_RIGHT;
             initVariables();
             attack=true;
-            n=_state;
-            setEstado(n);
+            numEstado=_state;
+            setEstado(numEstado);
         }
         if (_state==STATES::STILL_LEFT&&sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         {
             _state=STATES::ATTACK_LEFT;
             initVariables();
             attack=true;
-            n=_state;
-            setEstado(n);
+            numEstado=_state;
+            setEstado(numEstado);
         }
         if(_state==STATES::STILL_RIGHT&&sf::Keyboard::isKeyPressed(sf::Keyboard::D)&& !isDPressed)
         {
@@ -252,8 +244,8 @@ void Hero_1::mobility()
             isDPressed = true;
             _state=STATES::SHOOTING_RIGHT;
             initVariables();
-            n=_state;
-            setEstado(n);
+            numEstado=_state;
+            setEstado(numEstado);
         }
         else if (_state==STATES::STILL_LEFT&&sf::Keyboard::isKeyPressed(sf::Keyboard::D)&& !isDPressed)
         {
@@ -261,45 +253,29 @@ void Hero_1::mobility()
             isDPressed = true;
             _state=STATES::SHOOTING_LEFT;
             initVariables();
-            n=_state;
-            setEstado(n);
+            numEstado=_state;
+            setEstado(numEstado);
         }
         else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
             isDPressed =false;
             //yaDisparo =false;
         }
-        if (_state == STATES::DEATH)   // Si el héroe está muerto, no se mueve
+        if(_sprite_hero.getPosition().x<100)
         {
-            return;
+            _sprite_hero.setPosition(100,_sprite_hero.getPosition().y);
         }
 
+        if(_sprite_hero.getPosition().y<0)
+        {
+            _sprite_hero.setPosition(_sprite_hero.getPosition().x,0);
+        }
 
-        /*
-            if(_sprite_hero.getPosition().x<100)
-            {
-                _sprite_hero.setPosition(100,_sprite_hero.getPosition().y);
-            }
-            if(_sprite_hero.getPosition().y<0)
-            {
-                _sprite_hero.setPosition(_sprite_hero.getPosition().x,0);
-            }
+        if(_sprite_hero.getPosition().x>13250)
+        {
+            _sprite_hero.setPosition(13250,_sprite_hero.getPosition().y);
+        }
 
-
-        /////////////////////////level 2
-            if(_sprite_hero.getPosition().y>600){
-                caida=true;
-            }
-
-            if(_sprite_hero.getPosition().y<800&&caida==true)
-            {
-                _sprite_hero.setPosition(_sprite_hero.getPosition().x,800);
-            }
-
-            else if(_sprite_hero.getPosition().y<0)
-            {
-                _sprite_hero.setPosition(_sprite_hero.getPosition().x,0);
-            }*/
 
     }
 }
@@ -316,7 +292,7 @@ sf::FloatRect Hero_1::getBounds() const
 }
 void Hero_1::floor(float x, float y)
 {
-    if(_state==STATES::STILL_RIGHT||_state==STATES::STILL_LEFT||_state==STATES::SHOOTING_RIGHT||_state==STATES::SHOOTING_LEFT||_state==STATES::ATTACK_RIGHT||_state==STATES::ATTACK_LEFT||_state==STATES::COLISION_LEFT||_state==STATES::COLISION_RIGHT)
+    if(_state==STATES::STILL_RIGHT||_state==STATES::STILL_LEFT||_state==STATES::SHOOTING_RIGHT||_state==STATES::SHOOTING_LEFT||_state==STATES::ATTACK_RIGHT||_state==STATES::ATTACK_LEFT)
     {
         _jump_force=0;
         _sprite_hero.setPosition(x,y);
@@ -333,15 +309,22 @@ void Hero_1::setPosition(float x, float y)
     _sprite_hero.setPosition(x,y);
 }
 
-void Hero_1::setEstado(int n)
+void Hero_1::setEstado(int numEstado)
 {
-    Estado=n;
+    Estado=numEstado;
 }
 
 int Hero_1::getEstado()
 {
     return Estado;
 }
+
+void Hero_1::updateMuerte()
+{
+    _state = STATES::DEATH;
+    initVariables();
+}
+
 
 void Hero_1::updateAnimation()
 {
@@ -387,10 +370,6 @@ void Hero_1::updateAnimation()
         // Reiniciar el temporizador
         _animationTimer.restart();
     }
-
-
-
-
 }
 
 void Hero_1::initVariables()
@@ -434,12 +413,6 @@ void Hero_1::initVariables()
         _first_frame_of_sheet = sf::IntRect(0, 503, _width_texture, _height_texture); // Primer frame del disparo hacia la izquierda
         _current_frame = _first_frame_of_sheet;
         break;
-    case COLISION_RIGHT:
-
-        break;
-    case COLISION_LEFT:
-
-        break;
     case DEATH:
         _end_of_frames_sheet = 868;
         _sprite_hero.setScale(sf::Vector2f(1.5, 1.5));
@@ -469,8 +442,7 @@ void Hero_1::restarVidas(int cantidad)
     {
         vida = 0;
         isAlive = false;
-        _state = STATES::DEATH;
-        murio = true;
+
         _animationTimer.restart();
         std::cout << "El héroe ha muerto. VIDAS: " << vida << std::endl;
     }

@@ -1,5 +1,4 @@
 
-
 #include "Juego2.h"
 #include "Player.h"
 
@@ -64,6 +63,8 @@ int Juego2::run()      ///Estructura principal de la aplicacion
         case TIPO_MENU::GAME_OVER:
             _tipo_menu=gameOver(window);
             break;
+        default:
+            break;
         }
     }
 }
@@ -113,7 +114,13 @@ TIPO_MENU Juego2::menuPpal(sf::RenderWindow& window)
                         break;
                     }
                     break;
+                default:
+                    std::cout << "SALIR" << std::endl;
+                    t=TIPO_MENU::EXIT;
+                    break;
                 }
+                break;
+            default:
                 break;
             }
             if (event.type == sf::Event::Closed)
@@ -166,7 +173,11 @@ TIPO_MENU Juego2::ranking(sf::RenderWindow& window)
                         break;
                     }
                     break;
+                default:
+                    break;
                 }
+                break;
+            default:
                 break;
             }
             if (event.type == sf::Event::Closed)
@@ -229,7 +240,11 @@ TIPO_MENU Juego2::creditos(sf::RenderWindow& window)
                         break;
                     }
                     break;
+                default:
+                    break;
                 }
+                break;
+            default:
                 break;
             }
             if (event.type == sf::Event::Closed)
@@ -277,7 +292,11 @@ TIPO_MENU Juego2::reglamento(sf::RenderWindow& window)
                         break;
                     }
                     break;
+                default:
+                    break;
                 }
+                break;
+            default:
                 break;
             }
             if (event.type == sf::Event::Closed)
@@ -330,7 +349,11 @@ TIPO_MENU Juego2::menuSecundario(sf::RenderWindow& window)
                         break;
                     }
                     break;
+                default:
+                    break;
                 }
+                break;
+            default:
                 break;
             }
             if (event.type == sf::Event::Closed)
@@ -380,7 +403,11 @@ TIPO_MENU Juego2::winner(sf::RenderWindow& window)
                         break;
                     }
                     break;
+                default:
+                    break;
                 }
+                break;
+            default:
                 break;
             }
             if (event.type == sf::Event::Closed)
@@ -428,7 +455,11 @@ TIPO_MENU Juego2::gameOver(sf::RenderWindow& window)
                         break;
                     }
                     break;
+                default:
+                    break;
                 }
+                break;
+            default:
                 break;
             }
             if (event.type == sf::Event::Closed)
@@ -650,7 +681,7 @@ void Juego2::showRanking(sf::RenderWindow& window,Ranking& ranking)
     {
         text[i].setFont(font);
         text[i].setCharacterSize(10);
-        text[i].setColor(sf::Color(0,0,0));
+        text[i].setFillColor(sf::Color(0,0,0));
         text[i].setString("Puesto n°:  "+ std::to_string(i+1)+ "  " +p[i].getName()+ " con " +std::to_string(p[i].getPuntos())+ " asesinatos");
         if(i<5)
         {
@@ -683,6 +714,7 @@ TIPO_MENU Juego2::Jugar(Player& player,sf::RenderWindow& window)
     musica.audioON();
 
     sf::View _view(sf::FloatRect(0.f,0.f,1100.f,600.f));//1300, 700
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -716,6 +748,9 @@ TIPO_MENU Juego2::Jugar(Player& player,sf::RenderWindow& window)
         ///Por aca ganaste!
         if(gp.getWinner()==true&&gp.getGameOver()==false)
         {
+            _view.setCenter(660,380);
+            _view.setSize(1300.f, 700.f);
+            window.setView(_view);
             musica.audioOFF();
             ///Por aca hay que mostrar pantalla winner!!
             gp.setPuntaje(2);
@@ -735,6 +770,9 @@ TIPO_MENU Juego2::Jugar(Player& player,sf::RenderWindow& window)
         {
             if(gp.getGameOver()==true&&gp.getWinner()==false)
             {
+                _view.setCenter(660,380);
+                _view.setSize(1300.f, 700.f);
+                window.setView(_view);
                 musica.audioOFF();
                 ///Por aca hay que mostrar pantalla GAMEOVER!!
                 Partida partida(gp.getPuntaje(), gp.getNombrePlayer());

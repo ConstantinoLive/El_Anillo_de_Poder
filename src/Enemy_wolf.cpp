@@ -4,11 +4,7 @@ Enemy_wolf::Enemy_wolf()
 {
     vidaW = 10;
     death = false;
-     initTexture();
-    // _sprite_wolf.setPosition(pos.x,pos.y);
-    //_sprite_wolf.setPosition(4150,485); // posicion inicial  //1998
-    //_sprite_wolf.setOrigin({_sprite_wolf.getGlobalBounds().width/2.f,_sprite_wolf.getGlobalBounds().height/2.f});
-    //_sprite_wolf.setScale(sf::Vector2f(1.5,1.5));
+    initTexture();
     _state=STATES::W_STILL_LEFT; //estado inicial
     _jump_force=0; //Fuerza de salto inicial
 
@@ -70,19 +66,26 @@ void Enemy_wolf::update()
         _jump_force += 4.5;
         _sprite_wolf.move(-5,-20);
         break;
-        /*case W_INTERSECTION_RIGHT:
-            updateAnimation();
-            _jump_force += 4.5;
-            _sprite_wolf.move(3,-10);
-            break;
-        case W_INTERSECTION_LEFT:
-            updateAnimation();
-            _jump_force += 4.5;
-            _sprite_wolf.move(-3,-10);
-            break;*/
     }
     _jump_force-=5; //fuerza de gravedad. Se ejerse siempre
     _sprite_wolf.move(0,-_jump_force);
+
+}
+
+void Enemy_wolf::updateDeath()
+{
+    if(_state==STATES::W_STILL_RIGHT||_state==STATES::W_ATTACK_RIGHT||_state==STATES::W_ATTACK_WOLF_RIGHT||_state==STATES::W_WALKING_RIGHT)
+    {
+        _state=STATES::W_DEATH_RIGHT;
+        initVariables();
+
+    }
+    else if(_state==STATES::W_STILL_LEFT||_state==STATES::W_ATTACK_LEFT||_state==STATES::W_ATTACK_WOLF_LEFT||_state==STATES::W_WALKING_LEFT)
+    {
+        _state=STATES::W_DEATH_LEFT;
+        initVariables();
+
+    }
 
 }
 
@@ -91,7 +94,6 @@ void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
     _distance=_sprite_wolf.getPosition().x-heroPosition.x;
 
     int op_attack=getRandom();
-    //std::cout<<_jump_timer.getElapsedTime().asSeconds()<<std::endl;
     if(_state==STATES::W_STILL_RIGHT||_state==STATES::W_STILL_LEFT)
     {
         //Avance de derecha a izquierda hasta el encuento
@@ -198,17 +200,6 @@ void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
         {
             _state=STATES::W_STILL_LEFT;
         }
-        //Interseccion
-        /* if (_state==STATES::W_WALKING_RIGHT&&heroPosition.x>=_sprite_wolf.getPosition().x)
-         {
-             _state=STATES::W_INTERSECTION_RIGHT;
-             initVariables();
-         }
-         if (_state==STATES::W_STILL_LEFT&&heroPosition.x<=_sprite_wolf.getPosition().x)
-         {
-             _state=STATES::W_INTERSECTION_LEFT;
-             initVariables();
-         }*/
         if(_state==STATES::W_STILL_RIGHT&&sf::Keyboard::isKeyPressed(sf::Keyboard::C))
         {
             _state=STATES::W_DEATH_RIGHT;
@@ -234,11 +225,7 @@ void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
     }
 
 }
-/*
-sf::Sprite& Enemy_wolf::getDraw()
-{
-    return _sprite_wolf;
-}*/
+
 void Enemy_wolf::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(_sprite_wolf, states);
@@ -290,14 +277,6 @@ void Enemy_wolf::updateAnimation()
             {
                 _state = STATES::W_STILL_LEFT;
             }
-            /*if (_state == STATES::W_INTERSECTION_RIGHT)
-            {
-                _state = STATES::W_STILL_RIGHT;
-            }
-            else if (_state == STATES::W_INTERSECTION_LEFT)
-            {
-                _state = STATES::W_STILL_LEFT;
-            }*/
             if (_state == STATES::W_WALKING_RIGHT_JUMPING)
             {
                 _state = STATES::W_STILL_RIGHT;
@@ -401,22 +380,6 @@ void Enemy_wolf::initVariables()
         _first_frame_of_sheet = sf::IntRect(0, 531, _width_texture, _height_texture);
         _current_frame = _first_frame_of_sheet;
         break;
-        /*case W_INTERSECTION_RIGHT:
-            _width_texture = 145.5;
-            _height_texture = 144;
-            _end_of_frames_sheet = 727.5;
-            _sprite_wolf.setScale(sf::Vector2f(1.5, 1.5));
-            _first_frame_of_sheet = sf::IntRect(0, 668, _width_texture, _height_texture);
-            _current_frame = _first_frame_of_sheet;
-            break;
-        case W_INTERSECTION_LEFT:
-            _width_texture = 145.5;
-            _height_texture = 144;
-            _end_of_frames_sheet = 727.5;
-            _sprite_wolf.setScale(sf::Vector2f(-1.5, 1.5));
-            _first_frame_of_sheet = sf::IntRect(0, 668, _width_texture, _height_texture);
-            _current_frame = _first_frame_of_sheet;
-            break;*/
     }
 
 }
@@ -473,9 +436,7 @@ void Enemy_wolf::initTexture()
 
 
 }
-/*bool Enemy_wolf::isAlives() const {
-    return isAlives; // O la lógica que determines
-}*/
+
 void Enemy_wolf::restarVidas(int cantidad) {
     vidaW -= cantidad;
     if (vidaW < 0)
@@ -491,3 +452,14 @@ void Enemy_wolf::restarVidas(int cantidad) {
     }
     }
 }
+
+int Enemy_wolf::getEnergy()
+{
+    return _energy;
+}
+
+void Enemy_wolf::setEnergy(int n)
+{
+    _energy-=n;
+}
+

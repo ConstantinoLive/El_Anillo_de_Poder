@@ -3,7 +3,7 @@
 
 Mago::Mago()
 {
-    vidasMago = 10;
+    vidasMago = 100;
     _texture_Mago.loadFromFile("Resourses/Mago_spritever2.png");
     _spriteMago.setTexture(_texture_Mago);
     _spriteMago.setPosition(12550,465);
@@ -17,8 +17,7 @@ Mago::Mago()
     _spriteMago.setTextureRect(_current_frame);
 
     shooting = new Shots(STYLE::SPELL, sf::Vector2f(0, 0), true);
-    yaAtaco=false;
-    dying=false;
+
 
 }
 
@@ -136,24 +135,21 @@ void Mago::update(const sf::Vector2f& heroPosition, sf::Time deltaTime)
         updateAnimation();
         break;
 
-    case DEATH:
-        _spriteMago.setScale(sf::Vector2f(0, 0));
-        break;
+
     }
 
     for (auto& shot : _shots_array)
     {
         shot->update();
     }
-    _spriteMago.move(0,-_jump_force);
+//    _spriteMago.move(0,-_jump_force);
 }
 
-void Mago::mobility(const sf::Vector2f& heroPosition)
+void Mago::mobility(const sf::Vector2f& heroPosition,int heroState)
 {
-    arranqueNivel_1=false;
     distanciaPersonajes=_spriteMago.getPosition().x-heroPosition.x;
 
-    if (distanciaPersonajes<800&&!dying){
+    if (distanciaPersonajes<800&&isAlive==true&&heroPosition.y<500){
         arranqueNivel_1=true;}
 
     if (_attackCooldown.getElapsedTime() < _attackCooldownTime) {
@@ -173,17 +169,23 @@ void Mago::mobility(const sf::Vector2f& heroPosition)
             initVariables();
             _attackCooldown.restart();
             estaAtacando=false;
+            numEstado=_state;
+            setEstado(numEstado);
         }
         else if(distanciaPersonajes <= -110 && distanciaPersonajes >= -500&&_time_shoot.asSeconds() >= 4.0f )
         {
-            estaDisparando==true;
+            estaDisparando=true;
             _state=STATES::SHOOTING_RIGHT;
             initVariables();
             _attackCooldown.restart();
-            estaDisparando==false;
+            estaDisparando=false;
+            numEstado=_state;
+            setEstado(numEstado);
         }
         else{
         _state = STATES::WALKING_RIGHT;
+        numEstado=_state;
+        setEstado(numEstado);
         }
         }
         if (heroPosition.x < _spriteMago.getPosition().x)
@@ -195,45 +197,42 @@ void Mago::mobility(const sf::Vector2f& heroPosition)
             initVariables();
             _attackCooldown.restart();
             estaAtacando=false;
+            numEstado=_state;
+            setEstado(numEstado);
         }
         else if(distanciaPersonajes >= 110 && distanciaPersonajes <= 500&&_time_shoot.asSeconds() >= 4.0f )
         {
-            estaDisparando==true;
+            estaDisparando=true;
             _state=STATES::SHOOTING_LEFT;
             initVariables();
             _attackCooldown.restart();
-            estaDisparando==false;
+            estaDisparando=false;
+            numEstado=_state;
+            setEstado(numEstado);
         }
         else{
         _state = STATES::WALKING_LEFT;
+        numEstado=_state;
+        setEstado(numEstado);
         }
         }
         }
 
-    if(heroPosition.x>_spriteMago.getPosition().x&&sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+    if(distanciaPersonajes>=-150&&distanciaPersonajes<=-50&&heroPosition.x>_spriteMago.getPosition().x&&heroState==10)
         {
             _state=STATES::ATTACKED_RIGHT;
             initVariables();
+            numEstado=_state;
+            setEstado(numEstado);
         }
-        else if (heroPosition.x<_spriteMago.getPosition().x&&sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+        else if (distanciaPersonajes<=120&&distanciaPersonajes>=-50&&heroPosition.x<_spriteMago.getPosition().x&&heroState==9)
         {
             _state=STATES::ATTACKED_LEFT;
             initVariables();
+            numEstado=_state;
+            setEstado(numEstado);
         }
-
-   if(heroPosition.x>_spriteMago.getPosition().x&&sf::Keyboard::isKeyPressed(sf::Keyboard::L))
-        {
-            _state=STATES::DEATH_RIGHT;
-            initVariables();
-            dying=true;
-        }
-        else if (heroPosition.x<_spriteMago.getPosition().x&&sf::Keyboard::isKeyPressed(sf::Keyboard::L))
-        {
-            _state=STATES::DEATH_LEFT;
-            initVariables();
-            dying=true;
-        }
-
+    }
 
     if(_spriteMago.getPosition().x<100)
     {
@@ -244,12 +243,40 @@ void Mago::mobility(const sf::Vector2f& heroPosition)
         _spriteMago.setPosition(_spriteMago.getPosition().x,0);
     }
 }
+
+void Mago::setEstado(int numEstado)
+{
+    Estado=numEstado;
+}
+
+int Mago::getEstado()
+{
+    return Estado;
 }
 
 sf::Sprite& Mago::getDraw()
 {
     return _spriteMago;
 }
+
+void Mago::updateMuerte(const sf::Vector2f& heroPosition){
+       if(heroPosition.x>_spriteMago.getPosition().x)
+        {
+            _state=STATES::DEATH_RIGHT;
+            initVariables();
+            numEstado=_state;
+            setEstado(numEstado);
+
+        }
+        if (heroPosition.x<_spriteMago.getPosition().x)
+        {
+            _state=STATES::DEATH_LEFT;
+            initVariables();
+            numEstado=_state;
+            setEstado(numEstado);
+
+        }
+   }
 
 
 sf::Vector2f Mago::getPosition()
@@ -383,21 +410,21 @@ void Mago::initVariables()
 
     case DEATH_RIGHT:
 
-        _width_texture = 86;
+        _width_texture = 88;
         _height_texture = 116;
-        _end_of_frames_sheet = 702;
+        _end_of_frames_sheet = 703;
         _spriteMago.setScale(sf::Vector2f(1.4, 1.4));
-        _first_frame_of_sheet = sf::IntRect(7, 1093, _width_texture, _height_texture);
+        _first_frame_of_sheet = sf::IntRect(6, 1093, _width_texture, _height_texture);
         _current_frame = _first_frame_of_sheet;
         break;
 
     case DEATH_LEFT:
 
-        _width_texture = 86;
+        _width_texture = 88;
         _height_texture = 116;
-        _end_of_frames_sheet = 702;
+        _end_of_frames_sheet = 703;
         _spriteMago.setScale(sf::Vector2f(-1.4, 1.4));
-        _first_frame_of_sheet = sf::IntRect(7, 1093, _width_texture, _height_texture);
+        _first_frame_of_sheet = sf::IntRect(6, 1093, _width_texture, _height_texture);
         _current_frame = _first_frame_of_sheet;
         break;
     }
@@ -410,15 +437,11 @@ void Mago::restarVida(int cantidad) {
     vidasMago -= cantidad;
     if (vidasMago < 0)
     {
-    vidasMago = 0;  // No permitir vida negativa
+    vidasMago = 0;  }
     std::cout << "Vida de Mago: " << vidasMago << std::endl;
-    isAlive=true;
+
     if(vidasMago==0){
-       _state= STATES::DEATH_LEFT;
-       _state= STATES::DEATH_RIGHT;
-        _state= STATES::DEATH;
-       dying=true;
-    }
+        isAlive=false;
     }
 }
 

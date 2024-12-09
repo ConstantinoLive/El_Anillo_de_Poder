@@ -1,20 +1,20 @@
 #ifndef ITEMS_H
 #define ITEMS_H
 #include <SFML/Graphics.hpp>
+#include <vector>
 #include "Colision.h"
+#include "Hero_1.h"
 
-
-class Items: public sf::Drawable, public Colision{
-
-
-    public:
-        bool obtenido = false;
+class Items : public Colision
+{
+public:
+    bool obtenido = false;
     sf::Sprite _sprite_items;
     sf::Texture _texture_items;
 
     // Métodos públicos
     Items();  // Constructor
-    //void update(int n);
+    void update(int n);
     void respawn(int n);
     sf::Sprite getDraw() const;
     sf::FloatRect getBounds() const override;
@@ -28,10 +28,6 @@ class Items: public sf::Drawable, public Colision{
     std::vector<sf::Vector2f> posiciones;
     int i;
     int j;
-    virtual void update(int n) = 0;  // Función pura virtual
-
-
-
 
 private:
 
