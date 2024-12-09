@@ -93,6 +93,7 @@ private:
     bool _isDisappearing;
     bool _Desaparecido;
     bool volverAPegar;
+    float tiempoDesaparecer;
 
 
 

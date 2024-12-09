@@ -248,11 +248,8 @@ void Colisionables::colisionFlechasWolf(Hero_1& Hro, Manager_wolf& _Wolf_manager
             {
                 std::cout << "¡Colision detectada!" << std::endl;
 
-
-                Hro.actualizarEstado();
-                //std::cout<<"Energia % " <<Hro.energia << std::endl;
-//                    Hro.puntos+=100;
-//                    std::cout<<"PUNTOS: " <<Hro.puntos << std::endl;
+                Enemy_wolf->setEnergy(20);
+               /* Hro.actualizarEstado();
                 Enemy_wolf->restarVidas(5);
                 std::cout << "Vida de Wolf: " << Enemy_wolf->vidaW << std::endl;
 
@@ -262,8 +259,9 @@ void Colisionables::colisionFlechasWolf(Hero_1& Hro, Manager_wolf& _Wolf_manager
                 if (Enemy_wolf->vidaW <= 0 && !death)
                 {
                     death = true;
+
                     std::cout << "Wolf ha muerto!" << std::endl;
-                }
+                }*/
 
             }
         }

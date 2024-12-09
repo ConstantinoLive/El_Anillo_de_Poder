@@ -110,7 +110,7 @@ void Sauron::mobility(const sf::Vector2f& heroPosition,int heroState) {
         volverAPegar=true;
 
 }
-    else if(_attackCooldown.getElapsedTime()>=sf::seconds(3.f)){
+    else if(_attackCooldown.getElapsedTime()>=sf::seconds(1.f)){
         volverAPegar=true;
     }
  }
@@ -119,7 +119,14 @@ void Sauron::mobility(const sf::Vector2f& heroPosition,int heroState) {
         if (_isDisappearing==false&&estaAtacando==false&&volverAPegar==true&&_Desaparecido==false) {
 
             if (heroPosition.x > _spriteSauron.getPosition().x + 2) {
-                    if((rand() % 30 == 0)&&_disappearCooldown.getElapsedTime()>=sf::seconds(4.f)) {
+                    if(beingAttacked==false){
+                        tiempoDesaparecer=2.f;
+                    }
+                    else{
+                        tiempoDesaparecer=0.5f;
+                    }
+
+                    if((rand() % 30 == 0)&&_disappearCooldown.getElapsedTime()>=sf::seconds(tiempoDesaparecer)) {
                     _state=STATES::DISAPPEAR_RIGHT;
                     initVariables();
                     _isDisappearing = true;
@@ -136,7 +143,7 @@ void Sauron::mobility(const sf::Vector2f& heroPosition,int heroState) {
 
 
             if (heroPosition.x < _spriteSauron.getPosition().x - 2) {
-                if((rand() % 30 == 0)&&_disappearCooldown.getElapsedTime()>=sf::seconds(4.f)) {
+                if((rand() % 30 == 0)&&_disappearCooldown.getElapsedTime()>=sf::seconds(tiempoDesaparecer)) {
                     _state=STATES::DISAPPEAR_LEFT;
                     initVariables();
                     _isDisappearing = true;
@@ -167,6 +174,7 @@ void Sauron::mobility(const sf::Vector2f& heroPosition,int heroState) {
                 float nuevoX = static_cast<float>(PosicionInicio+(rand() % 1000));
 
                 _Desaparecido=false;
+                beingAttacked=false;
 
                 if (nuevoX >= heroPosition.x) {
                      _spriteSauron.setPosition(nuevoX, 1175);
@@ -231,7 +239,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)&&heroState==10&&estaAtacando==fal
     setEstado(numEstado);
 
     initVariables();
-    beingAttacked=false;
+//    beingAttacked=false;
     }
 }
 
@@ -247,7 +255,7 @@ if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)&&heroState==9&&estaAtacando==fals
     numEstado=_state;
     setEstado(numEstado);
 
-    beingAttacked=false;
+//    beingAttacked=false;
     }
 }
     }
@@ -390,7 +398,7 @@ void Sauron::initVariables()
         break;
 
     case APPEAR_RIGHT:
-        _width_texture = 96;
+        _width_texture = 94;
         _height_texture = 155;
         _end_of_frames_sheet = 1389;
         _spriteSauron.setScale(sf::Vector2f(1.4, 1.4));
@@ -399,7 +407,7 @@ void Sauron::initVariables()
         break;
 
     case APPEAR_LEFT:
-        _width_texture = 96;
+        _width_texture = 94;
         _height_texture = 155;
         _end_of_frames_sheet = 1389;
         _spriteSauron.setScale(sf::Vector2f(-1.4, 1.4));

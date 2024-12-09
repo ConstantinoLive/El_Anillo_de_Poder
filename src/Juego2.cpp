@@ -682,7 +682,7 @@ void Juego2::showRanking(sf::RenderWindow& window,Ranking& ranking)
         text[i].setFont(font);
         text[i].setCharacterSize(10);
         text[i].setFillColor(sf::Color(0,0,0));
-        text[i].setString("Puesto n°:  "+ std::to_string(i+1)+ "  " +p[i].getName()+ " con " +std::to_string(p[i].getPuntos())+ " asesinatos");
+        text[i].setString("Puesto n°:  "+ std::to_string(i+1)+ "  " +p[i].getName()+ " con " +std::to_string(p[i].getPuntos())+ " puntos");
         if(i<5)
         {
             text[i].setPosition(240, 265 + i* 45);
@@ -753,7 +753,7 @@ TIPO_MENU Juego2::Jugar(Player& player,sf::RenderWindow& window)
             window.setView(_view);
             musica.audioOFF();
             ///Por aca hay que mostrar pantalla winner!!
-            gp.setPuntaje(2);
+            gp.setPuntaje(gp.puntaje);
             Partida partida(gp.getPuntaje(), gp.getNombrePlayer());
             FILE *pPartida = fopen("Partidas.dat", "ab");
             if(pPartida == nullptr)
