@@ -48,6 +48,7 @@
 		<Unit filename="include/Anillos.h" />
 		<Unit filename="include/Audio.h" />
 		<Unit filename="include/Background.h" />
+		<Unit filename="include/Button.h" />
 		<Unit filename="include/Colision.h" />
 		<Unit filename="include/Colisionables.h" />
 		<Unit filename="include/Enemy_wolf.h" />
@@ -70,6 +71,7 @@
 		<Unit filename="src/Anillos.cpp" />
 		<Unit filename="src/Audio.cpp" />
 		<Unit filename="src/Background.cpp" />
+		<Unit filename="src/Button.cpp" />
 		<Unit filename="src/Colision.cpp" />
 		<Unit filename="src/Colisionables.cpp" />
 		<Unit filename="src/Enemy_wolf.cpp" />

@@ -108,6 +108,7 @@ private:
     const int MAX_WOLVES = 3;
     sf::Clock _wolf_spawn_timer;
 
+
     std::string _namePlayer;
 
 

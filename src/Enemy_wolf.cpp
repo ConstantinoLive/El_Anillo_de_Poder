@@ -2,8 +2,6 @@
 
 Enemy_wolf::Enemy_wolf()
 {
-    vidaW = 10;
-    death = false;
     initTexture();
     _state=STATES::W_STILL_LEFT; //estado inicial
     _jump_force=0; //Fuerza de salto inicial
@@ -74,18 +72,32 @@ void Enemy_wolf::update()
 
 void Enemy_wolf::updateDeath()
 {
-    if(_state==STATES::W_STILL_RIGHT||_state==STATES::W_ATTACK_RIGHT||_state==STATES::W_ATTACK_WOLF_RIGHT||_state==STATES::W_WALKING_RIGHT)
-    {
-        _state=STATES::W_DEATH_RIGHT;
-        initVariables();
 
-    }
-    else if(_state==STATES::W_STILL_LEFT||_state==STATES::W_ATTACK_LEFT||_state==STATES::W_ATTACK_WOLF_LEFT||_state==STATES::W_WALKING_LEFT)
-    {
-        _state=STATES::W_DEATH_LEFT;
-        initVariables();
 
+    if(death==false)
+    {
+        deathTimer.restart();
+        death=true;
     }
+
+    if(deathTimer.getElapsedTime().asSeconds() <= 0.015f)
+    {
+        if(_state==STATES::W_STILL_RIGHT||_state==STATES::W_ATTACK_RIGHT||_state==STATES::W_ATTACK_WOLF_RIGHT||_state==STATES::W_WALKING_RIGHT&&isDying==true)
+        {
+            _state=STATES::W_DEATH_RIGHT;
+            initVariables();
+        }
+        else if(_state==STATES::W_STILL_LEFT||_state==STATES::W_ATTACK_LEFT||_state==STATES::W_ATTACK_WOLF_LEFT||_state==STATES::W_WALKING_LEFT&&isDying==true)
+        {
+            _state=STATES::W_DEATH_LEFT;
+            initVariables();
+        }
+    }
+    else if(deathTimer.getElapsedTime().asSeconds() > 0.015f)
+    {
+        isDying=true;
+    }
+
 
 }
 
@@ -94,7 +106,7 @@ void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
     _distance=_sprite_wolf.getPosition().x-heroPosition.x;
 
     int op_attack=getRandom();
-    if(_state==STATES::W_STILL_RIGHT||_state==STATES::W_STILL_LEFT)
+    if(_state==STATES::W_STILL_RIGHT||_state==STATES::W_STILL_LEFT&&isDying==false)
     {
         //Avance de derecha a izquierda hasta el encuento
         if(_state==STATES::W_STILL_LEFT&&heroPosition.x<_sprite_wolf.getPosition().x&&_distance>300&&heroPosition.y==_sprite_wolf.getPosition().y)
@@ -131,14 +143,14 @@ void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
             _jump_timer.restart();
         }
         //Ataque con espada hacia la izquierda
-        if (_state==STATES::W_STILL_LEFT&&_distance<250&&_distance>100&&op_attack%2==0&&heroPosition.y==_sprite_wolf.getPosition().y)
+        if (_state==STATES::W_STILL_LEFT&&_distance<250&&_distance>50&&op_attack%2==0&&heroPosition.y==_sprite_wolf.getPosition().y)//100
         {
             _state=STATES::W_ATTACK_LEFT;
             initVariables();
             _jump_timer.restart();
         }
         //Ataque con lobo hacia la izquierda
-        if (_state==STATES::W_STILL_LEFT&&_distance<250&&_distance>100&&op_attack%2==1&&heroPosition.y==_sprite_wolf.getPosition().y)
+        if (_state==STATES::W_STILL_LEFT&&_distance<250&&_distance>50&&op_attack%2==1&&heroPosition.y==_sprite_wolf.getPosition().y)//100
         {
             _state=STATES::W_ATTACK_WOLF_LEFT;
             initVariables();
@@ -200,15 +212,19 @@ void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
         {
             _state=STATES::W_STILL_LEFT;
         }
-        if(_state==STATES::W_STILL_RIGHT&&sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+        /* if((_state==STATES::W_STILL_RIGHT||_state==STATES::W_ATTACK_RIGHT||_state==STATES::W_ATTACK_WOLF_RIGHT||_state==STATES::W_WALKING_RIGHT||_state==STATES::W_WALKING_RIGHT_JUMPING)&&getEnergy()==0)
+         {
+             _state=STATES::W_DEATH_RIGHT;
+             initVariables();
+         }
+         if((_state==STATES::W_STILL_LEFT||_state==STATES::W_ATTACK_LEFT||_state==STATES::W_ATTACK_WOLF_LEFT||_state==STATES::W_WALKING_LEFT||_state==STATES::W_WALKING_LEFT_JUMPING)&&getEnergy()==0)
+         {
+             _state=STATES::W_DEATH_LEFT;
+             initVariables();
+         }*/
+        if(getEnergy()<=0)
         {
-            _state=STATES::W_DEATH_RIGHT;
-            initVariables();
-        }
-        if(_state==STATES::W_STILL_LEFT&&sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-        {
-            _state=STATES::W_DEATH_LEFT;
-            initVariables();
+            updateDeath();
         }
         if(_state==STATES::W_STILL_RIGHT&&sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         {
@@ -430,27 +446,12 @@ void Enemy_wolf::initTexture()
 {
     _texture_wolf.loadFromFile("Resourses/Wolf.png");
     _sprite_wolf.setTexture(_texture_wolf);
+    _texture_wolf.setSmooth(true);
     _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture);
     _sprite_wolf.setTextureRect(_current_frame);
     _sprite_wolf.setOrigin(_width_texture/2, 0.f);   //desplazo el origen al medio del sprite para que al rotar quede ok
 
 
-}
-
-void Enemy_wolf::restarVidas(int cantidad) {
-    vidaW -= cantidad;
-    if (vidaW < 0)
-    {
-    vidaW = 0;  // No permitir vida negativa
-    std::cout << "Vida del Hero: " << vidaW << std::endl;
-    if(vidaW==0){
-        _state= STATES::W_DEATH_LEFT;
-        _state= STATES::W_DEATH_RIGHT;
-        //isAlives= false;
-        death=true;
-
-    }
-    }
 }
 
 int Enemy_wolf::getEnergy()

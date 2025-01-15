@@ -1,9 +1,23 @@
-
 #include "Juego2.h"
-#include "Player.h"
 
+Juego2::Juego2():
+    B1("INICIO", sf::Vector2f(1300 / 2.55, 700 / 5 * 1.7), sf::Vector2f(0.35, 0.5)),
+    B2("RANKING", sf::Vector2f(1300 / 2.55, 700 / 5 * 2.3), sf::Vector2f(0.35, 0.5)),
+    B3("CONTROLES", sf::Vector2f(1300 / 2.55, 700 / 5 * 2.9), sf::Vector2f(0.35, 0.5)),
+    B4("CREDITOS", sf::Vector2f(1300 / 2.55, 700 / 5 * 3.5), sf::Vector2f(0.35, 0.5)),
+    B5("SALIR", sf::Vector2f(1300 / 2.55, 700 / 5 * 4.1), sf::Vector2f(0.35, 0.5)),
+    B6("JUGAR", sf::Vector2f(1300 / 6, 700 / 3.5 * 1.5), sf::Vector2f(0.35, 0.5)),
+    B7("INGRESAR NOMBRE", sf::Vector2f(1300 / 6, 700 /3.5 * 2), sf::Vector2f(0.35, 0.5)),
+    B8("VOLVER", sf::Vector2f(1300 / 6, 700 / 3.5 * 2.5), sf::Vector2f(0.35, 0.5)),
+    B9("VOLVER", sf::Vector2f(1300 / 2.55, 700 /2.8 * 2), sf::Vector2f(0.35, 0.5)),
+    B10("SALIR", sf::Vector2f(1300 / 2.55, 700 / 2.8 * 2.3), sf::Vector2f(0.35, 0.5)),
+    B11("VOLVER", sf::Vector2f(1300 / 2.55, 700 /2.8 * 2), sf::Vector2f(0.35, 0.5)),
+    B12("SALIR", sf::Vector2f(1300 / 2.55, 700 / 2.8 * 2.3), sf::Vector2f(0.35, 0.5)),
+    B13("VOLVER", sf::Vector2f(1300 / 1.5, 700 /2.8 * 2), sf::Vector2f(0.35, 0.5)),
+    B14("SALIR", sf::Vector2f(1300 / 1.5, 700 / 2.8 * 2.3), sf::Vector2f(0.35, 0.5)),
+    B15("VOLVER", sf::Vector2f(1300 / 4.7, 700 /1.27), sf::Vector2f(0.35, 0.5)),
+    B16("SALIR", sf::Vector2f(1300 / 1.6, 700 / 1.27), sf::Vector2f(0.35, 0.5))
 
-Juego2::Juego2()
 {
     _menu_ppal=new Menu(TIPO_MENU::PRINCIPAL);
     _menu_ranking=new Menu(TIPO_MENU::RANKING);
@@ -78,59 +92,50 @@ TIPO_MENU Juego2::menuPpal(sf::RenderWindow& window)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type)
+            if (event.type == sf::Event::MouseButtonPressed)
             {
-            case sf::Event::KeyReleased:
-                switch (event.key.code)     ///Pregunto que tecla fue, arriba/abajo/enter
+                if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                case sf::Keyboard::Up:
-                    _menu_ppal->up();
-                    break;
-                case sf::Keyboard::Down:
-                    _menu_ppal->down();
-                    break;
-                case sf::Keyboard::Return:
-                    switch (_menu_ppal->getSelectedItem())  ///por aca las opciones de menu ppal
+                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+
+                    if(B1.getBounds().contains(mousePos))
                     {
-                    case INICIO:                            ///seria el 0, corresponde a inicio
                         std::cout << "INICIO" << std::endl;
                         t=TIPO_MENU::SECUNDARIO;
-                        break;
-                    case RANK:
+                    }
+                    if(B2.getBounds().contains(mousePos))
+                    {
                         std::cout << "RANKING" << std::endl;
                         t=TIPO_MENU::RANKING;
-                        break;
-                    case REGLA:
+                    }
+                    if(B3.getBounds().contains(mousePos))
+                    {
                         std::cout << "CONTROLES" << std::endl;
                         t=TIPO_MENU::REGLAMENTO;
-                        break;
-                    case CRED:
+                    }
+                    if(B4.getBounds().contains(mousePos))
+                    {
                         std::cout << "CRÉDITOs" << std::endl;
                         t=TIPO_MENU::CREDITOS;
-                        break;
-                    case SALIR:
+                    }
+                    if(B5.getBounds().contains(mousePos))
+                    {
                         std::cout << "SALIR" << std::endl;
                         t=TIPO_MENU::EXIT;
-                        break;
                     }
-                    break;
-                default:
-                    std::cout << "SALIR" << std::endl;
-                    t=TIPO_MENU::EXIT;
-                    break;
                 }
-                break;
-            default:
-                break;
             }
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
 
+            if (event.type == sf::Event::Closed)
+            {
+                window.close();
+            }
+
+        }
 
         window.clear(sf::Color::Black);
         window.draw(*_menu_ppal);   ///dibujo el contendido , que es un menu dibujable :)
-        showStart(window);
+        showStart1(window);
         window.display();
         return t;
     }
@@ -149,39 +154,30 @@ TIPO_MENU Juego2::ranking(sf::RenderWindow& window)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type)
+           if (event.type == sf::Event::MouseButtonPressed)
             {
-            case sf::Event::KeyReleased:
-                switch (event.key.code)     ///Pregunto que tecla fue, arriba/abajo/enter
+                if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                case sf::Keyboard::Up:
-                    _menu_ranking->up();
-                    break;
-                case sf::Keyboard::Down:
-                    _menu_ranking->down();
-                    break;
-                case sf::Keyboard::Return:
-                    switch (_menu_ranking->getSelectedItem())   ///por aca las opciones en el menu RANKING
+                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+
+                    if(B9.getBounds().contains(mousePos))
                     {
-                    case VOLVER:                            ///seria el 0, corresponde a VOLVER
                         std::cout << "VOLVER" << std::endl;
                         t=TIPO_MENU::PRINCIPAL;
-                        break;
-                    case SALIR_RyC:
+                    }
+                    if(B10.getBounds().contains(mousePos))
+                    {
                         std::cout << "SALIR" << std::endl;
                         t=TIPO_MENU::EXIT;
-                        break;
+
                     }
-                    break;
-                default:
-                    break;
+
                 }
-                break;
-            default:
-                break;
             }
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
         }
 
         ///ACA VA EL RANKING!
@@ -216,39 +212,28 @@ TIPO_MENU Juego2::creditos(sf::RenderWindow& window)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type)
+            if (event.type == sf::Event::MouseButtonPressed)
             {
-            case sf::Event::KeyReleased:
-                switch (event.key.code)     ///Pregunto que tecla fue, arriba/abajo/enter
+                if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                case sf::Keyboard::Up:
-                    _menu_creditos->up();
-                    break;
-                case sf::Keyboard::Down:
-                    _menu_creditos->down();
-                    break;
-                case sf::Keyboard::Return:
-                    switch (_menu_creditos->getSelectedItem())   ///por aca las opciones en el menu CREDITOS
+                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+
+                    if(B11.getBounds().contains(mousePos))
                     {
-                    case VOLVER:                            ///seria el 0, corresponde a VOLVER
                         std::cout << "VOLVER" << std::endl;
                         t=TIPO_MENU::PRINCIPAL;
-                        break;
-                    case SALIR_RyC:
+                    }
+                    if(B12.getBounds().contains(mousePos))
+                    {
                         std::cout << "SALIR" << std::endl;
                         t=TIPO_MENU::EXIT;
-                        break;
                     }
-                    break;
-                default:
-                    break;
                 }
-                break;
-            default:
-                break;
             }
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
         }
 
         window.clear(sf::Color::Black);
@@ -268,39 +253,29 @@ TIPO_MENU Juego2::reglamento(sf::RenderWindow& window)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type)
+           if (event.type == sf::Event::MouseButtonPressed)
             {
-            case sf::Event::KeyReleased:
-                switch (event.key.code)     ///Pregunto que tecla fue, arriba/abajo/enter
+                if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                case sf::Keyboard::Up:
-                    _menu_reglamento->up();
-                    break;
-                case sf::Keyboard::Down:
-                    _menu_reglamento->down();
-                    break;
-                case sf::Keyboard::Return:
-                    switch (_menu_reglamento->getSelectedItem())   ///por aca las opciones en el menu CREDITOS
+                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+
+                    if(B13.getBounds().contains(mousePos))
                     {
-                    case VOLVER:                            ///seria el 0, corresponde a VOLVER
                         std::cout << "VOLVER" << std::endl;
                         t=TIPO_MENU::PRINCIPAL;
-                        break;
-                    case SALIR_RyC:
+                    }
+                    if(B14.getBounds().contains(mousePos))
+                    {
                         std::cout << "SALIR" << std::endl;
                         t=TIPO_MENU::EXIT;
-                        break;
+
                     }
-                    break;
-                default:
-                    break;
                 }
-                break;
-            default:
-                break;
             }
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
         }
 
 
@@ -321,48 +296,42 @@ TIPO_MENU Juego2::menuSecundario(sf::RenderWindow& window)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type)
+            if (event.type == sf::Event::MouseButtonPressed)
             {
-            case sf::Event::KeyReleased:
-                switch (event.key.code)     ///Pregunto que tecla fue, arriba/abajo/enter
+                if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                case sf::Keyboard::Up:
-                    _menu_secundario->up();
-                    break;
-                case sf::Keyboard::Down:
-                    _menu_secundario->down();
-                    break;
-                case sf::Keyboard::Return:
-                    switch (_menu_secundario->getSelectedItem())  ///por aca las opciones de menu secundario
+                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+
+                    if(B6.getBounds().contains(mousePos))
                     {
-                    case JUGAR:                            ///seria el 0, corresponde a jugar
                         std::cout << "JUGAR" << std::endl;
                         t=Jugar(*_player,window);
-                        break;
-                    case INGRESAR_NOMBRE:
+                    }
+                    if(B7.getBounds().contains(mousePos))
+                    {
                         std::cout << "INGRESAR NOMBRE" << std::endl;
                         _player->setNombre(_player->ingresarNombre());
-                        break;
-                    case VOLVER_PPAL:
+
+                    }
+                    if(B8.getBounds().contains(mousePos))
+                    {
                         std::cout << "VOLVER PRINCIPAL" << std::endl;
                         t=TIPO_MENU::PRINCIPAL;
-                        break;
+
                     }
-                    break;
-                default:
-                    break;
+
                 }
-                break;
-            default:
-                break;
             }
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
         }
 
 
         window.clear(sf::Color::Black);
         window.draw(*_menu_secundario);   ///dibujo el contendido , que es un menu dibujable :)
+        showStart2(window);
         window.display();
         return t;
     }
@@ -379,39 +348,30 @@ TIPO_MENU Juego2::winner(sf::RenderWindow& window)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type)
+            if (event.type == sf::Event::MouseButtonPressed)
             {
-            case sf::Event::KeyReleased:
-                switch (event.key.code)     ///Pregunto que tecla fue, arriba/abajo/enter
+                if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                case sf::Keyboard::Up:
-                    _menu_winner->up();
-                    break;
-                case sf::Keyboard::Down:
-                    _menu_winner->down();
-                    break;
-                case sf::Keyboard::Return:
-                    switch (_menu_winner->getSelectedItem())   ///por aca las opciones en el menu WINNER
+                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+
+                    if(B15.getBounds().contains(mousePos))
                     {
-                    case VOLVER:                            ///seria el 0, corresponde a VOLVER
                         std::cout << "VOLVER" << std::endl;
                         t=TIPO_MENU::PRINCIPAL;
-                        break;
-                    case SALIR_RyC:
+                    }
+                    if(B16.getBounds().contains(mousePos))
+                    {
                         std::cout << "SALIR" << std::endl;
                         t=TIPO_MENU::EXIT;
-                        break;
+
                     }
-                    break;
-                default:
-                    break;
+
                 }
-                break;
-            default:
-                break;
             }
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
         }
 
         window.clear(sf::Color::Black);
@@ -431,39 +391,30 @@ TIPO_MENU Juego2::gameOver(sf::RenderWindow& window)
         sf::Event event;
         while (window.pollEvent(event))
         {
-            switch (event.type)
+           if (event.type == sf::Event::MouseButtonPressed)
             {
-            case sf::Event::KeyReleased:
-                switch (event.key.code)     ///Pregunto que tecla fue, arriba/abajo/enter
+                if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                case sf::Keyboard::Up:
-                    _menu_game_over->up();
-                    break;
-                case sf::Keyboard::Down:
-                    _menu_game_over->down();
-                    break;
-                case sf::Keyboard::Return:
-                    switch (_menu_game_over->getSelectedItem())   ///por aca las opciones en el menu GAME OVER
+                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+
+                    if(B15.getBounds().contains(mousePos))
                     {
-                    case VOLVER:                            ///seria el 0, corresponde a VOLVER
                         std::cout << "VOLVER" << std::endl;
                         t=TIPO_MENU::PRINCIPAL;
-                        break;
-                    case SALIR_RyC:
+                    }
+                    if(B16.getBounds().contains(mousePos))
+                    {
                         std::cout << "SALIR" << std::endl;
                         t=TIPO_MENU::EXIT;
-                        break;
+
                     }
-                    break;
-                default:
-                    break;
+
                 }
-                break;
-            default:
-                break;
             }
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
         }
 
         window.clear(sf::Color::Black);
@@ -474,15 +425,46 @@ TIPO_MENU Juego2::gameOver(sf::RenderWindow& window)
     }
 }
 
-void Juego2::showStart(sf::RenderWindow& window)
+void Juego2::showStart1(sf::RenderWindow& window)
 {
-    sf::Text text;
-    sf::Font font;
+    sf::Text _tittle;
+    sf::Font _font_t;
 
-    font.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf");
 
-    window.draw(text);
+    _font_t.loadFromFile("Resourses/Font/VIKING-N.TTF");
+    _tittle.setFont(_font_t);
+    _tittle.setString("El anillo de poder");
+    _tittle.setFillColor(sf::Color(223,223,223));
+    _tittle.setCharacterSize(70.f);
+    _tittle.setPosition(220,70);
+
+    window.draw(_tittle);
+    window.draw(B1);
+    window.draw(B2);
+    window.draw(B3);
+    window.draw(B4);
+    window.draw(B5);
+
 }
+
+void Juego2::showStart2(sf::RenderWindow& window)
+{
+    sf::Text _tittle;
+    sf::Font _font_t;
+
+    _font_t.loadFromFile("Resourses/Font/VIKING-N.TTF");
+    _tittle.setFont(_font_t);
+    _tittle.setString("El anillo de poder");
+    _tittle.setFillColor(sf::Color(223,223,223));
+    _tittle.setCharacterSize(70.f);
+    _tittle.setPosition(220,70);
+
+    window.draw(_tittle);
+    window.draw(B6);
+    window.draw(B7);
+    window.draw(B8);
+}
+
 
 void Juego2::showBestTeam(sf::RenderWindow& window)
 {
@@ -493,14 +475,24 @@ void Juego2::showBestTeam(sf::RenderWindow& window)
     sf::Text emi;
     sf::Text mateo;
 
+    sf::Text _tittle;
+    sf::Font _font_t;
+
+    _font_t.loadFromFile("Resourses/Font/VIKING-N.TTF");
+    _tittle.setFont(_font_t);
+    _tittle.setString("El anillo de poder");
+    _tittle.setFillColor(sf::Color(223,223,223));
+    _tittle.setCharacterSize(70.f);
+    _tittle.setPosition(220,70);
+
     sf::Font font;
     font.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf");
 
-    utn=sf::Text("U.T.N.",font,40);
+    utn=sf::Text("U.T.N.",_font_t,50);
     utn.setFillColor(sf::Color(255,255,255,180));
     utn.setPosition(200,220);
 
-    labo=sf::Text("Laboratorio II",font,40);
+    labo=sf::Text("Laboratorio II",_font_t,50);
     labo.setFillColor(sf::Color(255,255,255,180));
     labo.setPosition(500,220);
 
@@ -521,12 +513,15 @@ void Juego2::showBestTeam(sf::RenderWindow& window)
     mateo.setPosition(150,460);
 
 
+    window.draw(_tittle);
     window.draw(utn);
     window.draw(labo);
     window.draw(project);
     window.draw(fer);
     window.draw(emi);
     window.draw(mateo);
+    window.draw(B11);
+    window.draw(B12);
 }
 
 
@@ -558,6 +553,17 @@ void Juego2::showRule(sf::RenderWindow& window)
     sf::Font font;
     sf::Text nombre_text;
     sf::Font nombre_font;
+
+
+    sf::Text _tittle;
+    sf::Font _font_t;
+
+    _font_t.loadFromFile("Resourses/Font/VIKING-N.TTF");
+    _tittle.setFont(_font_t);
+    _tittle.setString("El anillo de poder");
+    _tittle.setFillColor(sf::Color(223,223,223));
+    _tittle.setCharacterSize(70.f);
+    _tittle.setPosition(220,70);
 
 
 
@@ -621,6 +627,7 @@ void Juego2::showRule(sf::RenderWindow& window)
     P.setPosition(550,550);
 
 
+    window.draw(_tittle);
     window.draw(nombre_text);
     window.draw(sprite_A);
     window.draw(sprite_S);
@@ -636,6 +643,8 @@ void Juego2::showRule(sf::RenderWindow& window)
     window.draw(Der);
     window.draw(spaceBar);
     window.draw(P);
+    window.draw(B13);
+    window.draw(B14);
 }
 
 void Juego2::showWinnerText(sf::RenderWindow& window)
@@ -653,7 +662,9 @@ void Juego2::showWinnerText(sf::RenderWindow& window)
     text.setPosition(80,300);
 
     window.draw(text);
-    window.draw(text_P);
+    //window.draw(text_P);
+    window.draw(B15);
+    window.draw(B16);
 }
 
 void Juego2::showLoserText(sf::RenderWindow& window)
@@ -667,16 +678,30 @@ void Juego2::showLoserText(sf::RenderWindow& window)
     text.setFillColor(sf::Color(255,255,255,80));
     text.setPosition(80,300);
     window.draw(text);
+    window.draw(B15);
+    window.draw(B16);
 }
 
 void Juego2::showRanking(sf::RenderWindow& window,Ranking& ranking)
 {
+
+    sf::Text _tittle;
+    sf::Font _font_t;
+
+    _font_t.loadFromFile("Resourses/Font/VIKING-N.TTF");
+    _tittle.setFont(_font_t);
+    _tittle.setString("El anillo de poder");
+    _tittle.setFillColor(sf::Color(223,223,223));
+    _tittle.setCharacterSize(70.f);
+    _tittle.setPosition(220,70);
+
     Partida* p=ranking.getRanking();
 
     sf::Text text[10];
     sf::Font font;
     font.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf");
 
+    window.draw(_tittle);
     for(int i=0; i<10; i++)
     {
         text[i].setFont(font);
@@ -695,6 +720,8 @@ void Juego2::showRanking(sf::RenderWindow& window,Ranking& ranking)
 
         window.draw(text[i]);
     }
+    window.draw(B9);
+    window.draw(B10);
 }
 
 

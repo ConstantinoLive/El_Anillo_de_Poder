@@ -44,9 +44,8 @@ enum STATES
     void initAnimation();
     void initTexture();
     int getRandom();
-    int vidaW;
-    void restarVidas(int cantidad);
-    bool death=false;
+    //int vidaW;
+    //void restarVidas(int cantidad);
     bool isDying = false;
     sf::Clock deathTimer;
     int getEnergy();
@@ -69,6 +68,8 @@ private:
     int random=0;
     int op_dir;
     float _energy=60;
+    bool death=false;
+
 
 
 };

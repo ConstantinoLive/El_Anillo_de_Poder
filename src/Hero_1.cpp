@@ -11,6 +11,7 @@ Hero_1::Hero_1()
     porcentajeVida = 100;
     energia = 100;
     _texture_hero.loadFromFile("Resourses/Legolas_sprite.png");
+    _texture_hero.setSmooth(true);
     //_sprite_hero.setOrigin(_sprite_hero.getGlobalBounds().width/2,0);//Para que se de vuelta
     _sprite_hero.setTexture(_texture_hero);
     _sprite_hero.setPosition(250,465); // posicion inicial

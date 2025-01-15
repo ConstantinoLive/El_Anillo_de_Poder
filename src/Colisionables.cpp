@@ -217,21 +217,20 @@ void Colisionables::colisionMagoConHero(Mago& Villano_1, Hero_1& Hro, bool& deat
 void Colisionables::colisionHeroConWolf(Hero_1& Hro, Manager_wolf& _Wolf_manager, bool& attack, bool& dying)
 {
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-    {
-        if (Hro._state == Hero_1::STATES::ATTACK_RIGHT || Hro._state == Hero_1::STATES::ATTACK_LEFT)
-        {
 
-            for (auto& Enemy_wolf : _Wolf_manager._array_wolf)
+    if (Hro._state == Hero_1::STATES::ATTACK_RIGHT || Hro._state == Hero_1::STATES::ATTACK_LEFT)
+    {
+
+        for (auto& Enemy_wolf : _Wolf_manager._array_wolf)
+        {
+            if (Hro.getBounds().intersects(Enemy_wolf->getBounds())&&(Hro._state == Hero_1::STATES::ATTACK_LEFT||Hro._state == Hero_1::STATES::ATTACK_RIGHT))
             {
-                if (Hro.getBounds().intersects(Enemy_wolf->getBounds())&&(Hro._state == Hero_1::STATES::ATTACK_LEFT||Hro._state == Hero_1::STATES::ATTACK_RIGHT))
-                {
-                    Enemy_wolf->setEnergy(20);
-                    std::cout<<"Energia: " <<Enemy_wolf->getEnergy() << std::endl;
-                }
+                Enemy_wolf->setEnergy(20);
+                //std::cout<<"Energia: " <<Enemy_wolf->getEnergy() << std::endl;
             }
         }
     }
+
 
     Hro.actualizarEstado();
 
@@ -246,23 +245,8 @@ void Colisionables::colisionFlechasWolf(Hero_1& Hro, Manager_wolf& _Wolf_manager
         {
             if (shot->isAlive && shot->getBounds().intersects(Enemy_wolf->getBounds()))
             {
-                std::cout << "¡Colision detectada!" << std::endl;
-
+                //std::cout << "¡Colision detectada!" << std::endl;
                 Enemy_wolf->setEnergy(20);
-               /* Hro.actualizarEstado();
-                Enemy_wolf->restarVidas(5);
-                std::cout << "Vida de Wolf: " << Enemy_wolf->vidaW << std::endl;
-
-
-                shot->setAlive(false);
-
-                if (Enemy_wolf->vidaW <= 0 && !death)
-                {
-                    death = true;
-
-                    std::cout << "Wolf ha muerto!" << std::endl;
-                }*/
-
             }
         }
     }
