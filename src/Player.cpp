@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Player.h"
 
 Player::Player() {
@@ -34,7 +32,7 @@ std::string Player::ingresarNombre()
 {
     sf::RenderWindow ventanita(sf::VideoMode(300, 50),"", sf::Style::None);
     ventanita.setFramerateLimit(60);
-    ventanita.setPosition(sf::Vector2i(1000,460));
+    ventanita.setPosition(sf::Vector2i(870,635));//1000,460
 
     sf::Font font;
     font.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf");
@@ -42,7 +40,7 @@ std::string Player::ingresarNombre()
     sf::Text texto;
     texto.setFont(font);
 
-    texto.setCharacterSize(30);
+    texto.setCharacterSize(20);
     texto.setFillColor(sf::Color::White);
 
     std::string entrada = "";

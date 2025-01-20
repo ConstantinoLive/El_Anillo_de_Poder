@@ -436,8 +436,8 @@ void Hero_1::restarVidas(int cantidad)
         isAlive = true;
         porcentajeVida = 100; // Restaurar porcentaje de vida
         energia = 100;        // Restaurar energía
-        std::cout << "Perdiste una vida. Vidas restantes: " << vida << std::endl;
-        std::cout << "Porcentaje de vida y energía restaurados: " << porcentajeVida << ", " << energia << std::endl;
+       // std::cout << "Perdiste una vida. Vidas restantes: " << vida << std::endl;
+       // std::cout << "Porcentaje de vida y energía restaurados: " << porcentajeVida << ", " << energia << std::endl;
     }
     else     // Si ya no tiene vidas restantes
     {
@@ -445,7 +445,7 @@ void Hero_1::restarVidas(int cantidad)
         isAlive = false;
 
         _animationTimer.restart();
-        std::cout << "El héroe ha muerto. VIDAS: " << vida << std::endl;
+       // std::cout << "El héroe ha muerto. VIDAS: " << vida << std::endl;
     }
 }
 void Hero_1::actualizarEstado()
@@ -468,7 +468,7 @@ void Hero_1::actualizarEstado()
     {
         porcentajeVida = 0;
         energia = 0;
-        std::cout << "Porcentaje de vida o energia agotados. Pierdes 1 vida." << std::endl;
+        //std::cout << "Porcentaje de vida o energia agotados. Pierdes 1 vida." << std::endl;
         restarVidas(1);
     }
 }

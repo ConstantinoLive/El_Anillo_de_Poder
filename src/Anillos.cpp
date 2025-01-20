@@ -25,28 +25,35 @@ Anillos::~Anillos()
     //dtor
 }
 
-void Anillos::limitePantalla(const sf::Vector2f& heroPosition){
+void Anillos::limitePantalla(const sf::Vector2f& heroPosition)
+{
 
-    if (_spriteAnillos.getPosition().x<250){
+    if (_spriteAnillos.getPosition().x<250)
+    {
         _spriteAnillos.setPosition (250,getPosition().y);
 
     }
-    if (_spriteAnillos.getPosition().x>13250){
+    if (_spriteAnillos.getPosition().x>13250)
+    {
         _spriteAnillos.setPosition (13250,getPosition().y);
 
     }
     if(heroPosition.y<500)
     {
-        if (_spriteAnillos.getPosition().x>822&&_spriteAnillos.getPosition().x<1386){
+        if (_spriteAnillos.getPosition().x>822&&_spriteAnillos.getPosition().x<1386)
+        {
             _spriteAnillos.setPosition(822,getPosition().y);
         }
-        if (_spriteAnillos.getPosition().x>4146&&_spriteAnillos.getPosition().x<4700){
+        if (_spriteAnillos.getPosition().x>4146&&_spriteAnillos.getPosition().x<4700)
+        {
             _spriteAnillos.setPosition (4146,getPosition().y);
         }
-        if (_spriteAnillos.getPosition().x>9546&&_spriteAnillos.getPosition().x<9842){
+        if (_spriteAnillos.getPosition().x>9546&&_spriteAnillos.getPosition().x<9842)
+        {
             _spriteAnillos.setPosition (9546,getPosition().y);
         }
-        if (_spriteAnillos.getPosition().x>10858&&_spriteAnillos.getPosition().x<11158){
+        if (_spriteAnillos.getPosition().x>10858&&_spriteAnillos.getPosition().x<11158)
+        {
             _spriteAnillos.setPosition (10858,getPosition().y);
         }
     }
@@ -56,36 +63,47 @@ void Anillos::update(const sf::Vector2f& heroPosition)
 {
     limitePantalla(heroPosition);
 
-    if (_isVisible) {
+    if (_isVisible)
+    {
         updateAnimation();
 
-        if (_timer.getElapsedTime() >= _visibleTime) {
+        if (_timer.getElapsedTime() >= _visibleTime)
+        {
             _isVisible = false;
             _state = STATES::DISAPPEARED;
             _timer.restart();
             initVariables();
         }
     }
-    else {
-        if (_timer.getElapsedTime() >= _invisibleTime) {
-            if (_state == STATES::DISAPPEARED) {
-                if(EstadoAnterior==1){
-                _state = STATES::APPEARED_GOLD;
-                _isVisible = true;
-                _timer.restart();
-                initVariables();
-                EstadoAnterior=0;}
-                else{
-                _state = STATES::APPEARED_SILVER;
-                _isVisible = true;
-                _timer.restart();
-                initVariables();
-                EstadoAnterior=1;
+    else
+    {
+        if (_timer.getElapsedTime() >= _invisibleTime)
+        {
+            if (_state == STATES::DISAPPEARED)
+            {
+                if(EstadoAnterior==1)
+                {
+                    _state = STATES::APPEARED_GOLD;
+                    _isVisible = true;
+                    _timer.restart();
+                    initVariables();
+                    EstadoAnterior=0;
+                }
+                else
+                {
+                    _state = STATES::APPEARED_SILVER;
+                    _isVisible = true;
+                    _timer.restart();
+                    initVariables();
+                    EstadoAnterior=1;
                 }
 
-                if (_state == STATES::APPEARED_GOLD) {
+                if (_state == STATES::APPEARED_GOLD)
+                {
                     _spriteAnillos.setPosition(250, 555);
-                } else {
+                }
+                else
+                {
                     _spriteAnillos.setPosition(350, 555);
                 }
                 float offset = (rand()%2!=0) ? -350 : 350;
@@ -94,12 +112,14 @@ void Anillos::update(const sf::Vector2f& heroPosition)
                 {
                     _spriteAnillos.setPosition(heroPosition.x + offset, 555);
                 }
-                else{
+                else
+                {
                     _spriteAnillos.setPosition(heroPosition.x + offset, 1280);
                 }
+            }
         }
     }
-}}
+}
 
 
 
@@ -124,11 +144,13 @@ void Anillos::updateAnimation()
     {
         _current_frame.left += _width_texture;
 
-        if (_current_frame.left >= _end_of_frames_sheet) {
+        if (_current_frame.left >= _end_of_frames_sheet)
+        {
             _current_frame.left = 0; // Reiniciar al primer frame
         }
 
-        if (_isVisible) {
+        if (_isVisible)
+        {
             _spriteAnillos.setTextureRect(_current_frame);
         }
 
@@ -153,10 +175,12 @@ void Anillos::initVariables()
         break;
     }
 
-    if (_state == APPEARED_GOLD || _state == APPEARED_SILVER) {
+    if (_state == APPEARED_GOLD || _state == APPEARED_SILVER)
+    {
         _spriteAnillos.setScale(sf::Vector2f(0.5f, 0.5f));
     }
 }
-sf::FloatRect Anillos::getBounds() const {
-        return _spriteAnillos.getGlobalBounds();
+sf::FloatRect Anillos::getBounds() const
+{
+    return _spriteAnillos.getGlobalBounds();
 }

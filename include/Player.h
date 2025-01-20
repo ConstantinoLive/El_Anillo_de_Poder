@@ -4,7 +4,7 @@
 #include <string.h>
 #include <cstdlib>
 #include <string>
-
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 #include "Partida.h"

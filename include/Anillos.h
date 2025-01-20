@@ -34,7 +34,7 @@ public:
     float offset;
     sf::FloatRect getBounds() const;
     bool obtenido;
-    void recoger() {obtenido = true;}
+    //void recoger(bool a) {obtenido = a;}
     STATES _state;
     bool isObtenido() const {return obtenido;}
 

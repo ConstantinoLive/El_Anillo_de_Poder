@@ -5,6 +5,12 @@ Enemy_wolf::Enemy_wolf()
     initTexture();
     _state=STATES::W_STILL_LEFT; //estado inicial
     _jump_force=0; //Fuerza de salto inicial
+    _energyBarF.setSize({60,10.f});
+    _energyBarF.setFillColor(sf::Color::Black);
+    _energyBarF.setPosition(_sprite_wolf.getPosition().x-20,_sprite_wolf.getPosition().y-30);
+    _energyBar.setSize({getEnergy(),10.f});
+    _energyBar.setFillColor(sf::Color(101,157,87));
+    _energyBar.setPosition(_sprite_wolf.getPosition().x-20,_sprite_wolf.getPosition().y-30);
 
     op_dir=getRandom();
 }
@@ -31,10 +37,14 @@ void Enemy_wolf::update()
     case W_WALKING_RIGHT:
         updateAnimation();
         _sprite_wolf.move(5,0);
+        _energyBarF.move(5,0);
+        _energyBar.move(5,0);
         break;
     case W_WALKING_LEFT:
         updateAnimation();
         _sprite_wolf.move(-5,0);
+        _energyBarF.move(-5,0);
+        _energyBar.move(-5,0);
         break;
     case W_ATTACK_RIGHT:
         updateAnimation();
@@ -58,16 +68,21 @@ void Enemy_wolf::update()
         updateAnimation();
         _jump_force += 4.5;
         _sprite_wolf.move(5,-20);
+        _energyBarF.move(5,-20);
+        _energyBar.move(5,-20);
         break;
     case W_WALKING_LEFT_JUMPING:
         updateAnimation();
         _jump_force += 4.5;
         _sprite_wolf.move(-5,-20);
+        _energyBarF.move(-5,-20);
+        _energyBar.move(-5,-20);
         break;
     }
     _jump_force-=5; //fuerza de gravedad. Se ejerse siempre
     _sprite_wolf.move(0,-_jump_force);
-
+    _energyBarF.move(0,-_jump_force);
+    _energyBar.move(0,-_jump_force);
 }
 
 void Enemy_wolf::updateDeath()
@@ -245,6 +260,8 @@ void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
 void Enemy_wolf::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(_sprite_wolf, states);
+    target.draw(_energyBarF, states);
+    target.draw(_energyBar, states);
 }
 
 void Enemy_wolf::updateAnimation()
@@ -409,6 +426,8 @@ void Enemy_wolf::floor(float x, float y)
     {
         _jump_force=0;
         _sprite_wolf.setPosition(x,y);
+        _energyBarF.setPosition(_sprite_wolf.getPosition().x-20,_sprite_wolf.getPosition().y-30);
+        _energyBar.setPosition(_sprite_wolf.getPosition().x-20,_sprite_wolf.getPosition().y-30);
     }
 }
 
@@ -420,6 +439,8 @@ sf::Vector2f Enemy_wolf::getPosition()
 void Enemy_wolf::setPosition(float x, float y)
 {
     _sprite_wolf.setPosition(x,y);
+    _energyBarF.setPosition(x,y);
+    _energyBar.setPosition(x,y);
 }
 
 int Enemy_wolf::getRandom()
@@ -442,6 +463,7 @@ sf::FloatRect Enemy_wolf::getBounds()const
 {
     return _sprite_wolf.getGlobalBounds();
 }
+
 void Enemy_wolf::initTexture()
 {
     _texture_wolf.loadFromFile("Resourses/Wolf.png");
@@ -462,5 +484,14 @@ int Enemy_wolf::getEnergy()
 void Enemy_wolf::setEnergy(int n)
 {
     _energy-=n;
+    _energyBar.setSize({getEnergy(),10.f});
+}
+
+bool Enemy_wolf::wasHit() const {
+    return _wasHit;
+}
+
+void Enemy_wolf::setHit(bool hit) {
+    _wasHit = hit;
 }
 

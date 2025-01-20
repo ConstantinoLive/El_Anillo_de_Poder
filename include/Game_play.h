@@ -14,6 +14,7 @@
 #include "Items.h"
 #include "Colision.h"
 #include "Colisionables.h"
+#include "Message.h"
 
 
 class Game_play
@@ -95,6 +96,7 @@ private:
     Colisionables colisionables;
     Platforms_rectangle_shape Prs[35];
     Manager_wolf _Wolf_manager;
+    Message Msg;
     // Agregar el reloj para movimiento random de villanos
     sf::Clock clock;
     sf::Clock cambio_nivel;
@@ -143,6 +145,8 @@ private:
     bool dying=false;
     int i;
     int num_PackFlechas;
+
+
 
 };
 

@@ -114,7 +114,10 @@ void Game_play::draw(sf::RenderWindow& window)
 {
     window.draw(BG.getDraw());
     window.draw(Pltfm.getDraw());
+    window.draw(Msg);
+    //Msg.draw(window, sf::RenderStates::Default);
     window.draw(Hro.getDraw());
+
 
     window.draw(Villano_1.getDraw());
 
@@ -175,7 +178,25 @@ void Game_play::cmd()
     if(_states==STATES_GAME_PLAY::ACTION)
     {
         check_collision_platform();
+
         colisionables.anillosColision(Hro, anillos);
+        if(anillos.isObtenido())
+        {
+            if(colisionables.getSilver()==true&&colisionables.getGold()==false)
+            {
+                Msg.mobility(anillos.getPosition(),true);
+            }
+            else if(colisionables.getSilver()==false&&colisionables.getGold()==true)
+            {
+                Msg.mobility(anillos.getPosition(),false);
+            }
+            else
+            {
+                colisionables.setGold(false);
+                colisionables.setSilver(false);
+            }
+        }
+
         colisionables.colisionFlechasConVillanos(Hro, Villano_1, Villano_2, death, dying);
         colisionables.colisionHeroConVillanos(Hro, Villano_1, Villano_2, death, dying, attack);
         colisionables.colisionSauronConHro(Villano_2,Hro, death);
@@ -184,6 +205,7 @@ void Game_play::cmd()
         colisionables.colisionFlechasWolf(Hro,_Wolf_manager,dying);
         colisionables.colisionWolfConHero(Hro,_Wolf_manager,dying);
 
+        Msg.update();
 
         Hro.mobility();
 
@@ -563,8 +585,6 @@ void Game_play::updateEnemySupGeneration()
             {
                 newWolf->setPosition(randomOffset, 1210);
             }
-
-
             // Agrega el lobo al administrador
             _Wolf_manager.Add_wolf(newWolf);
 
@@ -574,47 +594,6 @@ void Game_play::updateEnemySupGeneration()
     }
 
 }
-/*
-void Game_play::deleteEnemySup()
-{
-    ///DELETEO DE LOBOS
-    ////recorro el array de lobos del gestor y deleteo lobos si corresponde////
-    for(auto it=_Wolf_manager._array_wolf.begin(); it!=_Wolf_manager._array_wolf.end();)   //inicio el iterador IT en el principio del array y recorro hasta el final de array
-    {
-        Enemy_wolf* Wolf = *it;
-
-        if (Wolf->getEnergy() == 0 ||(Wolf->getPosition().y > 650&&_current_level==LEVEL_I)|| Wolf->getPosition().x < Hro.getPosition().x - 1500)
-        {
-            //std::cout<<Wolf->getEnergy()<<std::endl;
-            if (!Wolf->isDying)
-            {
-                Wolf->isDying = true;
-                Wolf->deathTimer.restart();
-            }
-            if(Wolf->deathTimer.getElapsedTime().asSeconds() <= 0.015f)
-            {
-                Wolf->updateDeath(); // Dibuja la animación de muerte
-                //Wolf->isDying = false;
-            }
-            else if (Wolf->deathTimer.getElapsedTime().asSeconds() > 0.015f)   // Si la animación terminó
-            {
-                if(Wolf->getEnergy()==0)
-                {
-                    puntaje+=20;
-                }
-                std::cout<<"ok"<<std::endl;
-                delete Wolf; // Elimina el objeto
-                //_wolf_spawn_timer.restart();
-                it = _Wolf_manager._array_wolf.erase(it); // Elimina del array y actualiza el iterador
-                continue; // Salta al siguiente lobo
-            }
-
-        }
-        ++it; // Si no se elimina el enemigo, avanza al siguiente
-
-    }
-
-}*/
 
 void Game_play::deleteEnemySup()
 {
@@ -639,15 +618,11 @@ void Game_play::deleteEnemySup()
 
 }
 
-
-
-
 void Game_play::mobilityEnemySup()
 {
     for (Enemy_wolf* Wolf :  _Wolf_manager._array_wolf)
     {
         Wolf->mobility(Hro.getPosition());
-        //std::cout<<Wolf->deathTimer.getElapsedTime().asSeconds()<<std::endl;
     }
 }
 

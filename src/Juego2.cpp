@@ -456,7 +456,7 @@ void Juego2::showStart2(sf::RenderWindow& window)
     _tittle.setFont(_font_t);
     _tittle.setString("El anillo de poder");
     _tittle.setFillColor(sf::Color(223,223,223));
-    _tittle.setCharacterSize(70.f);
+    _tittle.setCharacterSize(50.f);
     _tittle.setPosition(220,70);
 
     window.draw(_tittle);
@@ -492,7 +492,7 @@ void Juego2::showBestTeam(sf::RenderWindow& window)
     utn.setFillColor(sf::Color(255,255,255,180));
     utn.setPosition(200,220);
 
-    labo=sf::Text("Laboratorio II",_font_t,50);
+    labo=sf::Text("Programación II",_font_t,50);
     labo.setFillColor(sf::Color(255,255,255,180));
     labo.setPosition(500,220);
 

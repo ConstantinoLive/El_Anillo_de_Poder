@@ -59,6 +59,7 @@
 		<Unit filename="include/Mago.h" />
 		<Unit filename="include/Manager_wolf.h" />
 		<Unit filename="include/Menu.h" />
+		<Unit filename="include/Message.h" />
 		<Unit filename="include/Partida.h" />
 		<Unit filename="include/Platforms.h" />
 		<Unit filename="include/Platforms_rectangle_shape.h" />
@@ -82,6 +83,7 @@
 		<Unit filename="src/Mago.cpp" />
 		<Unit filename="src/Manager_wolf.cpp" />
 		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Message.cpp" />
 		<Unit filename="src/Partida.cpp" />
 		<Unit filename="src/Platforms.cpp" />
 		<Unit filename="src/Platforms_rectangle_shape.cpp" />

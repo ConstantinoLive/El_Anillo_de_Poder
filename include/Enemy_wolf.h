@@ -51,10 +51,15 @@ enum STATES
     int getEnergy();
     void setEnergy(int n);
     void updateDeath();
+    bool wasHit() const;        // Indica si el lobo fue golpeado
+    void setHit(bool hit);      // Establece si el lobo fue golpeado
+
 
 private:
     sf::Sprite _sprite_wolf;
     sf::Texture _texture_wolf;
+    sf::RectangleShape _energyBarF;
+    sf::RectangleShape _energyBar;
     float _jump_force;
     int _xtexture=0;
     float _width_texture;
@@ -67,8 +72,10 @@ private:
     sf::Clock _jump_timer;
     int random=0;
     int op_dir;
-    float _energy=60;
+    float _energy=60.f;
     bool death=false;
+    bool _wasHit = false;
+
 
 
 
