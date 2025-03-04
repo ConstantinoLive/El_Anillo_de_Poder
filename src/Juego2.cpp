@@ -1,22 +1,22 @@
 #include "Juego2.h"
 
 Juego2::Juego2():
-    B1("INICIO", sf::Vector2f(1300 / 2.55, 700 / 5 * 1.7), sf::Vector2f(0.35, 0.5)),
-    B2("RANKING", sf::Vector2f(1300 / 2.55, 700 / 5 * 2.3), sf::Vector2f(0.35, 0.5)),
-    B3("CONTROLES", sf::Vector2f(1300 / 2.55, 700 / 5 * 2.9), sf::Vector2f(0.35, 0.5)),
-    B4("CREDITOS", sf::Vector2f(1300 / 2.55, 700 / 5 * 3.5), sf::Vector2f(0.35, 0.5)),
-    B5("SALIR", sf::Vector2f(1300 / 2.55, 700 / 5 * 4.1), sf::Vector2f(0.35, 0.5)),
-    B6("JUGAR", sf::Vector2f(1300 / 6, 700 / 3.5 * 1.5), sf::Vector2f(0.35, 0.5)),
-    B7("INGRESAR NOMBRE", sf::Vector2f(1300 / 6, 700 /3.5 * 2), sf::Vector2f(0.35, 0.5)),
-    B8("VOLVER", sf::Vector2f(1300 / 6, 700 / 3.5 * 2.5), sf::Vector2f(0.35, 0.5)),
-    B9("VOLVER", sf::Vector2f(1300 / 2.55, 700 /2.8 * 2), sf::Vector2f(0.35, 0.5)),
-    B10("SALIR", sf::Vector2f(1300 / 2.55, 700 / 2.8 * 2.3), sf::Vector2f(0.35, 0.5)),
-    B11("VOLVER", sf::Vector2f(1300 / 2.55, 700 /2.8 * 2), sf::Vector2f(0.35, 0.5)),
-    B12("SALIR", sf::Vector2f(1300 / 2.55, 700 / 2.8 * 2.3), sf::Vector2f(0.35, 0.5)),
-    B13("VOLVER", sf::Vector2f(1300 / 1.5, 700 /2.8 * 2), sf::Vector2f(0.35, 0.5)),
-    B14("SALIR", sf::Vector2f(1300 / 1.5, 700 / 2.8 * 2.3), sf::Vector2f(0.35, 0.5)),
-    B15("VOLVER", sf::Vector2f(1300 / 4.7, 700 /1.27), sf::Vector2f(0.35, 0.5)),
-    B16("SALIR", sf::Vector2f(1300 / 1.6, 700 / 1.27), sf::Vector2f(0.35, 0.5))
+    B1("INICIO", sf::Vector2f(1300 / 1.9, 700 / 5 * 1.9), sf::Vector2f(0.35, 0.5)), //Inicio
+    B2("RANKING", sf::Vector2f(1300 / 1.9, 700 / 5 * 2.5), sf::Vector2f(0.35, 0.5)),
+    B3("CONTROLES", sf::Vector2f(1300 / 1.9, 700 / 5 * 3.1), sf::Vector2f(0.35, 0.5)),
+    B4("CREDITOS", sf::Vector2f(1300 / 1.9, 700 / 5 * 3.7), sf::Vector2f(0.35, 0.5)),
+    B5("SALIR", sf::Vector2f(1300 / 1.9, 700 / 5 * 4.3), sf::Vector2f(0.35, 0.5)),
+    B6("JUGAR", sf::Vector2f(1300 / 4, 700 / 3.5 * 1.7), sf::Vector2f(0.35, 0.5)), //Secundario
+    B7("INGRESAR NOMBRE", sf::Vector2f(1300 / 4, 700 /3.5 * 2.2), sf::Vector2f(0.35, 0.5)),
+    B8("VOLVER", sf::Vector2f(1300 / 4, 700 / 3.5 * 2.7), sf::Vector2f(0.35, 0.5)),
+    B9("VOLVER", sf::Vector2f(1300 / 1.9, 700 /2.8 * 2.2), sf::Vector2f(0.35, 0.5)),
+    B10("SALIR", sf::Vector2f(1300 / 1.9, 700 / 2.8 * 2.5), sf::Vector2f(0.35, 0.5)),
+    B11("VOLVER", sf::Vector2f(1300 / 1.9, 700 /2.8 * 2.2), sf::Vector2f(0.35, 0.5)),
+    B12("SALIR", sf::Vector2f(1300 / 1.9, 700 / 2.8 * 2.5), sf::Vector2f(0.35, 0.5)),
+    B13("VOLVER", sf::Vector2f(1300 / 1.3, 700 /2.8 * 2.2), sf::Vector2f(0.35, 0.5)),
+    B14("SALIR", sf::Vector2f(1300 / 1.3, 700 / 2.8 * 2.5), sf::Vector2f(0.35, 0.5)),
+    B15("VOLVER", sf::Vector2f(1300 / 4.05, 700 /1.27), sf::Vector2f(0.35, 0.5)),
+    B16("SALIR", sf::Vector2f(1300 / 1.4, 700 / 1.27), sf::Vector2f(0.35, 0.5))
 
 {
     _menu_ppal=new Menu(TIPO_MENU::PRINCIPAL);
@@ -30,6 +30,11 @@ Juego2::Juego2():
     _player=new Player();
 
     _tipo_menu=TIPO_MENU::PRINCIPAL;
+
+    cursorImagen.loadFromFile("Resourses/Cursor.png");
+    customCursor.loadFromPixels(cursorImagen.getPixelsPtr(), cursorImagen.getSize(), {16, 16});
+    icon.loadFromFile("Resourses/icon.png");
+
 }
 
 Juego2::~Juego2()
@@ -87,51 +92,76 @@ TIPO_MENU Juego2::menuPpal(sf::RenderWindow& window)
 {
     TIPO_MENU t=TIPO_MENU::PRINCIPAL;
 
+    window.setMouseCursorVisible(true);
+    window.setMouseCursor(customCursor);
+    window.setIcon(icon.getSize().x,icon.getSize().y,icon.getPixelsPtr());
+
     while(window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::MouseButtonPressed)
-            {
-                if (event.mouseButton.button == sf::Mouse::Left)
-                {
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
-                    if(B1.getBounds().contains(mousePos))
-                    {
-                        std::cout << "INICIO" << std::endl;
-                        t=TIPO_MENU::SECUNDARIO;
-                    }
-                    if(B2.getBounds().contains(mousePos))
-                    {
-                        std::cout << "RANKING" << std::endl;
-                        t=TIPO_MENU::RANKING;
-                    }
-                    if(B3.getBounds().contains(mousePos))
-                    {
-                        std::cout << "CONTROLES" << std::endl;
-                        t=TIPO_MENU::REGLAMENTO;
-                    }
-                    if(B4.getBounds().contains(mousePos))
-                    {
-                        std::cout << "CRÉDITOs" << std::endl;
-                        t=TIPO_MENU::CREDITOS;
-                    }
-                    if(B5.getBounds().contains(mousePos))
-                    {
-                        std::cout << "SALIR" << std::endl;
-                        t=TIPO_MENU::EXIT;
-                    }
+            B1.desactiveButton();
+            B2.desactiveButton();
+            B3.desactiveButton();
+            B4.desactiveButton();
+            B5.desactiveButton();
+
+            if(B1.getBounds().contains(mousePos))
+            {
+                B1.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "INICIO" << std::endl;
+                    t = TIPO_MENU::SECUNDARIO;
                 }
             }
-
-            if (event.type == sf::Event::Closed)
+            else if(B2.getBounds().contains(mousePos))
             {
-                window.close();
+                B2.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "RANKING" << std::endl;
+                    t = TIPO_MENU::RANKING;
+                }
             }
-
+            else if(B3.getBounds().contains(mousePos))
+            {
+                B3.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "CONTROLES" << std::endl;
+                    t = TIPO_MENU::REGLAMENTO;
+                }
+            }
+            else if(B4.getBounds().contains(mousePos))
+            {
+                B4.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "CRÉDITOS" << std::endl;
+                    t = TIPO_MENU::CREDITOS;
+                }
+            }
+            else if(B5.getBounds().contains(mousePos))
+            {
+                B5.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "SALIR" << std::endl;
+                    t = TIPO_MENU::EXIT;
+                }
+            }
         }
+
+        if (event.type == sf::Event::Closed)
+        {
+            window.close();
+        }
+
+
 
         window.clear(sf::Color::Black);
         window.draw(*_menu_ppal);   ///dibujo el contendido , que es un menu dibujable :)
@@ -139,6 +169,7 @@ TIPO_MENU Juego2::menuPpal(sf::RenderWindow& window)
         window.display();
         return t;
     }
+
 }
 
 TIPO_MENU Juego2::ranking(sf::RenderWindow& window)
@@ -147,6 +178,8 @@ TIPO_MENU Juego2::ranking(sf::RenderWindow& window)
 
     Partida partida;
 
+    window.setMouseCursorVisible(true);
+
     Ranking ranking;
 
     while(window.isOpen())
@@ -154,26 +187,31 @@ TIPO_MENU Juego2::ranking(sf::RenderWindow& window)
         sf::Event event;
         while (window.pollEvent(event))
         {
-           if (event.type == sf::Event::MouseButtonPressed)
+
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+            B9.desactiveButton();
+            B10.desactiveButton();
+
+            if(B9.getBounds().contains(mousePos))
             {
-                if (event.mouseButton.button == sf::Mouse::Left)
+                B9.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
                 {
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
-
-                    if(B9.getBounds().contains(mousePos))
-                    {
-                        std::cout << "VOLVER" << std::endl;
-                        t=TIPO_MENU::PRINCIPAL;
-                    }
-                    if(B10.getBounds().contains(mousePos))
-                    {
-                        std::cout << "SALIR" << std::endl;
-                        t=TIPO_MENU::EXIT;
-
-                    }
-
+                    std::cout << "VOLVER" << std::endl;
+                    t=TIPO_MENU::PRINCIPAL;
                 }
             }
+            else if(B10.getBounds().contains(mousePos))
+            {
+                B10.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "SALIR" << std::endl;
+                    t=TIPO_MENU::EXIT;
+                }
+            }
+
             if (event.type == sf::Event::Closed)
             {
                 window.close();
@@ -207,29 +245,38 @@ TIPO_MENU Juego2::creditos(sf::RenderWindow& window)
 {
     TIPO_MENU t=TIPO_MENU::CREDITOS;
 
+    window.setMouseCursorVisible(true);
+
     while(window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::MouseButtonPressed)
-            {
-                if (event.mouseButton.button == sf::Mouse::Left)
-                {
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
 
-                    if(B11.getBounds().contains(mousePos))
-                    {
-                        std::cout << "VOLVER" << std::endl;
-                        t=TIPO_MENU::PRINCIPAL;
-                    }
-                    if(B12.getBounds().contains(mousePos))
-                    {
-                        std::cout << "SALIR" << std::endl;
-                        t=TIPO_MENU::EXIT;
-                    }
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+            B11.desactiveButton();
+            B12.desactiveButton();
+
+            if(B11.getBounds().contains(mousePos))
+            {
+                B11.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "VOLVER" << std::endl;
+                    t=TIPO_MENU::PRINCIPAL;
                 }
             }
+            else if(B12.getBounds().contains(mousePos))
+            {
+                B12.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "SALIR" << std::endl;
+                    t=TIPO_MENU::EXIT;
+                }
+            }
+
             if (event.type == sf::Event::Closed)
             {
                 window.close();
@@ -248,30 +295,37 @@ TIPO_MENU Juego2::reglamento(sf::RenderWindow& window)
 {
     TIPO_MENU t=TIPO_MENU::REGLAMENTO;
 
+    window.setMouseCursorVisible(true);
+
     while(window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
         {
-           if (event.type == sf::Event::MouseButtonPressed)
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+            B13.desactiveButton();
+            B14.desactiveButton();
+
+            if(B13.getBounds().contains(mousePos))
             {
-                if (event.mouseButton.button == sf::Mouse::Left)
+                B13.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
                 {
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
-
-                    if(B13.getBounds().contains(mousePos))
-                    {
-                        std::cout << "VOLVER" << std::endl;
-                        t=TIPO_MENU::PRINCIPAL;
-                    }
-                    if(B14.getBounds().contains(mousePos))
-                    {
-                        std::cout << "SALIR" << std::endl;
-                        t=TIPO_MENU::EXIT;
-
-                    }
+                    std::cout << "VOLVER" << std::endl;
+                    t=TIPO_MENU::PRINCIPAL;
                 }
             }
+            else if(B14.getBounds().contains(mousePos))
+            {
+                B14.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "SALIR" << std::endl;
+                    t=TIPO_MENU::EXIT;
+                }
+            }
+
             if (event.type == sf::Event::Closed)
             {
                 window.close();
@@ -291,37 +345,48 @@ TIPO_MENU Juego2::menuSecundario(sf::RenderWindow& window)
 {
     TIPO_MENU t=TIPO_MENU::SECUNDARIO;
 
+    window.setMouseCursorVisible(true);
+
     while(window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::MouseButtonPressed)
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+            B6.desactiveButton();
+            B7.desactiveButton();
+            B8.desactiveButton();
+
+            if(B6.getBounds().contains(mousePos))
             {
-                if (event.mouseButton.button == sf::Mouse::Left)
+                B6.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
                 {
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
-
-                    if(B6.getBounds().contains(mousePos))
-                    {
-                        std::cout << "JUGAR" << std::endl;
-                        t=Jugar(*_player,window);
-                    }
-                    if(B7.getBounds().contains(mousePos))
-                    {
-                        std::cout << "INGRESAR NOMBRE" << std::endl;
-                        _player->setNombre(_player->ingresarNombre());
-
-                    }
-                    if(B8.getBounds().contains(mousePos))
-                    {
-                        std::cout << "VOLVER PRINCIPAL" << std::endl;
-                        t=TIPO_MENU::PRINCIPAL;
-
-                    }
-
+                    std::cout << "JUGAR" << std::endl;
+                    t=Jugar(*_player,window);
                 }
             }
+            else if(B7.getBounds().contains(mousePos))
+            {
+                B7.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "INGRESAR NOMBRE" << std::endl;
+                    _player->setNombre(_player->ingresarNombre());
+                }
+            }
+            else if(B8.getBounds().contains(mousePos))
+            {
+                B8.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "VOLVER PRINCIPAL" << std::endl;
+                    t=TIPO_MENU::PRINCIPAL;
+                }
+            }
+
+
             if (event.type == sf::Event::Closed)
             {
                 window.close();
@@ -343,31 +408,37 @@ TIPO_MENU Juego2::winner(sf::RenderWindow& window)
 {
     TIPO_MENU t=TIPO_MENU::WINNER;
 
+    window.setMouseCursorVisible(true);
+
     while(window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::MouseButtonPressed)
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+            B15.desactiveButton();
+            B16.desactiveButton();
+
+            if(B15.getBounds().contains(mousePos))
             {
-                if (event.mouseButton.button == sf::Mouse::Left)
+                B15.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
                 {
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
-
-                    if(B15.getBounds().contains(mousePos))
-                    {
-                        std::cout << "VOLVER" << std::endl;
-                        t=TIPO_MENU::PRINCIPAL;
-                    }
-                    if(B16.getBounds().contains(mousePos))
-                    {
-                        std::cout << "SALIR" << std::endl;
-                        t=TIPO_MENU::EXIT;
-
-                    }
-
+                    std::cout << "VOLVER" << std::endl;
+                    t=TIPO_MENU::PRINCIPAL;
                 }
             }
+            else if(B16.getBounds().contains(mousePos))
+            {
+                B16.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "SALIR" << std::endl;
+                    t=TIPO_MENU::EXIT;
+                }
+            }
+
             if (event.type == sf::Event::Closed)
             {
                 window.close();
@@ -386,31 +457,37 @@ TIPO_MENU Juego2::gameOver(sf::RenderWindow& window)
 {
     TIPO_MENU t=TIPO_MENU::GAME_OVER;
 
+    window.setMouseCursorVisible(true);
+
     while(window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
         {
-           if (event.type == sf::Event::MouseButtonPressed)
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+            B15.desactiveButton();
+            B16.desactiveButton();
+
+            if(B15.getBounds().contains(mousePos))
             {
-                if (event.mouseButton.button == sf::Mouse::Left)
+                B15.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
                 {
-                    sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
-
-                    if(B15.getBounds().contains(mousePos))
-                    {
-                        std::cout << "VOLVER" << std::endl;
-                        t=TIPO_MENU::PRINCIPAL;
-                    }
-                    if(B16.getBounds().contains(mousePos))
-                    {
-                        std::cout << "SALIR" << std::endl;
-                        t=TIPO_MENU::EXIT;
-
-                    }
-
+                    std::cout << "VOLVER" << std::endl;
+                    t=TIPO_MENU::PRINCIPAL;
                 }
             }
+            else if(B16.getBounds().contains(mousePos))
+            {
+                B16.activeButton();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout << "SALIR" << std::endl;
+                    t=TIPO_MENU::EXIT;
+                }
+            }
+
             if (event.type == sf::Event::Closed)
             {
                 window.close();
@@ -735,6 +812,8 @@ TIPO_MENU Juego2::Jugar(Player& player,sf::RenderWindow& window)
 
     Game_play gp(window,player);
     gp.setNombrePlayer(player.getNombre());
+
+    window.setMouseCursorVisible(false);
 
     Audio musica(1);
 

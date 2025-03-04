@@ -116,7 +116,7 @@ void Enemy_wolf::updateDeath()
 
 }
 
-void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
+void Enemy_wolf::mobility(const sf::Vector2f& heroPosition, int heroState)
 {
     _distance=_sprite_wolf.getPosition().x-heroPosition.x;
 
@@ -249,6 +249,13 @@ void Enemy_wolf::mobility(const sf::Vector2f& heroPosition)
         if(_state==STATES::W_STILL_LEFT&&sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
         {
             _state=STATES::W_WALKING_LEFT_JUMPING;
+            initVariables();
+        }
+        //Sigue su camino...
+        if((_state==STATES::W_ATTACK_WOLF_LEFT||_state==STATES::W_ATTACK_WOLF_RIGHT||_state==STATES::W_ATTACK_LEFT||_state==STATES::W_ATTACK_RIGHT||
+            _state==STATES::W_STILL_RIGHT||_state==STATES::W_STILL_LEFT)&&heroState==11)
+        {
+            _state=STATES::W_WALKING_LEFT;
             initVariables();
         }
 
@@ -487,11 +494,13 @@ void Enemy_wolf::setEnergy(int n)
     _energyBar.setSize({getEnergy(),10.f});
 }
 
-bool Enemy_wolf::wasHit() const {
+bool Enemy_wolf::wasHit() const
+{
     return _wasHit;
 }
 
-void Enemy_wolf::setHit(bool hit) {
+void Enemy_wolf::setHit(bool hit)
+{
     _wasHit = hit;
 }
 

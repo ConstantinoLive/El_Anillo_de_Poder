@@ -26,11 +26,10 @@ public:
         SHOOTING_LEFT,
         ATTACK_RIGHT,
         ATTACK_LEFT,
-        //COLISION_RIGHT,
-        //COLISION_LEFT,
-        DEATH,
+        DEATH
 
     };
+    STATES _state;
     void update();
     void updateAnimation();
     void mobility();
@@ -41,30 +40,32 @@ public:
     void initVariables();
     void initAnimation();
     float getJump_force();
-    bool caida=false;
-
     Shots* shootig;
     std::vector<std::unique_ptr<Shots>> _shots_array;
     bool isDPressed = false;
     bool yaDisparo = false;
     sf::FloatRect getBounds() const;
-    bool obtenido=false;
     bool isAlive=true;
-    STATES _state;
-    int numEstado;
-    int Estado;
-    void setEstado(int numEstado);
+
+    void setEstado(int numE);
     int getEstado();
-    int getVida();
+    int getVida(){return vida;};
+    void SumarVida(int v){vida+=v;};
+    void setVida(int v){vida=v;};
+    int getEnergia(){return energia;};
+    void setEnergia(int e){energia=e;};
+    void RestarEnergia(int e){energia-=e;};
+    void SumarEnergia(int e){energia+=e;};
     bool attack=false;
-    int vida;
-    float porcentajeVida=100;
     void restarVidas(int cantidad);
-    bool murio=false;
-    int energia=100;
-    float puntos=0;
     void actualizarEstado();
-    void updateMuerte();
+    void updateReborn();
+    sf::Vector2f getLastPosition(){return lastPosition;};
+    void setLastPosition();
+    bool isFallen=false;
+    bool getd_r(){return d_r;};
+
+
 
 protected:
 
@@ -75,19 +76,20 @@ private:
     float _jump_force;
     int _xtexture=0;
     float _width_texture;
-
+    int vida;
+    int energia;
+    int numEstado;
     sf::Clock _animationTimer;
     sf::IntRect _current_frame;
-    sf::Sprite _spriteSauron;
     sf::Sprite _sprite_shot;
     sf::IntRect _first_frame_of_sheet;      //me sirve para saber las coordenadas donde arranca el frame de cada tipo de disparo
     int _end_of_frames_sheet;               //me sirve para saber hasta donde va cada sprite en los distintos tipos de disparos
     int _height_texture;
-    //STATES _state;
     sf::Clock _shoot_timer;
     sf::Time _time_shoot;
-    std::vector<sf::IntRect> _death_frames; // Coordenadas de los cuadros de muerte
-    size_t _death_frame_index;
+    sf::Clock deathTimer;
+    bool d_r=false;
+    sf::Vector2f lastPosition;
 
 };
 

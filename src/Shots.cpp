@@ -37,9 +37,7 @@ void Shots::initVariables()
     case ARROW:
         _width_texture=35;
         _height_texture=10;
-       // _first_frame_of_sheet=sf::IntRect(197,409,_width_texture,_height_texture);
-       // _end_of_frames_sheet=0;
-       _sprite_shot.setTextureRect(sf::IntRect(197, 409, _width_texture, _height_texture)); //reemplaza a las dos lineas anteriores. Usara esas lineas para otros disparos
+        _sprite_shot.setTextureRect(sf::IntRect(197, 409, _width_texture, _height_texture)); //reemplaza a las dos lineas anteriores. Usara esas lineas para otros disparos
         _damage_shoot=3;
         break;
     case SPELL:
@@ -63,8 +61,6 @@ void Shots::initTexture()
     case STYLE::ARROW:
         _texture_shot.loadFromFile("Resourses/Legolas_sprite.png");
         _sprite_shot.setTexture(_texture_shot);
-       // _current_frame=sf::IntRect(_first_frame_of_sheet.left,_first_frame_of_sheet.top,_width_texture,_height_texture); //usar en otros disparos
-       // _sprite_shot.setTextureRect(_current_frame); //usar en otros disparos
         _sprite_shot.setPosition(_position.x,_position.y);
         _sprite_shot.setOrigin(_width_texture/2,0);
         break;
@@ -86,12 +82,12 @@ void Shots::mobility()
 {
     if(_right)
     {
-       _sprite_shot.setScale(sf::Vector2f(1.2,1.2));
+        _sprite_shot.setScale(sf::Vector2f(1.2,1.2));
         _sprite_shot.move(15,-0.5);
     }
     else
     {
-         _sprite_shot.setScale(sf::Vector2f(-1.2,1.2));
+        _sprite_shot.setScale(sf::Vector2f(-1.2,1.2));
         _sprite_shot.move(-15,-0.5);
     }
 }
@@ -125,7 +121,6 @@ void Shots::updateAnimation() //usar en otros disparos
 void Shots::update()
 {
     mobility();
-    //updateAnimation(); //usar en otros disparos
 
 }
 
@@ -143,7 +138,8 @@ void Shots::setArrow(int a)
 {
     _cant_arrow+=a;
 }
-sf::FloatRect Shots::getBounds() const {
-        return _sprite_shot.getGlobalBounds();
+sf::FloatRect Shots::getBounds() const
+{
+    return _sprite_shot.getGlobalBounds();
 }
 

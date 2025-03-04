@@ -103,7 +103,7 @@ private:
     sf::Clock clock_update_muerte;
     sf::Clock GANO;
     bool _casiWinner=false;
-    bool Hro_clock_update_muerte_ACTIVADO=false;
+            bool Hro_clock_update_muerte_ACTIVADO=false;
     bool Villano_1_clock_update_muerte_ACTIVADO=false;
     bool Villano_2_clock_update_muerte_ACTIVADO=false;
 

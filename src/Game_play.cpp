@@ -47,6 +47,8 @@ Game_play::Game_play(sf::RenderWindow& window,Player& player)
     Prs[33]=Platforms_rectangle_shape(105,11962,870);
     Prs[34]=Platforms_rectangle_shape(228,12132,1025);
 
+   // Prs[35]=Platforms_rectangle_shape(13000,4000,700);//foza
+
     _wolf_spawn_timer.restart();
 
     _namePlayer = player.getNombre();
@@ -115,8 +117,11 @@ void Game_play::draw(sf::RenderWindow& window)
     window.draw(BG.getDraw());
     window.draw(Pltfm.getDraw());
     window.draw(Msg);
-    //Msg.draw(window, sf::RenderStates::Default);
-    window.draw(Hro.getDraw());
+    if(Hro.getd_r()==false)
+    {
+        window.draw(Hro.getDraw());
+    }
+
 
 
     window.draw(Villano_1.getDraw());
@@ -240,21 +245,41 @@ void Game_play::update(sf::RenderTarget& window)
 {
     if(_game_over==false)
     {
+        if(Hro.isFallen==false)
+        {
+            _textenergia.setPosition(Hro.getPosition().x+400,Hro.getPosition().y-270);
+            _textenergia.setString(std::to_string(Hro.getEnergia()));
+            _textvidas.setPosition(Hro.getPosition().x+200,Hro.getPosition().y-270);
+            _textvidas.setString(std::to_string(Hro.getVida()));
+            _textPuntaje.setPosition(Hro.getPosition().x-100,Hro.getPosition().y-270);
+            _textPuntaje.setString(std::to_string(puntaje));
+            _textPlayer.setPosition(Hro.getPosition().x-500,Hro.getPosition().y-270);
 
-        _textenergia.setPosition(Hro.getPosition().x+400,Hro.getPosition().y-270);
-        _textenergia.setString(std::to_string(Hro.porcentajeVida));
-        _textvidas.setPosition(Hro.getPosition().x+200,Hro.getPosition().y-270);
-        _textvidas.setString(std::to_string(Hro.vida));
-        _textPuntaje.setPosition(Hro.getPosition().x-100,Hro.getPosition().y-270);
-        _textPuntaje.setString(std::to_string(puntaje));
-        _textPlayer.setPosition(Hro.getPosition().x-500,Hro.getPosition().y-270);
+            _textenergia_1.setPosition(Hro.getPosition().x+300,Hro.getPosition().y-270);
+            _textenergia_1.setString("Energia");
+            _textvidas_1.setPosition(Hro.getPosition().x+100,Hro.getPosition().y-270);
+            _textvidas_1.setString("Vidas");
+            _textPuntaje_1.setPosition(Hro.getPosition().x-250,Hro.getPosition().y-270);
+            _textPuntaje_1.setString("Puntaje");
+        }
+        else
+        {
+            _textenergia.setPosition(Hro.getPosition().x+400,215);
+            _textenergia.setString(std::to_string(Hro.getEnergia()));
+            _textvidas.setPosition(Hro.getPosition().x+200,215);
+            _textvidas.setString(std::to_string(Hro.getVida()));
+            _textPuntaje.setPosition(Hro.getPosition().x-100,215);
+            _textPuntaje.setString(std::to_string(puntaje));
+            _textPlayer.setPosition(Hro.getPosition().x-500,215);
 
-        _textenergia_1.setPosition(Hro.getPosition().x+300,Hro.getPosition().y-270);
-        _textenergia_1.setString("Energia");
-        _textvidas_1.setPosition(Hro.getPosition().x+100,Hro.getPosition().y-270);
-        _textvidas_1.setString("Vidas");
-        _textPuntaje_1.setPosition(Hro.getPosition().x-250,Hro.getPosition().y-270);
-        _textPuntaje_1.setString("Puntaje");
+            _textenergia_1.setPosition(Hro.getPosition().x+300,215);
+            _textenergia_1.setString("Energia");
+            _textvidas_1.setPosition(Hro.getPosition().x+100,215);
+            _textvidas_1.setString("Vidas");
+            _textPuntaje_1.setPosition(Hro.getPosition().x-250,215);
+            _textPuntaje_1.setString("Puntaje");
+        }
+
 
         BG.update();
 
@@ -265,6 +290,9 @@ void Game_play::update(sf::RenderTarget& window)
         if(_states==STATES_GAME_PLAY::ACTION)
         {
             Hro.update();
+            //std::cout<<Hro.getPosition().y<<std::endl;
+            //std::cout<<"Level I ....."<<posicion_LEVEL_I<<"    Level II ....."<<posicion_LEVEL_II<<std::endl;
+            //std::cout<<Hro.getPosition().x<< _winner<<std::endl;
 
             Villano_1.update(Hro.getPosition(), deltaTime);
 
@@ -361,26 +389,24 @@ void Game_play::update(sf::RenderTarget& window)
                 }
             }
 
-            //std::cout<<"MURIO "<<_game_over<<" -- "<<"GANO "<< _winner<<std::endl;
-
-
-            if(Hro.isAlive==false)
+            if(Hro.getVida()<=0)
             {
                 if(Hro_clock_update_muerte_ACTIVADO==false)
                 {
                     clock_update_muerte.restart();
                     Hro_clock_update_muerte_ACTIVADO=true;
                 }
-                if(clock_update_muerte.getElapsedTime().asSeconds()>2.0f&&Hro_clock_update_muerte_ACTIVADO==true)
+                if(clock_update_muerte.getElapsedTime().asSeconds()>1.0f&&Hro_clock_update_muerte_ACTIVADO==true)
                 {
                     _game_over=true;
                     _winner=false;
                 }
-                {
-                    Hro.updateMuerte();
-                }
+
 
             }
+
+
+
 
             //-------------------------------------------------------------------------------
             if(num_PackFlechas == 0 && Hro.getPosition().y <= 500)
@@ -448,14 +474,16 @@ void Game_play::update(sf::RenderTarget& window)
             if(posicion_LEVEL_I==true)
             {
                 _current_level = LEVEL_I;
+                posicion_LEVEL_II=false;
                 if(Hro.getPosition().x<1435)
                 {
                     Hro.setPosition(1435,Hro.getPosition().y);
                 }
 
-                if(Hro.getPosition().y>550)
+                if(Hro.getDraw().getPosition().x > 1366 && Hro.getPosition().y>550)
                 {
                     Hro.isAlive=false;
+                    Hro.isFallen=true;
                 }
             }
 
@@ -482,7 +510,18 @@ void Game_play::update(sf::RenderTarget& window)
 
 sf::Vector2f Game_play::get_camera_position()
 {
-    return  Hro.getPosition();
+    sf::Vector2f pos;
+
+    if(Hro.isFallen==true&&Hro.isAlive==false)
+    {
+        pos= {Hro.getPosition().x,485};
+        return  pos;
+    }
+    else
+    {
+         pos= {Hro.getPosition().x,Hro.getPosition().y};
+        return  pos;
+    }
 }
 
 void Game_play::check_collision_platform()
@@ -528,6 +567,14 @@ void Game_play::floor_definition()
         {
             Hro.floor(Hro.getDraw().getPosition().x, 485);
         }
+        /* else if ((Hro.getDraw().getPosition().x > 866 && Hro.getDraw().getPosition().x < 1366) ||
+                 (Hro.getDraw().getPosition().x > 4214 && Hro.getDraw().getPosition().x<4642) ||
+                 (Hro.getDraw().getPosition().x > 5186 && Hro.getDraw().getPosition().x < 5374) ||
+                 (Hro.getDraw().getPosition().x > 9584 && Hro.getDraw().getPosition().x <9754) ||
+                 (Hro.getDraw().getPosition().x > 10902 && Hro.getDraw().getPosition().x < 11086))//485 Suelo... limite de caida
+         {
+             Hro.floor(Hro.getDraw().getPosition().x, 540);
+         }*/
     }
     else if (_current_level == LEVEL_II)
     {
@@ -602,7 +649,7 @@ void Game_play::deleteEnemySup()
     for(auto it=_Wolf_manager._array_wolf.begin(); it!=_Wolf_manager._array_wolf.end();)   //inicio el iterador IT en el principio del array y recorro hasta el final de array
     {
         Enemy_wolf* Wolf = *it;
-        if ((Wolf->isDying == true||(Wolf->getPosition().y > 650&&_current_level==LEVEL_I)|| Wolf->getPosition().x < Hro.getPosition().x - 1500))
+        if ((Wolf->isDying == true||(Wolf->getPosition().y > 550&&_current_level==LEVEL_I)|| Wolf->getPosition().x < Hro.getPosition().x - 1500))
         {
             if(Wolf->isDying==true)
             {
@@ -622,7 +669,7 @@ void Game_play::mobilityEnemySup()
 {
     for (Enemy_wolf* Wolf :  _Wolf_manager._array_wolf)
     {
-        Wolf->mobility(Hro.getPosition());
+        Wolf->mobility(Hro.getPosition(),Hro.getEstado());
     }
 }
 

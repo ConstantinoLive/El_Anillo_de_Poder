@@ -50,7 +50,7 @@ void Message::update()
     {
         //_energy_message.move(0, -3);
         _sprite_msj.move(0, -3);
-        if (_energy_timer.getElapsedTime().asSeconds() > 1.0f) // Desaparece tras 2 segundos
+        if (_energy_timer.getElapsedTime().asSeconds() > .5f) // Desaparece tras 2 segundos
         {
             set_energy(false);
             set_1up(false);
@@ -61,7 +61,7 @@ void Message::update()
     {
        // _1up_message.move(0, -3);
        _sprite_msj.move(0, -3);
-        if (_1up_timer.getElapsedTime().asSeconds() > 1.0f) // Desaparece tras 2 segundos
+        if (_1up_timer.getElapsedTime().asSeconds() > .5f) // Desaparece tras 2 segundos
         {
             set_1up(false);
             set_energy(false);

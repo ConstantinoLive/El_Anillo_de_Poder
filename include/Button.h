@@ -11,7 +11,8 @@ public:
     Button(const std::string& t, sf::Vector2f p, sf::Vector2f s);
     Button();
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-    void setScale(sf::Vector2f s);
+    void activeButton();
+    void desactiveButton();
     sf::FloatRect getBounds() const;
 
     virtual ~Button();
@@ -24,7 +25,7 @@ private:
     sf::Text _text_button;
     sf::Font _font_button;
 
-    //sf::Vector2f _scale;
+    sf::Vector2f _scale;
     //sf::Vector2f _position;
     int click=255;
     //std::string _text;

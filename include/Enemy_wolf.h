@@ -33,7 +33,7 @@ enum STATES
    STATES _state;
     void update();
     void updateAnimation();
-    void mobility(const sf::Vector2f& heroPosition);
+    void mobility(const sf::Vector2f& heroPosition, int heroState);
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
     void floor(float x, float y);
     sf::Vector2f getPosition();
@@ -44,10 +44,7 @@ enum STATES
     void initAnimation();
     void initTexture();
     int getRandom();
-    //int vidaW;
-    //void restarVidas(int cantidad);
     bool isDying = false;
-    sf::Clock deathTimer;
     int getEnergy();
     void setEnergy(int n);
     void updateDeath();
@@ -64,6 +61,7 @@ private:
     int _xtexture=0;
     float _width_texture;
     float _distance=0;
+    sf::Clock deathTimer;
     sf::Clock _animationTimer;
     sf::IntRect _current_frame;
     sf::IntRect _first_frame_of_sheet;      //me sirve para saber las coordenadas donde arranca el frame de cada tipo de disparo

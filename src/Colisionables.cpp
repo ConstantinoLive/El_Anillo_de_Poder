@@ -31,7 +31,7 @@ void Colisionables::anillosColision(Hero_1& Hro, Anillos& anillos)
             anillos.obtenido = true;
             setGold(true);
             setSilver(false);
-            Hro.porcentajeVida+=20;
+            Hro.SumarEnergia(20);
         }
     }
 
@@ -42,7 +42,7 @@ void Colisionables::anillosColision(Hero_1& Hro, Anillos& anillos)
             anillos.obtenido = true;
             setGold(false);
             setSilver(true);
-            Hro.vida+=1;
+            Hro.SumarVida(1);
         }
     }
     if(anillos._state==Anillos::STATES::DISAPPEARED)
@@ -59,12 +59,12 @@ void Colisionables::colisionFlechasConVillanos(Hero_1& Hro, Mago& Villano_1, Sau
     {
         if (shot->isAlive && shot->getBounds().intersects(Villano_2.getBounds()))
         {
-           // std::cout << "¡Colision detectada!" << std::endl;
+            // std::cout << "¡Colision detectada!" << std::endl;
 
             Hro.actualizarEstado();
             //std::cout<<"Energia % " <<Hro.energia << std::endl;
             Villano_2.restarVida(2);
-           // std::cout << "Vida de Sauron: " << Villano_2.vidas << std::endl;
+            // std::cout << "Vida de Sauron: " << Villano_2.vidas << std::endl;
 
 
             shot->setAlive(false);
@@ -73,7 +73,7 @@ void Colisionables::colisionFlechasConVillanos(Hero_1& Hro, Mago& Villano_1, Sau
             {
                 death = true;
                 Villano_2.isAlive = false;
-               // std::cout << "Sauron ha muerto!" << std::endl;
+                // std::cout << "Sauron ha muerto!" << std::endl;
             }
 
         }
@@ -87,7 +87,7 @@ void Colisionables::colisionFlechasConVillanos(Hero_1& Hro, Mago& Villano_1, Sau
 
             Hro.actualizarEstado();
             Villano_1.restarVida(2);
-           // std::cout << "Vida de Mago: " << Villano_1.vidasMago << std::endl;
+            // std::cout << "Vida de Mago: " << Villano_1.vidasMago << std::endl;
 
             shot->setAlive(false);
 
@@ -118,13 +118,13 @@ void Colisionables::colisionHeroConVillanos(Hero_1& Hro, Mago& Villano_1, Sauron
                 attack = true;
                 Hro.actualizarEstado();
                 Villano_2.restarVida(2);
-               // std::cout << "Vida de Sauron: " << Villano_2.vidas << std::endl;
+                // std::cout << "Vida de Sauron: " << Villano_2.vidas << std::endl;
 
                 if (Villano_2.vidas <= 0 && !dying)
                 {
                     dying = true;
                     Villano_2.isAlive = false;
-                   // std::cout << "Sauron ha muerto!" << std::endl;
+                    // std::cout << "Sauron ha muerto!" << std::endl;
                 }
             }
         }
@@ -141,14 +141,14 @@ void Colisionables::colisionHeroConVillanos(Hero_1& Hro, Mago& Villano_1, Sauron
                 attack = true;
 
                 Villano_1.restarVida(2);
-               // std::cout << "Vida de Mago: " << Villano_1.vidasMago << std::endl;
+                // std::cout << "Vida de Mago: " << Villano_1.vidasMago << std::endl;
 
 
                 if (Villano_1.vidasMago <= 0 && !dying)
                 {
                     dying=true;
                     Villano_1.isAlive = false;
-                   // std::cout << "Mago ha muerto!" << std::endl;
+                    // std::cout << "Mago ha muerto!" << std::endl;
                 }
             }
         }
@@ -173,7 +173,7 @@ void Colisionables::colisionSauronConHro(Sauron& Villano_2, Hero_1& Hro, bool& d
                 if (Hro.isAlive)
                 {
                     //std::cout << "Sauron golpeo al heroe. Pierdes porcentaje de vida." << std::endl;
-                    Hro.porcentajeVida -= 2; // Reducir porcentaje de vida
+                    Hro.RestarEnergia(2); // Reducir porcentaje de vida
                     Hro.actualizarEstado();
                     //std::cout << "Porcentaje de vida del héroe: " << Hro.porcentajeVida << "%" << std::endl;
                 }
@@ -195,10 +195,10 @@ void Colisionables::colisionMagoConHero(Mago& Villano_1, Hero_1& Hro, bool& deat
             {
                 if (Hro.isAlive)
                 {
-                   // std::cout << "Mago golpeo al heroe. Pierdes 1 vida." << std::endl;
-                    Hro.porcentajeVida-=2;
+                    // std::cout << "Mago golpeo al heroe. Pierdes 1 vida." << std::endl;
+                    Hro.RestarEnergia(2);
                     Hro.actualizarEstado();
-                   // std::cout << "VIDAS HRO: " << Hro.vida << std::endl;
+                    // std::cout << "VIDAS HRO: " << Hro.vida << std::endl;
                 }
             }
         }
@@ -212,7 +212,7 @@ void Colisionables::colisionMagoConHero(Mago& Villano_1, Hero_1& Hro, bool& deat
             if (Hro.isAlive)
             {
                 //std::cout << "Mago golpeo al heroe. Pierdes 1 vida." << std::endl;
-                Hro.porcentajeVida-=10;
+                Hro.RestarEnergia(10);
                 Hro.actualizarEstado();
                 //std::cout << "VIDAS HRO: " << Hro.vida << std::endl;
             }
@@ -256,26 +256,51 @@ void Colisionables::colisionHeroConWolf(Hero_1& Hro, Manager_wolf& _Wolf_manager
     Hro.actualizarEstado();
 
 }
-
-
 void Colisionables::colisionFlechasWolf(Hero_1& Hro, Manager_wolf& _Wolf_manager, bool& dying)
 {
     //COLISION DE LAS FLECHAS
 
-    for (auto& Enemy_wolf : _Wolf_manager._array_wolf)
+    /*for (auto& Enemy_wolf : _Wolf_manager._array_wolf)
     {
         for (auto& shot : Hro._shots_array)
         {
             if (shot->isAlive && shot->getBounds().intersects(Enemy_wolf->getBounds()))
             {
                 //std::cout << "¡Colision detectada!" << std::endl;
-                Enemy_wolf->setEnergy(20);
+                Enemy_wolf->setEnergy(60);
+                //nemy_wolf->setHit(true);
             }
+           // Enemy_wolf->setHit(false);
+
         }
+    }
+    Hro.actualizarEstado();*/
+
+    for (auto& Enemy_wolf : _Wolf_manager._array_wolf)
+    {
+        Hro._shots_array.erase(std::remove_if(Hro._shots_array.begin(),Hro._shots_array.end(),[&](std::unique_ptr<Shots>& shot)
+        {
+            if (shot->isAlive && shot->getBounds().intersects(Enemy_wolf->getBounds()))
+            {
+                Enemy_wolf->setEnergy(60); // Restar 60 de energía
+                Enemy_wolf->setHit(true);
+                if (Enemy_wolf->getEnergy() <= 0)
+                {
+                    Enemy_wolf->setHit(false);
+                }
+                return true; // Marcar la flecha para eliminación
+            }
+            return false;
+        }
+            ),
+        Hro._shots_array.end()
+        );
     }
     Hro.actualizarEstado();
 
+
 }
+
 void Colisionables::colisionWolfConHero(Hero_1& Hro,Manager_wolf& _Wolf_manager, bool& dying)
 {
     if (!Hro.isAlive)
@@ -292,7 +317,7 @@ void Colisionables::colisionWolfConHero(Hero_1& Hro,Manager_wolf& _Wolf_manager,
                 if (Hro.isAlive)
                 {
                     //std::cout << "Lobo ataco al heroe. Pierdes porcentaje de vida." << std::endl;
-                    Hro.porcentajeVida -=1; // Reducir porcentaje de vida
+                    Hro.RestarEnergia(1); // Reducir porcentaje de vida
                     Hro.actualizarEstado();
                     //std::cout << "Porcentaje de vida del héroe: " << Hro.porcentajeVida << "%" << std::endl;
                 }
