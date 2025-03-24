@@ -58,11 +58,11 @@ void Menu::initBackground()
         scale = {1.5, 1.5};
         break;
 
-    default:
+    /*default:
         _texture_background.loadFromFile("Resourses/Menu_background.png");
          _texture_background.setSmooth(true);
         scale= {0.23,0.2};
-        break;
+        break;*/
     }
     _background.setTexture(_texture_background);
     _background.setScale(scale);

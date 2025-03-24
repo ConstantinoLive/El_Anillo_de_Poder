@@ -2,10 +2,9 @@
 
 Platforms::Platforms()
 {
-    _texture_platform.loadFromFile("Resourses/Plataformas.png");
+    _texture_platform.loadFromFile("Resourses/Plataformas3.png");
     _sprite_platform.setTexture(_texture_platform);
-    _sprite_platform.setPosition(-650,-10);
-
+    _sprite_platform.setPosition(-650,-670);//-10
     _sprite_platform.scale(sf::Vector2f(2.6f,2.6f));//(2.7f,2.7f)
 }
 

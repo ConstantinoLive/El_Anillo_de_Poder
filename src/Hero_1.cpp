@@ -21,6 +21,8 @@ Hero_1::Hero_1()
 
     shootig = new Shots(STYLE::ARROW, sf::Vector2f(0, 0), true);
     shootig->setArrow(15);
+
+
 }
 
 void Hero_1::update()
@@ -220,11 +222,7 @@ void Hero_1::mobility()
         {
             _sprite_hero.setPosition(100, _sprite_hero.getPosition().y);
         }
-        if (_sprite_hero.getPosition().y < 0)
-        {
-            _sprite_hero.setPosition(_sprite_hero.getPosition().x, 0);
-        }
-        if (_sprite_hero.getPosition().x > 13250)
+        if  (_sprite_hero.getPosition().x > 13250)
         {
             _sprite_hero.setPosition(13250, _sprite_hero.getPosition().y);
         }
@@ -234,22 +232,24 @@ void Hero_1::mobility()
              _state == STATES::WALKING_RIGHT_JUMPING)&&!isAlive)
     {
         //deathTimer.restart();
-        if(!isFallen)
+        if(!isFallen&&!isAlive)
         {
+            std::cout<<"sin caida"<<std::endl;
             _state = STATES::DEATH;
             initVariables();
             numEstado = _state;
             setEstado(numEstado);
             deathTimer.restart();
         }
-        else
+        if(isFallen==true&&!isAlive)
         {
+            std::cout<<"con caida"<<std::endl;
             _state = STATES::DEATH;
-            restarVidas(1);
-            actualizarEstado();
+            numEstado = _state;
+            setEstado(numEstado);
+            //restarVidas(1);
+            //actualizarEstado();
             d_r=true;
-            //_sprite_hero.setPosition(_sprite_hero.getPosition().x,500);
-
         }
     }
 }
@@ -267,8 +267,8 @@ sf::FloatRect Hero_1::getBounds() const
 void Hero_1::floor(float x, float y)
 {
     if (_state == STATES::STILL_RIGHT || _state == STATES::STILL_LEFT || _state == STATES::SHOOTING_RIGHT ||
-        _state == STATES::SHOOTING_LEFT || _state == STATES::ATTACK_RIGHT || _state == STATES::ATTACK_LEFT ||
-        _state == STATES::DEATH)
+            _state == STATES::SHOOTING_LEFT || _state == STATES::ATTACK_RIGHT || _state == STATES::ATTACK_LEFT ||
+            _state == STATES::DEATH)
     {
         _jump_force = 0;
         _sprite_hero.setPosition(x, y);
@@ -303,38 +303,14 @@ int Hero_1::getEstado()
 
 void Hero_1::updateReborn()
 {
-    if(!isFallen)
+    //std::cout<<"1"<<std::endl;
+    if(!isFallen&&isAlive==false)
     {
-        isAlive = true;
+        std::cout<<"1"<<std::endl;
+        //isAlive = true;
         _state = STATES::STILL_RIGHT;
         numEstado = _state;
         setEstado(numEstado);
-        setLastPosition();
-        if(getVida()>0)
-        {
-            setEnergia(100);
-
-        }
-        else
-        {
-            setEnergia(0);
-        }
-    }
-    else
-    {
-        isAlive = true;
-        _state = STATES::STILL_RIGHT;
-        numEstado = _state;
-        setEstado(numEstado);
-        if(_sprite_hero.getPosition().x>42070&&_sprite_hero.getPosition().x<47310)
-        {
-            _sprite_hero.setPosition(41700,485);
-        }
-        else
-        {
-            _sprite_hero.setPosition(_sprite_hero.getPosition().x-50,485);
-        }
-        _sprite_hero.setPosition(_sprite_hero.getPosition().x-400,485);
         setLastPosition();
         if(getVida()>0)
         {
@@ -346,7 +322,47 @@ void Hero_1::updateReborn()
             setEnergia(0);
         }
         isFallen=false;
+        isAlive = true;
     }
+    else if(isFallen==true&&isAlive==false)
+    {
+        _state = STATES::STILL_RIGHT;
+        numEstado = _state;
+        setEstado(numEstado);
+
+        if(_sprite_hero.getPosition().x>4160&&_sprite_hero.getPosition().x<4755&&isAlive==false)
+        {
+            _sprite_hero.setPosition(_sprite_hero.getPosition().x-855,485);
+            //isFallen=false;
+           // isAlive = true;
+            std::cout<<"2"<<std::endl;
+            std::cout<<_sprite_hero.getPosition().x<<std::endl;
+        }
+        if(_sprite_hero.getPosition().x>=4755&&isAlive==false)
+        {
+            _sprite_hero.setPosition(_sprite_hero.getPosition().x-220,485);
+            //isFallen=false;
+            //isAlive = true;
+            std::cout<<"3"<<std::endl;
+            std::cout<<_sprite_hero.getPosition().x<<std::endl;
+        }
+        restarVidas(1);
+        actualizarEstado();
+        setLastPosition();
+        if(getVida()>0)
+        {
+            setEnergia(100);
+
+        }
+        else
+        {
+            setEnergia(0);
+        }
+        //isFallen=false;
+        //isAlive = true;
+    }
+    isFallen=false;
+    isAlive = true;
 
 }
 
@@ -391,14 +407,9 @@ void Hero_1::updateAnimation()
                 }
                 else
                 {
-                   /* d_r = true;
-                    if (deathTimer.getElapsedTime().asSeconds() > .005f)
-                    {*/
                     d_r = false;
                     updateReborn();
-                    //}
                 }
-
             }
         }
         _sprite_hero.setTextureRect(_current_frame);

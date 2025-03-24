@@ -15,6 +15,7 @@
 #include "Colision.h"
 #include "Colisionables.h"
 #include "Message.h"
+#include "Hud.h"
 
 
 class Game_play
@@ -26,29 +27,15 @@ public:
     void cmd();
     void update(sf::RenderTarget& window);
     sf::Vector2f get_camera_position();
-    bool arranqueMago;
     void check_collision_platform();
     void deleteEnemySup();
     void mobilityEnemySup();
     void updateEnemySup();
     void updateEnemySupGeneration();
-    void updateMuerteVillano_1();
-    void Muerte_Villano_1 ();
-    void mobilityMuerteVillano_1();
-    void updateMuerteVillano_2();
-    void Muerte_Villano_2();
-    void mobilityMuerteVillano_2();
-    void updateMuerteHro();
-    void MuerteHeroe();
-    void mobilityMuerteHro();
     void floor_definition();
     bool isAlive=false;
-    Shots shot;
-    int getArrow();
     bool death=false;
     bool attack=false;
-    bool estaAtacando=false;
-    bool estaDisparando=false;
     int getPuntaje()
     {
         return puntaje;
@@ -85,6 +72,7 @@ private:
         PAUSE
     };
     STATES_GAME_PLAY _states;
+    Hud Hud_game;
     Items items;
     Hero_1 Hro;
     Background BG;
@@ -120,22 +108,7 @@ private:
 
     sf::Font _font_pause;
     sf::Text _text_pause;
-    sf::Font _fontPlayer;
-    sf::Text _textPlayer;
-    sf::Font _fontPuntaje;
-    sf::Text _textPuntaje;
-    sf::Text _textPuntaje_1;
-    sf::Font _fontvidas;
-    sf::Text _textvidas;
-    sf::Text _textvidas_1;
-    sf::Text _cantvidas;
-    sf::Font _fontenergia;
-    sf::Text _textenergia;
-    sf::Text _textenergia_1;
 
-
-   // int enemigos=0;
-   // int enemigos_eliminados=0;
     bool _winner=false;
     bool _game_over=false;
     bool posicion_LEVEL_I=false;
@@ -145,6 +118,13 @@ private:
     bool dying=false;
     int i;
     int num_PackFlechas;
+
+    const int FLOOR_I=485; //485
+    const int FLOOR_II=1650; //1210
+
+    int p=400;
+
+
 
 
 

@@ -9,101 +9,49 @@ Game_play::Game_play(sf::RenderWindow& window,Player& player)
     _current_level = LEVEL_I;
     clock.restart();
     //Superficie
-    Prs[0]=Platforms_rectangle_shape(508,846,355);
-    Prs[1]=Platforms_rectangle_shape(264,1466,195);
-    Prs[2]=Platforms_rectangle_shape(388,1750,325);
-    Prs[3]=Platforms_rectangle_shape(274,4292,365);
-    Prs[4]=Platforms_rectangle_shape(495,4638,195);
-    Prs[5]=Platforms_rectangle_shape(156,5195,365);
-    Prs[6]=Platforms_rectangle_shape(380,5578,195);
-    Prs[7]=Platforms_rectangle_shape(508,6406,341);
-    Prs[8]=Platforms_rectangle_shape(272,7942,302);
-    Prs[9]=Platforms_rectangle_shape(264,9170,317);
-    Prs[10]=Platforms_rectangle_shape(264,9584,170);
-    Prs[11]=Platforms_rectangle_shape(500,10008,307);
-    Prs[12]=Platforms_rectangle_shape(505,10680,177);
+    Prs[0]=Platforms_rectangle_shape(508,846,355);      //355
+    Prs[1]=Platforms_rectangle_shape(264,1466,195);     //195
+    Prs[2]=Platforms_rectangle_shape(388,1750,325);     //325
+    Prs[3]=Platforms_rectangle_shape(274,4292,365);     //365
+    Prs[4]=Platforms_rectangle_shape(495,4638,195);     //195
+    Prs[5]=Platforms_rectangle_shape(156,5195,365);     //365
+    Prs[6]=Platforms_rectangle_shape(380,5578,195);     //195
+    Prs[7]=Platforms_rectangle_shape(508,6406,341);     //341
+    Prs[8]=Platforms_rectangle_shape(272,7942,302);     //302
+    Prs[9]=Platforms_rectangle_shape(264,9170,317);     //317
+    Prs[10]=Platforms_rectangle_shape(264,9584,170);    //170
+    Prs[11]=Platforms_rectangle_shape(500,10008,307);   //307
+    Prs[12]=Platforms_rectangle_shape(505,10680,177);   //177
 
     //Cueva
-    Prs[13]=Platforms_rectangle_shape(80,35,950);
-    Prs[14]=Platforms_rectangle_shape (312, 236,1053);
-    Prs[15]=Platforms_rectangle_shape(108,1740,1105);
-    Prs[16]=Platforms_rectangle_shape(528,1890,980);
-    Prs[17]=Platforms_rectangle_shape(105,2642,897);
-    Prs[18]=Platforms_rectangle_shape(105,4978,957);
-    Prs[19]=Platforms_rectangle_shape(105,5154,1070);
-    Prs[20]=Platforms_rectangle_shape(105,5780,1070);
-    Prs[21]=Platforms_rectangle_shape(440,6010,975);
-    Prs[22]=Platforms_rectangle_shape(188,6608,1055);
-    Prs[23]=Platforms_rectangle_shape(105,8044,1105);
-    Prs[24]=Platforms_rectangle_shape(105,8276,985);
-    Prs[25]=Platforms_rectangle_shape(444,8544,910);
-    Prs[26]=Platforms_rectangle_shape(180,9116,985);
-    Prs[27]=Platforms_rectangle_shape(105,9447,910);
-    Prs[28]=Platforms_rectangle_shape(105,9624,1085);
-    Prs[29]=Platforms_rectangle_shape(460,9844,990);
-    Prs[30]=Platforms_rectangle_shape(105,10444,1075);
-    Prs[31]=Platforms_rectangle_shape(105,11176,1080);
-    Prs[32]=Platforms_rectangle_shape(404,11404,970);
-    Prs[33]=Platforms_rectangle_shape(105,11962,870);
-    Prs[34]=Platforms_rectangle_shape(228,12132,1025);
+    Prs[13]=Platforms_rectangle_shape(80,35,950+p);       //950
+    Prs[14]=Platforms_rectangle_shape (312, 236,1053+p);  //1053
+    Prs[15]=Platforms_rectangle_shape(108,1740,1105+p);   //1105
+    Prs[16]=Platforms_rectangle_shape(528,1890,980+p);    //980
+    Prs[17]=Platforms_rectangle_shape(105,2642,897+p);    //897
+    Prs[18]=Platforms_rectangle_shape(105,4978,957+p);    //957
+    Prs[19]=Platforms_rectangle_shape(105,5154,1070+p);   //1070
+    Prs[20]=Platforms_rectangle_shape(105,5780,1070+p);   //1070
+    Prs[21]=Platforms_rectangle_shape(440,6010,975+p);    //975
+    Prs[22]=Platforms_rectangle_shape(188,6608,1055+p);   //1055
+    Prs[23]=Platforms_rectangle_shape(105,8044,1105+p);   //1105
+    Prs[24]=Platforms_rectangle_shape(105,8276,985+p);    //985
+    Prs[25]=Platforms_rectangle_shape(444,8544,910+p);    //910
+    Prs[26]=Platforms_rectangle_shape(180,9116,985+p);    //985
+    Prs[27]=Platforms_rectangle_shape(105,9447,910+p);    //910
+    Prs[28]=Platforms_rectangle_shape(105,9624,1085+p);   //1085
+    Prs[29]=Platforms_rectangle_shape(460,9844,990+p);    //990
+    Prs[30]=Platforms_rectangle_shape(105,10444,1075+p);  //1075
+    Prs[31]=Platforms_rectangle_shape(105,11176,1080+p);  //1080
+    Prs[32]=Platforms_rectangle_shape(404,11404,970+p);   //970
+    Prs[33]=Platforms_rectangle_shape(105,11962,870+p);   //870
+    Prs[34]=Platforms_rectangle_shape(228,12132,1025+p);  //1025
 
    // Prs[35]=Platforms_rectangle_shape(13000,4000,700);//foza
 
     _wolf_spawn_timer.restart();
 
     _namePlayer = player.getNombre();
-
-    /************** NOMBRE DE JUGADOR ****************/
-
-    if (!_fontPlayer.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
-    {
-        std::cout<<"Error al cargar texto"<<std::endl;
-    }
-    _textPlayer.setFont(_fontPlayer);
-    _textPlayer.setString(_namePlayer);
-    _textPlayer.setFillColor(sf::Color::Yellow);
-    _textPlayer.setCharacterSize(10.f);
-
-    /*****************PUNTAJE**************************/
-    if (!_fontPuntaje.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
-    {
-        std::cout<<"Error al cargar texto"<<std::endl;
-    }
-    _textPuntaje.setFont(_fontPuntaje);
-    _textPuntaje.setFillColor(sf::Color::Yellow);
-    _textPuntaje_1.setFont(_fontPuntaje);
-    _textPuntaje_1.setFillColor(sf::Color::Yellow);
-    _textPuntaje.setCharacterSize(10.f);
-    _textPuntaje_1.setCharacterSize(10.f);
-
-    /*****************VIDAS**************************/
-
-    if (!_fontvidas.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
-    {
-        std::cout<<"Error al cargar texto"<<std::endl;
-    }
-    _textvidas.setFont(_fontvidas);
-    _textvidas.setFillColor(sf::Color::Yellow);
-    _textvidas_1.setFont(_fontvidas);
-    _textvidas_1.setFillColor(sf::Color::Yellow);
-    _textvidas.setCharacterSize(10.f);
-    _textvidas_1.setCharacterSize(10.f);
-
-    /*****************ENERGIA**************************/
-
-    if (!_fontenergia.loadFromFile("Resourses/Font/PressStart2P-Regular.ttf"))
-    {
-        std::cout<<"Error al cargar texto"<<std::endl;
-    }
-    _textenergia.setFont(_fontenergia);
-    _textenergia.setFillColor(sf::Color::Yellow);
-    _textenergia_1.setFont(_fontenergia);
-    _textenergia_1.setFillColor(sf::Color::Yellow);
-    _textenergia.setCharacterSize(10.f);
-    _textenergia_1.setCharacterSize(10.f);
-
-    /***********************************************/
-
 
 }
 
@@ -166,13 +114,7 @@ void Game_play::draw(sf::RenderWindow& window)
 
     if(_states==STATES_GAME_PLAY::ACTION)
     {
-        window.draw(_textPlayer);
-        window.draw(_textPuntaje);
-        window.draw(_textvidas);
-        window.draw(_textenergia);
-        window.draw(_textPuntaje_1);
-        window.draw(_textvidas_1);
-        window.draw(_textenergia_1);
+        window.draw(Hud_game);
     }
 }
 
@@ -183,6 +125,8 @@ void Game_play::cmd()
     if(_states==STATES_GAME_PLAY::ACTION)
     {
         check_collision_platform();
+
+        Hud_game.mobility(Hro.getPosition(),get_camera_position());
 
         colisionables.anillosColision(Hro, anillos);
         if(anillos.isObtenido())
@@ -245,42 +189,6 @@ void Game_play::update(sf::RenderTarget& window)
 {
     if(_game_over==false)
     {
-        if(Hro.isFallen==false)
-        {
-            _textenergia.setPosition(Hro.getPosition().x+400,Hro.getPosition().y-270);
-            _textenergia.setString(std::to_string(Hro.getEnergia()));
-            _textvidas.setPosition(Hro.getPosition().x+200,Hro.getPosition().y-270);
-            _textvidas.setString(std::to_string(Hro.getVida()));
-            _textPuntaje.setPosition(Hro.getPosition().x-100,Hro.getPosition().y-270);
-            _textPuntaje.setString(std::to_string(puntaje));
-            _textPlayer.setPosition(Hro.getPosition().x-500,Hro.getPosition().y-270);
-
-            _textenergia_1.setPosition(Hro.getPosition().x+300,Hro.getPosition().y-270);
-            _textenergia_1.setString("Energia");
-            _textvidas_1.setPosition(Hro.getPosition().x+100,Hro.getPosition().y-270);
-            _textvidas_1.setString("Vidas");
-            _textPuntaje_1.setPosition(Hro.getPosition().x-250,Hro.getPosition().y-270);
-            _textPuntaje_1.setString("Puntaje");
-        }
-        else
-        {
-            _textenergia.setPosition(Hro.getPosition().x+400,215);
-            _textenergia.setString(std::to_string(Hro.getEnergia()));
-            _textvidas.setPosition(Hro.getPosition().x+200,215);
-            _textvidas.setString(std::to_string(Hro.getVida()));
-            _textPuntaje.setPosition(Hro.getPosition().x-100,215);
-            _textPuntaje.setString(std::to_string(puntaje));
-            _textPlayer.setPosition(Hro.getPosition().x-500,215);
-
-            _textenergia_1.setPosition(Hro.getPosition().x+300,215);
-            _textenergia_1.setString("Energia");
-            _textvidas_1.setPosition(Hro.getPosition().x+100,215);
-            _textvidas_1.setString("Vidas");
-            _textPuntaje_1.setPosition(Hro.getPosition().x-250,215);
-            _textPuntaje_1.setString("Puntaje");
-        }
-
-
         BG.update();
 
         sf::Time deltaTime = clock.restart(); // Reinicia el reloj y obtiene el tiempo transcurrido
@@ -290,9 +198,8 @@ void Game_play::update(sf::RenderTarget& window)
         if(_states==STATES_GAME_PLAY::ACTION)
         {
             Hro.update();
-            //std::cout<<Hro.getPosition().y<<std::endl;
-            //std::cout<<"Level I ....."<<posicion_LEVEL_I<<"    Level II ....."<<posicion_LEVEL_II<<std::endl;
-            //std::cout<<Hro.getPosition().x<< _winner<<std::endl;
+
+            Hud_game.update(_namePlayer, Hro.getEnergia(),Hro.getVida(),puntaje,Hro.shootig->getArrow());
 
             Villano_1.update(Hro.getPosition(), deltaTime);
 
@@ -352,15 +259,15 @@ void Game_play::update(sf::RenderTarget& window)
                 }
             }
 
-            if(posicionInicial_LEVEL_I==1)
+           /* if(posicionInicial_LEVEL_I==1)
             {
-                Hro.setPosition(1435,485);
+                Hro.setPosition(1435,FLOOR_I);
             }
 
             if(posicionInicial_LEVEL_II==1)
             {
-                Hro.setPosition(650,1175);
-            }
+                Hro.setPosition(650,FLOOR_II);//1175
+            }*/
 
             if(Hro.getPosition().x>=1345&&Hro.getPosition().y<550&&Villano_1.isAlive==true)
             {
@@ -459,16 +366,6 @@ void Game_play::update(sf::RenderTarget& window)
                 }
             }
             //---------------------------------------------------------------------------------------*/
-            /*if (Hro.getDraw().getPosition().y<650)
-            {
-                _current_level = LEVEL_I;
-            }
-            else
-            {
-                _current_level = LEVEL_II;
-            }*/
-
-            /////////SETEO DE POSICION DE PERSONAJE SEGUN NIVEL
 
             ////////POSICION
             if(posicion_LEVEL_I==true)
@@ -514,12 +411,17 @@ sf::Vector2f Game_play::get_camera_position()
 
     if(Hro.isFallen==true&&Hro.isAlive==false)
     {
-        pos= {Hro.getPosition().x,485};
+        pos= {Hro.getPosition().x,FLOOR_I};
+        return  pos;
+    }
+    else if(Hro.getPosition().y<1260&&Hro.getPosition().y>550)
+    {
+        pos= {Hro.getPosition().x,1260};
         return  pos;
     }
     else
     {
-         pos= {Hro.getPosition().x,Hro.getPosition().y};
+        pos= {Hro.getPosition().x,Hro.getPosition().y};
         return  pos;
     }
 }
@@ -530,7 +432,6 @@ void Game_play::check_collision_platform()
     {
         if(Hro.getDraw().getGlobalBounds().intersects(Platform.getDraw().getGlobalBounds())&&Hro.getJump_force()<0)
         {
-            //std::cout<<"Check"<<std::endl;
             Hro.floor(Hro.getDraw().getPosition().x, Platform.getDraw().getGlobalBounds().top-120);
         }
 
@@ -558,29 +459,21 @@ void Game_play::floor_definition()
 {
     if (_current_level == LEVEL_I)
     {
-        if ((Hro.getDraw().getPosition().x < 866 && Hro.getDraw().getPosition().y>485) ||
-                (Hro.getDraw().getPosition().x > 1366 && Hro.getDraw().getPosition().x < 4214 && Hro.getDraw().getPosition().y>485) ||
-                (Hro.getDraw().getPosition().x > 4642 && Hro.getDraw().getPosition().x < 5186 && Hro.getDraw().getPosition().y>485) ||
-                (Hro.getDraw().getPosition().x > 5374 && Hro.getDraw().getPosition().x < 9584 && Hro.getDraw().getPosition().y>485) ||
-                (Hro.getDraw().getPosition().x > 9754 && Hro.getDraw().getPosition().x < 10902 && Hro.getDraw().getPosition().y>485) ||
-                (Hro.getDraw().getPosition().x > 11086 && Hro.getDraw().getPosition().y > 485))//485 Suelo... limite de caida
+        if ((Hro.getDraw().getPosition().x < 866 && Hro.getDraw().getPosition().y>FLOOR_I) ||
+                (Hro.getDraw().getPosition().x > 1366 && Hro.getDraw().getPosition().x < 4214 && Hro.getDraw().getPosition().y>FLOOR_I) ||
+                (Hro.getDraw().getPosition().x > 4642 && Hro.getDraw().getPosition().x < 5186 && Hro.getDraw().getPosition().y>FLOOR_I) ||
+                (Hro.getDraw().getPosition().x > 5374 && Hro.getDraw().getPosition().x < 9584 && Hro.getDraw().getPosition().y>FLOOR_I) ||
+                (Hro.getDraw().getPosition().x > 9754 && Hro.getDraw().getPosition().x < 10902 && Hro.getDraw().getPosition().y>FLOOR_I) ||
+                (Hro.getDraw().getPosition().x > 11086 && Hro.getDraw().getPosition().y > FLOOR_I))//485 Suelo... limite de caida
         {
-            Hro.floor(Hro.getDraw().getPosition().x, 485);
+            Hro.floor(Hro.getDraw().getPosition().x, FLOOR_I);
         }
-        /* else if ((Hro.getDraw().getPosition().x > 866 && Hro.getDraw().getPosition().x < 1366) ||
-                 (Hro.getDraw().getPosition().x > 4214 && Hro.getDraw().getPosition().x<4642) ||
-                 (Hro.getDraw().getPosition().x > 5186 && Hro.getDraw().getPosition().x < 5374) ||
-                 (Hro.getDraw().getPosition().x > 9584 && Hro.getDraw().getPosition().x <9754) ||
-                 (Hro.getDraw().getPosition().x > 10902 && Hro.getDraw().getPosition().x < 11086))//485 Suelo... limite de caida
-         {
-             Hro.floor(Hro.getDraw().getPosition().x, 540);
-         }*/
     }
     else if (_current_level == LEVEL_II)
     {
-        if (Hro.getDraw().getPosition().y > 1210)
+        if (Hro.getDraw().getPosition().y > FLOOR_II)
         {
-            Hro.floor(Hro.getDraw().getPosition().x, 1210);
+            Hro.floor(Hro.getDraw().getPosition().x, FLOOR_II);
         }
     }
 
@@ -588,14 +481,14 @@ void Game_play::floor_definition()
     {
         for (auto& Wolf :  _Wolf_manager._array_wolf)
         {
-            if ((Wolf->getPosition().x < 866 && Wolf->getPosition().y>485) ||
-                    (Wolf->getPosition().x > 1366 && Wolf->getPosition().x < 4214 && Wolf->getPosition().y>485) ||
-                    (Wolf->getPosition().x > 4642 && Wolf->getPosition().x < 5186 && Wolf->getPosition().y>485) ||
-                    (Wolf->getPosition().x > 5374 && Wolf->getPosition().x < 9584 && Wolf->getPosition().y>485) ||
-                    (Wolf->getPosition().x > 9754 && Wolf->getPosition().x < 10902 && Wolf->getPosition().y>485) ||
-                    (Wolf->getPosition().x > 11086 && Wolf->getPosition().y > 485))//485 Suelo... limite de caida
+            if ((Wolf->getPosition().x < 866 && Wolf->getPosition().y>FLOOR_I) ||
+                    (Wolf->getPosition().x > 1366 && Wolf->getPosition().x < 4214 && Wolf->getPosition().y>FLOOR_I) ||
+                    (Wolf->getPosition().x > 4642 && Wolf->getPosition().x < 5186 && Wolf->getPosition().y>FLOOR_I) ||
+                    (Wolf->getPosition().x > 5374 && Wolf->getPosition().x < 9584 && Wolf->getPosition().y>FLOOR_I) ||
+                    (Wolf->getPosition().x > 9754 && Wolf->getPosition().x < 10902 && Wolf->getPosition().y>FLOOR_I) ||
+                    (Wolf->getPosition().x > 11086 && Wolf->getPosition().y > FLOOR_I))//485 Suelo... limite de caida
             {
-                Wolf->floor(Wolf->getPosition().x, 485);
+                Wolf->floor(Wolf->getPosition().x, FLOOR_I);
             }
         }
 
@@ -604,9 +497,9 @@ void Game_play::floor_definition()
     {
         for (auto& Wolf :  _Wolf_manager._array_wolf)
         {
-            if (Wolf->getPosition().y > 1210)
+            if (Wolf->getPosition().y > FLOOR_II)
             {
-                Wolf->floor(Wolf->getPosition().x, 1210);
+                Wolf->floor(Wolf->getPosition().x, FLOOR_II);
             }
         }
 
@@ -626,11 +519,11 @@ void Game_play::updateEnemySupGeneration()
             Enemy_wolf* newWolf = new Enemy_wolf();
             if(_current_level==LEVEL_I)
             {
-                newWolf->setPosition(randomOffset, 485);
+                newWolf->setPosition(randomOffset, FLOOR_I);
             }
             else if(_current_level==LEVEL_II)
             {
-                newWolf->setPosition(randomOffset, 1210);
+                newWolf->setPosition(randomOffset, FLOOR_II);
             }
             // Agrega el lobo al administrador
             _Wolf_manager.Add_wolf(newWolf);

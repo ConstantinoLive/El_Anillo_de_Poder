@@ -804,12 +804,6 @@ void Juego2::showRanking(sf::RenderWindow& window,Ranking& ranking)
 
 TIPO_MENU Juego2::Jugar(Player& player,sf::RenderWindow& window)
 {
-    sf::Sprite sprite_fondo;
-    sf::Texture texture_fondo;
-
-    texture_fondo.loadFromFile("Resourses/Menu_background.png");
-    sprite_fondo.setTexture(texture_fondo);
-
     Game_play gp(window,player);
     gp.setNombrePlayer(player.getNombre());
 
@@ -845,7 +839,6 @@ TIPO_MENU Juego2::Jugar(Player& player,sf::RenderWindow& window)
 
             window.clear(sf::Color::Black);
 
-            window.draw(sprite_fondo);
             gp.draw(window);
 
             window.display();

@@ -54,6 +54,7 @@
 		<Unit filename="include/Enemy_wolf.h" />
 		<Unit filename="include/Game_play.h" />
 		<Unit filename="include/Hero_1.h" />
+		<Unit filename="include/Hud.h" />
 		<Unit filename="include/Items.h" />
 		<Unit filename="include/Juego2.h" />
 		<Unit filename="include/Mago.h" />
@@ -78,6 +79,7 @@
 		<Unit filename="src/Enemy_wolf.cpp" />
 		<Unit filename="src/Game_play.cpp" />
 		<Unit filename="src/Hero_1.cpp" />
+		<Unit filename="src/Hud.cpp" />
 		<Unit filename="src/Items.cpp" />
 		<Unit filename="src/Juego2.cpp" />
 		<Unit filename="src/Mago.cpp" />

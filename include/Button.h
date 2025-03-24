@@ -26,10 +26,7 @@ private:
     sf::Font _font_button;
 
     sf::Vector2f _scale;
-    //sf::Vector2f _position;
-    int click=255;
-    //std::string _text;
-
+   // int click=255;
 
 };
 

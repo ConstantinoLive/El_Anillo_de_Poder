@@ -29,7 +29,7 @@ sf::Sprite Items::getDraw()const
 void Items::respawn(int n)
 {
     int positionsX[] = {3500, 6600, 9300,10500,3500,6650,8300,10500};
-    int positionsY[]= {500,230,230,300,1230,970,900,970};
+    int positionsY[]= {500,230,230,300,1670,1360,1290,1360};
 
     _sprite_items.setPosition(positionsX[n], positionsY[n]);
     }

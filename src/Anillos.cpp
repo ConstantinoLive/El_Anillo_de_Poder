@@ -114,7 +114,7 @@ void Anillos::update(const sf::Vector2f& heroPosition)
                 }
                 else
                 {
-                    _spriteAnillos.setPosition(heroPosition.x + offset, 1280);
+                    _spriteAnillos.setPosition(heroPosition.x + offset, 1720);//1280
                 }
             }
         }
